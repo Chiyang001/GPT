@@ -137,7 +137,7 @@
 
     <div id="header">
         <h1 id="title" style="background: linear-gradient(to right, #1a237e, #0d47a1); -webkit-background-clip: text; color: transparent;">您的 GPT 工具</h1>
-        <p>您的 GPT 动力工具一站式资源。</p>
+        <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
     <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration')">文本生成</button>
@@ -295,31 +295,92 @@
         <p id="uptime">网站运行时间：<span id="uptime-value">计算中...</span></p>
     </div>
     <script>
-        // 等待页面加载完成后执行
         window.onload = function() {
-            setTimeout(() => {
-                animateTitle();
-                displayUptime();
-                setInterval(displayUptime, 1000); // 每秒更新一次运行时间
-            }, 1000); // 等待1秒后开始打字效果和运行时间显示
-        };
+    setTimeout(() => {
+        animateTitle();
+        displayUptime();
+        setInterval(displayUptime, 1000); // 每秒更新一次运行时间
+    }, 1000); // 等待1秒后开始标题动画和运行时间显示
+};
 
-        function animateTitle() {
-            const title = document.getElementById('title');
-            const text = "您的 GPT 工具";
-            let currentText = '';
-            let currentIndex = 0;
+function animateTitle() {
+    const title = document.getElementById('title');
+    const titleText = "您的 GPT 工具";
+    const cursor = document.createElement('span');
+    cursor.id = 'cursor';
+    cursor.textContent = '|';
+    let cursorVisible = true;
 
-            const typingInterval = setInterval(() => {
-                currentText += text[currentIndex];
-                title.textContent = currentText;
-                currentIndex++;
+    title.textContent = ''; // Clear the title initially
 
-                if (currentIndex >= text.length) {
-                    clearInterval(typingInterval);
-                }
-            }, 100); // 每100毫秒添加一个字
+    setInterval(() => {
+        if (cursorVisible) {
+            cursor.style.opacity = '0';
+            cursorVisible = false;
+        } else {
+            cursor.style.opacity = '1';
+            cursorVisible = true;
         }
+    }, 500); // Toggle cursor visibility every 500ms
+
+    let currentTitle = '';
+    let currentIndexTitle = 0;
+
+    const typingInterval = setInterval(() => {
+        currentTitle += titleText[currentIndexTitle];
+        title.textContent = currentTitle;
+        title.appendChild(cursor); // Append the cursor
+
+        currentIndexTitle++;
+
+        if (currentIndexTitle >= titleText.length) {
+            clearInterval(typingInterval);
+            title.removeChild(cursor); // Remove the cursor after typing is done
+
+            // Start subtitle animation after title animation finishes
+            setTimeout(animateSubtitle, 500); // Delay before starting subtitle animation
+        }
+    }, 100); // Type a character every 100ms
+}
+
+function animateSubtitle() {
+    const subtitle = document.getElementById('subtitle');
+    const subtitleText = "您的 GPT 动力工具一站式资源。";
+    const cursor = document.createElement('span');
+    cursor.id = 'cursor';
+    cursor.textContent = '|';
+    let cursorVisible = true;
+
+    subtitle.textContent = ''; // Clear the subtitle initially
+
+    setInterval(() => {
+        if (cursorVisible) {
+            cursor.style.opacity = '0';
+            cursorVisible = false;
+        } else {
+            cursor.style.opacity = '1';
+            cursorVisible = true;
+        }
+    }, 500); // Toggle cursor visibility every 500ms
+
+    let currentSubtitle = '';
+    let currentIndexSubtitle = 0;
+
+    const typingInterval = setInterval(() => {
+        currentSubtitle += subtitleText[currentIndexSubtitle];
+        subtitle.textContent = currentSubtitle;
+        subtitle.appendChild(cursor); // Append the cursor
+
+        currentIndexSubtitle++;
+
+        if (currentIndexSubtitle >= subtitleText.length) {
+            clearInterval(typingInterval);
+            subtitle.removeChild(cursor); // Remove the cursor after typing is done
+        }
+    }, 100); // Type a character every 100ms
+}
+
+
 
 
        function toggleCategory(categoryId) {
