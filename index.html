@@ -129,10 +129,52 @@
             text-align: center;
             padding: 20px;
         }
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+        
     </style>
 </head>
 <body>
 
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>手机端请使用桌面模式，否则网站显示会出现问题。</p>
+      <button id="closeBtn">我已阅读</button>
+    </div>
+  </div>
 
 
     <div id="header">
@@ -173,6 +215,48 @@
                 </div>
             </div>
             
+            
+            <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>GPT账号网站</h3>
+                    <p>这个网站允许使用GPT3.5，有多个接口用来使用，回复速度快，推荐使用。</p>
+                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html?v=2">了解更多</a>
+                </div>
+                <div class="tool-card">
+                    <h3>WRTN</h3>
+                    <p>不稳定，需要使用魔法。</p>
+                    <a class="glowing-button" href="https://wrtn.ai">了解更多</a>
+                </div>
+            </div>
+            
+            <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>ICode联盟</h3>
+                    <p>这个网站允许使用GPT3.5，但网站布局有点奇怪，手机端看不见输入内容，而且不支持流式输出。</p>
+                    <a class="glowing-button" href="https://yy123.ink/chatgpt">了解更多</a>
+                </div>
+                <div class="tool-card">
+                    <h3>小傅哥GPT</h3>
+                    <p>本人未试过，需要进公众号获取验证码。</p>
+                    <a class="glowing-button" href="https://chatgpt.itedus.cn/#/chat">了解更多</a>
+                </div>
+            </div>
+           
+           <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>bito</h3>
+                    <p>外国网站，也许要梯子更快，完全免费无次数限制，可以转载开发工具也可以作为浏览器插件，确定就是总是用英文回答
+。</p>
+                    <a class="glowing-button" href="https://bito.ai/">了解更多</a>
+                </div>
+                <div class="tool-card">
+                    <h3>WeTab</h3>
+                    <p>目前已知最好用的插件，支持edge和chrome插件，手机可使用狐猴浏览器安装。</p>
+                    <a class="glowing-button" href="https://www.wetab.link/">了解更多</a>
+                </div>
+            </div>
+           
+           
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>Gradio</h3>
@@ -285,6 +369,15 @@
                 </div>
             </div>
             
+            <div class="category" id="work">
+            <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>Cursor</h3>
+                    <p>最强AI编辑器 可以根据你的描述在当前文件自动生成代码。</p>
+                    <a class="glowing-button" href="https://www.cursor.sh/">了解更多</a>
+                </div>
+                
+            </div>
             
     </div>
     
@@ -295,6 +388,19 @@
         <p id="uptime">网站运行时间：<span id="uptime-value">计算中...</span></p>
     </div>
     <script>
+    
+    // 在这里嵌入JavaScript代码
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // 显示弹窗
+    popup.style.display = 'flex';
+
+    // 点击按钮隐藏弹窗
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+    
         window.onload = function() {
     setTimeout(() => {
         animateTitle();
