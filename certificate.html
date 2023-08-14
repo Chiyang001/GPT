@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免责声明</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            background: linear-gradient(to right, #1a237e, #0d47a1);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .glow-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(to right, #1a237e, #0d47a1);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-button::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: scale(1.2);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .glow-button:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">免责声明</h1>
+        <p class="content">
+    
+**免责声明**<br>
+
+欢迎访问 **您的 GPT 工具** 网站（以下简称“本网站”）。在使用本网站之前，请您务必仔细阅读以下免责声明。通过访问本网站，您同意遵守以下条款和条件：<br>
+
+1. **信息准确性和完整性**：本网站提供的所有信息和内容仅供参考和信息交流之用。尽管我们努力确保提供准确和最新的信息，但我们不对信息的准确性、完整性、可靠性或适用性做出任何明示或暗示的保证。您在使用本网站提供的信息时应自行判断其适用性。<br>
+
+2. **技术免责**：本网站提供的工具和资源基于GPT技术，这些工具生成的内容可能会受到算法和数据输入的影响。我们不对通过本网站生成的文本、图像或其他内容的准确性、合法性、完整性或品质承担任何责任。<br>
+
+3. **第三方链接**：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户提供。我们对这些第三方网站的内容或准确性不承担任何责任，并且不对其进行背书或推荐。<br>
+
+4. **服务中断**：我们将尽力保证本网站的正常运行，但不保证本网站在任何时候都不会受到中断、延迟或其他技术问题的影响。我们不承担由于网站服务中断或技术问题引起的任何损失或损害。<br>
+
+5. **知识产权**：本网站上的所有内容，包括但不限于文本、图像、标志、图标和其他元素，均受版权和其他知识产权法律的保护。未经授权，任何人不得复制、修改、分发、传播或以任何方式使用本网站的内容。<br>
+
+6. **使用风险**：您通过本网站使用任何工具或资源，均属于您个人的决定和责任。您应自行承担因使用本网站而可能导致的任何风险和后果。<br>
+
+7. **免责声明的修改**：我们保留随时修改本免责声明的权利。请您定期访问此页面以了解最新的免责声明。<br>
+
+通过访问和使用本网站，您表示您已阅读、理解并同意上述免责声明中的条款和条件。如果您不同意这些条款，请不要使用本网站。<br>
+
+如果您对本免责声明或本网站有任何疑问，请联系我：QQ-3083248889。<br>
+
+
+        </p>
+        <a class="glow-button" href="#">了解更多</a>
+    </div>
+</body>
+</html>
