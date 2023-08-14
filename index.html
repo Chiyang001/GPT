@@ -413,18 +413,23 @@ function animateSubtitle() {
 
 
         function displayUptime() {
-            const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30)); // 北京时间换算为 UTC
-            const currentTime = new Date();
-            const uptimeMillis = currentTime - startTime;
+    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30)); // 北京时间换算为 UTC
+    const currentTime = new Date();
+    const uptimeMillis = currentTime - startTime;
 
-            const seconds = Math.floor((uptimeMillis / 1000) % 60);
-            const minutes = Math.floor((uptimeMillis / (1000 * 60)) % 60);
-            const hours = Math.floor((uptimeMillis / (1000 * 60 * 60)) % 24);
-            const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
+    const milliseconds = uptimeMillis % 1000;
+    const seconds = Math.floor((uptimeMillis / 1000) % 60);
+    const minutes = Math.floor((uptimeMillis / (1000 * 60)) % 60);
+    const hours = Math.floor((uptimeMillis / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
 
-            const uptimeElement = document.getElementById('uptime-value');
-            uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒`;
-        }
+    const uptimeElement = document.getElementById('uptime-value');
+    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒, ${milliseconds} 毫秒`;
+}
+
+// 在 window.onload 函数中使用以下代码调用 displayUptime 函数
+setInterval(displayUptime, 1); // 每毫秒更新一次计时器
+
         
     </script>
     
