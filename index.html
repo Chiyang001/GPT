@@ -356,16 +356,13 @@
       }
     }
 
-    // 根据设备类型跳转到不同页面
-    function redirectToCorrectPage() {
+    // 页面加载时根据设备类型跳转
+    window.onload = function() {
       var deviceType = detectDeviceType();
       if (deviceType === 'phone') {
         window.location.href = 'phone.html';
-      } else {
-        // 这里可以替换成你的电脑和平板设备对应的网址
-        window.location.href = 'index.html';
       }
-    }
+    };
 
         window.onload = function() {
     setTimeout(() => {
