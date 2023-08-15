@@ -1,12 +1,144 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta charset="UTF-8">
 
     <title>您的 GPT 工具</title>
     <style>
-        body {
+    /* 适用于手机设备 */
+@media only screen and (max-width: 600px) {
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: #ffffff;
+        }
+
+        /* Header */
+        #header {
+            background-image: url('header-background.jpg');
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Tool Categories */
+        .category-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .category-button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .category-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Tool Categories Content */
+        .categories-container {
+            margin-top: 10px;
+        }
+
+        .category {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(to right, #212121, #424242);
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+            backdrop-filter: blur(8px); /* 添加毛玻璃效果 */
+        }
+
+        /* Featured Tools Container */
+        .featured-tools {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        /* Tool Cards */
+        .tool-card {
+            background-color: #303030;
+            border: 1px solid #444444;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Glowing Button */
+        .glowing-button {
+            background: linear-gradient(to right, #1a237e, #0d47a1);
+            color: #ffffff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .glowing-button::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: scale(1.2);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .glowing-button:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #202020;
+            color: #888888;
+            text-align: center;
+            padding: 10px;
+        }
+}
+
+/* 适用于平板和电脑设备 */
+@media only screen and (min-width: 601px) {
+    body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -129,6 +261,9 @@
             color: #888888;
             text-align: center;
             padding: 20px;
+}
+
+        
       
 
         
