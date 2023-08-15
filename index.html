@@ -136,6 +136,16 @@
         }
 }
 
+.gradient-bg {
+    background: linear-gradient(to right, #ff9900, #ff33cc); /* 渐变色设置 */
+    padding: 10px; /* 添加一些内边距使渐变色可见 */
+    display: inline-block; /* 让段落以块级元素显示，以适应渐变背景 */
+  }
+  .gradient-bg a {
+    text-decoration: none; /* 移除下划线 */
+    color: white; /* 链接文字颜色 */
+  }
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -263,7 +273,15 @@
             padding: 20px;
 }
 
-        
+.gradient-bg {
+    background: linear-gradient(to right, #ff9900, #ff33cc); /* 渐变色设置 */
+    padding: 10px; /* 添加一些内边距使渐变色可见 */
+    display: inline-block; /* 让段落以块级元素显示，以适应渐变背景 */
+  }
+  .gradient-bg a {
+    text-decoration: none; /* 移除下划线 */
+    color: white; /* 链接文字颜色 */
+  }        
       
 
         
@@ -478,6 +496,8 @@
         <p>copyright 2023 炽阳001 保留所有权利。</p>
         <p>网站部署于 GitHub</p>
         <p><a href="certificate.html">免责声明</a></p>
+        <p class="gradient-bg"><a href="thank.html">鸣谢名单</a></p>
+        
         <p id="uptime">网站运行时间：<span id="uptime-value">计算中...</span></p>
         </div>
     <script>

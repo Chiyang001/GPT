@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>炫酷科技感鸣谢名单</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+      background-image: linear-gradient(45deg, #00f, #0f0, #f00);
+      background-size: 200% 200%;
+      animation: gradientAnimation 10s infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
+      }
+    }
+
+    #circleButton {
+      width: 150px;
+      height: 150px;
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    #circleButton:before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      background: radial-gradient(circle at center, transparent 20%, #fff 60%);
+      opacity: 0;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    #circleButton:hover:before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    #creditsOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 998;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #creditsContent {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: none;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+    }
+  </style>
+  <script>
+    function showCredits() {
+      document.getElementById("creditsOverlay").style.display = "flex";
+    }
+
+    function closeCredits() {
+      document.getElementById("creditsOverlay").style.display = "none";
+    }
+  </script>
+</head>
+<body>
+  <button id="circleButton" onclick="showCredits()">点击显示鸣谢名单</button>
+  
+  <div id="creditsOverlay">
+    <div id="creditsContent">
+      <span class="closeButton" onclick="closeCredits()">X</span>
+      <h2>感谢支持</h2>
+      <p>115414-提供大量GPT网站</p>
+    </div>
+  </div>
+</body>
+</html>
