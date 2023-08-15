@@ -146,6 +146,9 @@
     color: white; /* 链接文字颜色 */
   }
 
+
+
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -283,6 +286,26 @@
     color: white; /* 链接文字颜色 */
   }        
       
+/* 紫色按钮样式 */
+.purple-button {
+    background-color: #8a4df5; /* 紫色背景颜色 */
+    color: #ffffff; /* 文字颜色 */
+    padding: 10px 20px; /* 内边距 */
+    border: none; /* 移除边框 */
+    border-radius: 10px; /* 圆角边框 */
+    font-weight: bold; /* 字体加粗 */
+    cursor: pointer; /* 鼠标指针样式 */
+    text-decoration: none; /* 移除链接下划线 */
+    display: inline-block; /* 块级元素 */
+    margin-top: 10px; /* 上边距 */
+    transition: background-color 0.3s, color 0.3s; /* 过渡效果 */
+}
+
+/* 鼠标悬停时的按钮样式 */
+.purple-button:hover {
+    background-color: #6a2aba; /* 悬停时的紫色背景颜色 */
+    color: #ffffff; /* 悬停时的文字颜色 */
+}
 
         
     </style>
@@ -294,12 +317,26 @@
         <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
+    
     <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration')">✏️文本生成</button>
     <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing')">🎬图像处理</button>
     <button id="work-button" class="category-button" onclick="toggleCategory('work')">💻工作辅助</button>
 </div>
 
+
+
+
+ <div class="tool-card">
+        <h3>体验炽阳Bing AI</h3>
+        <p>点击进入炽阳Bing AI空间，尽情体验强大的AI功能。</p>
+        <a class="purple-button" href="https://huggingface.co/spaces/chiyang001/CY_Bing">体验炽阳Bing AI</a>
     </div>
+</div>
+ 
+    </div>
+    
+   
+    
     <div class="featured-tools">
         <div class="tool-card">
             <h3>开发者B站</h3>
@@ -312,6 +349,7 @@
             
         </div>
     </div>
+     
     <div class="categories-container">
         <div class="category" id="textGeneration">
             <div class="featured-tools">
