@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
     <title>您的 GPT 工具</title>
@@ -18,7 +18,7 @@
         #header {
             background-image: url('header-background.jpg');
             background-size: cover;
-            padding: 150px 0;
+            padding: 100px 0;
             text-align: center;
             color: #ffffff;
         }
@@ -27,7 +27,8 @@
         .category-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .category-button {
@@ -36,9 +37,9 @@
             color: #ffffff;
             font-weight: bold;
             cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 20px;
-            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin: 5px;
             transition: background-color 0.3s;
         }
 
@@ -52,15 +53,15 @@
 
         /* Tool Categories Content */
         .categories-container {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .category {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background: linear-gradient(to right, #212121, #424242);
-            border-radius: 15px;
-            margin: 20px;
+            border-radius: 10px;
+            margin: 10px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
             display: none;
             opacity: 0;
@@ -72,16 +73,16 @@
         /* Featured Tools Container */
         .featured-tools {
             display: flex;
-            justify-content: space-between;
-            margin: 20px;
+            flex-direction: column;
+            margin: 10px;
         }
 
         /* Tool Cards */
         .tool-card {
             background-color: #303030;
             border: 1px solid #444444;
-            padding: 20px;
-            margin: 10px;
+            padding: 10px;
+            margin: 5px;
             text-align: center;
             border-radius: 10px;
             position: relative;
@@ -97,9 +98,9 @@
         .glowing-button {
             background: linear-gradient(to right, #1a237e, #0d47a1);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 5px 10px;
             border: none;
-            border-radius: 20px;
+            border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
             position: relative;
@@ -128,37 +129,22 @@
             background-color: #202020;
             color: #888888;
             text-align: center;
-            padding: 20px;
-      
-
-        
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
-
     <div id="header">
         <h1 id="title" style="background: linear-gradient(to right, #1a237e, #0d47a1); -webkit-background-clip: text; color: transparent;">您的 GPT 工具</h1>
         <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
-    <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration')">✏️文本生成</button>
-    <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing')">🎬图像处理</button>
-    <button id="work-button" class="category-button" onclick="toggleCategory('work')">💻工作辅助</button>
-</div>
-
-    </div>
-    <div class="featured-tools">
-        <div class="tool-card">
-            <h3>开发者B站</h3>
-            <p>每一个优秀的开发者都有一个优秀的传播平台。</p>
-           <a class="glowing-button" href="https://m.bilibili.com/space/404891612">了解更多</a>
-        </div>
-        <div class="tool-card">
-            <h3>捐助开发者</h3>
-            <p>开发者目前经费还够，无需捐助❤️群人数到300继续更新资源🤗如果您愿意的话，不妨到up主视频中来个三连➕关注</p>
-            
+            <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration')">✏️文本生成</button>
+            <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing')">🎬图像处理</button>
+            <button id="work-button" class="category-button" onclick="toggleCategory('work')">💻工作辅助</button>
         </div>
     </div>
+    
     <div class="categories-container">
         <div class="category" id="textGeneration">
             <div class="featured-tools">
@@ -336,36 +322,17 @@
                 </div>
             </div>    
         </div>
-            
     </div>
     
-        <div id="footer">
+    <div id="footer">
         <p>copyright 2023 炽阳001 保留所有权利。</p>
         <p>网站部署于 GitHub</p>
         <p><a href="certificate.html">免责声明</a></p>
         <p id="uptime">网站运行时间：<span id="uptime-value">计算中...</span></p>
-        </div>
-    <script>
+    </div>
     
-    // 检测设备类型
-    function detectDeviceType() {
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        return 'phone';
-      } else {
-        return 'other';
-      }
-    }
-
-    // 根据设备类型跳转到不同页面
-    function redirectToCorrectPage() {
-      var deviceType = detectDeviceType();
-      if (deviceType === 'phone') {
-        window.location.href = 'phone.html';
-      } else {
-        // 这里可以替换成你的电脑和平板设备对应的网址
-        window.location.href = 'index.html';
-      }
-    }
+    <script>
+        
 
         window.onload = function() {
     setTimeout(() => {
@@ -502,8 +469,7 @@ function animateSubtitle() {
 // 在 window.onload 函数中使用以下代码调用 displayUptime 函数
 setInterval(displayUptime, 1); // 每毫秒更新一次计时器
 
-        
+
     </script>
-    
 </body>
 </html>
