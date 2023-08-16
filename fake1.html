@@ -240,9 +240,7 @@
         .featured-tools {
             display: flex;
             justify-content: space-between;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
-            margin: 0px;
+            margin: 20px;
         }
 
         /* Tool Cards */
@@ -331,11 +329,7 @@
     color: #ffffff; /* 悬停时的文字颜色 */
 }
 
-        /* 调整标题距离顶部的边距 */
-#title {
-    margin-top: -110px; /* 调整此值以减小标题到顶部的距离 */
-}
-
+        
     </style>
 </head>
 <body>
@@ -346,16 +340,14 @@
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
     
-    <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
-<button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
-<button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
-<button id="official-button" class="category-button" onclick="toggleCategory('official'); scrollToContent()">💼官方模型</button>
-
+    <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration')">✏️文本生成</button>
+    <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing')">🎬图像处理</button>
+    <button id="work-button" class="category-button" onclick="toggleCategory('work')">💻工作辅助</button>
 </div>
 
 
 
-    <div class="featured-tools">
+
  <div class="tool-card">
         <h3>体验微软Bing AI</h3>
         <p>点击进入微软Bing AI，尽情体验强大的GPT-4功能。</p>
@@ -363,7 +355,7 @@
     </div>
 </div>
  
-    
+    </div>
     
    
     
@@ -376,7 +368,7 @@
         <div class="tool-card">
             <h3>捐助开发者</h3>
             <p>开发者目前经费还够，无需捐助❤️祝贺群人数到达300人！🤗如果您愿意的话，不妨到up主视频中来个三连➕关注</p>
-            <a class="glowing-button" href="fake1.html">🤗</a>
+            <a class="glowing-button" href="index.html">🤗</a>
         </div>
     </div>
      
@@ -549,8 +541,8 @@
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>MiYa</h3>
-                    <p>这个网站需要登录，支持GPT3.5和4.0，同时可使用绘画并且完全免费，使用一段时间会提示QQ频道验证，不过使用的人有点多。</p>
-                    <a class="glowing-button" href="miyagpt.com">了解更多</a>
+                    <p>这个网站需要登录，支持GPT3.5和4.0，同时可使用绘画并且完全免费，使用一段时间会提示QQ频道验证。</p>
+                    <a class="glowing-button" href="fake2.html">🤗</a>
                 </div>
                
             </div>
@@ -599,215 +591,21 @@
                 </div>
             </div>
             
-            
+            <div class="category" id="work">
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>Cursor</h3>
                     <p>最强AI编辑器 可以根据你的描述在当前文件自动生成代码。</p>
                     <a class="glowing-button" href="https://www.cursor.sh/">了解更多</a>
                 </div>
-                <div class="tool-card">
-                    <h3>亿图脑图</h3>
-                    <p>国内首款实现AIGC“文生脑图”全端上线的脑图软件。</p>
-                    <a class="glowing-button" href="https://www.edrawsoft.cn/mindmaster/?AI-bot">了解更多</a>
-                </div>
             </div>    
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>GitMind · 思乎</h3>
-                    <p>GitMind · 思乎是一款非常好用又免费的思维导图软件</p>
-                    <a class="glowing-button" href="https://gitmind.cn/?ref=ai-bot.cn">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>Taskade</h3>
-                    <p>它可能会是你最喜欢的全平台协作工具，颜值太高了。</p>
-                    <a class="glowing-button" href="https://www.taskade.com/">了解更多</a>
-                </div>
-            </div>    
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>WPS AI</h3>
-                    <p>“WPS AI”是金山办公旗下具备了大语言模型能力的一款生成式人工智能应用，也是中国协同办公赛道首个类ChatGPT式应用。</p>
-                    <a class="glowing-button" href="https://ai.wps.cn/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>博思AI白板</h3>
-                    <p>博思AI白板，AI自动生成文字和思维导图。</p>
-                    <a class="glowing-button" href="https://boardmix.cn/ai-whiteboard/">了解更多</a>
-                </div>
-            </div>    
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>AmyMind</h3>
-                    <p>开箱即用的在线AI思维导图工具</p>
-                    <a class="glowing-button" href="https://amymind.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>美图AI PPT</h3>
-                    <p>美图秀秀旗下新出的制作PPT的AI工具。</p>
-                    <a class="glowing-button" href="https://design.meitu.com/ppt/">了解更多</a>
-                </div>
-            </div>    
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>飞书妙记</h3>
-                    <p>飞书智能会议纪要和快捷语音识别转文字。</p>
-                    <a class="glowing-button" href="https://www.feishu.cn/product/minutes">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>周报生成器</h3>
-                    <p>可以用AI生成周报。</p>
-                    <a class="glowing-button" href="https://weeklyreport.avemaria.fun/zh">了解更多</a>
-                </div>
-            </div>    
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>事半</h3>
-                    <p>一款可以用来写文章，写剧本，写教案，绘图，写工作总结，包括支持抠图，修图的AI工具。</p>
-                    <a class="glowing-button" href="https://halfwork.cn/tool">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>Ask Your PDF</h3>
-                    <p>AskYourPdf 是一个人工智能聊天系统，使用户能够以更高效、更愉快的方式与 PDF 文档进行交互。。</p>
-                    <a class="glowing-button" href="https://askyourpdf.com/">了解更多</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>LightPDF</h3>
-                    <p>LightPDF 的人工智能文档聊天机器人是一个免费的在线工具，允许用户即时分析和提取 PDF、Word、Excel 和 PPT 文档中的数据。</p>
-                    <a class="glowing-button" href="https://lightpdf.com/chatdoc">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3></h3>
-                    <p>。</p>
-                    <a class="glowing-button" href="">了解更多</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>gamma</h3>
-                    <p>自动化完成PPT。</p>
-                    <a class="glowing-button" href="https://gamma.app/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>mindshow</h3>
-                    <p>MindShow是一款全新的在线演示工具，它可以帮助用户快速、简便地创建漂亮的PPT演示文稿。</p>
-                    <a class="glowing-button" href="https://www.mindshow.fun/">了解更多</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>MotionGo-Chatppt</h3>
-                    <p>MotionGo是必优科技（原口袋动画团队）全新升级的一款PPT动画插件，可兼容WPS和Office软件，是一款轻量级产品，可以让PPT动效表达更加专业。</p>
-                    <a class="glowing-button" href="https://motion.yoo-ai.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>Tome</h3>
-                    <p>Tome 是一个协作式 AI 合作伙伴，可帮助您使用任何类型的内容创建引人入胜的故事。</p>
-                    <a class="glowing-button" href="https://beta.tome.app/">了解更多</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>Ajelix</h3>
-                    <p>Ajelix 是一款 AI Excel & Google Sheets 工具，可帮助用户以 10 倍的速度编写和解释公式、翻译电子表格、生成模板以及编写 VBA 脚。</p>
-                    <a class="glowing-button" href="https://ajelix.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>Excelformulabot</h3>
-                    <p>ExcelFormulaBot 是一种人工智能工具，可帮助用户在几秒钟内解决 Excel 和 Google 表格问题。</p>
-                    <a class="glowing-button" href="https://excelformulabot.com/">了解更多</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>酷表ChatExcel</h3>
-                    <p>ChatExcel帮你处理Excel表格，上传你的文件，输入你的需求，AI自动就帮主你处理。</p>
-                    <a class="glowing-button" href="https://chatexcel.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>秘塔写作猫</h3>
-                    <p>秘塔写作猫已经拥有数百万用户，成立北京和成都两大研发中心，在AIGC、文档辅助创作、智能合同等方向上开展研发与产品落地。</p>
-                    <a class="glowing-button" href="https://xiezuocat.com/">了解更多</a>
-                </div>
-            </div>
-            
-            
-            
         </div>
-            
-         <div class="category" id="official">
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>文心一言</h3>
-                    <a class="glowing-button" href="https://yiyan.baidu.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>360智脑</h3>
-                    <a class="glowing-button" href="https://ai.360.cn/?ref=aikxy.com">了解更多</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>序列猴子开放平台</h3>
-                    <a class="glowing-button" href="https://openapi.mobvoi.com/largemodel-application">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>天工大模型官网</h3>
-                    <a class="glowing-button" href="https://chat.singularity-ai.com/">了解更多</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>秘塔写作猫</h3>
-                    <a class="glowing-button" href="https://xiezuocat.com/#/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>讯飞星火认知大模型</h3>
-                    <a class="glowing-button" href="https://xinghuo.xfyun.cn/">了解更多</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>通义大模型</h3>
-                    <a class="glowing-button" href="https://tongyi.aliyun.com/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>MOSS</h3>
-                    <a class="glowing-button" href="https://moss.fastnlp.top/">了解更多</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>ChatGLM</h3>
-                    <a class="glowing-button" href="https://chatglm.cn/">了解更多</a>
-                </div>
-                <div class="tool-card">
-                    <h3>SenseChat</h3>
-                    <a class="glowing-button" href="https://chat.sensetime.com/wb/">了解更多</a>
-                </div>
-            </div>
-         </div>
-            
-            
-            
             
     </div>
     
         <div id="footer">
         <p>copyright 2023 炽阳001 保留所有权利。</p>
-        <p>网站部署于 GitHub version:V2.1.0</p>
+        <p>网站部署于 GitHub</p>
         <p><a href="certificate.html">免责声明</a></p>
         <p class="gradient-bg"><a href="thank.html">鸣谢名单</a></p>
         
@@ -967,13 +765,7 @@ function animateSubtitle() {
 // 在 window.onload 函数中使用以下代码调用 displayUptime 函数
 setInterval(displayUptime, 1); // 每毫秒更新一次计时器
 
-        function scrollToContent() {
-    window.scrollTo({
-        top: 500, // 滚动的目标位置，这里设置为500px
-        behavior: 'smooth' // 平滑滚动效果
-    });
-}
-
+        
     </script>
     
 </body>
