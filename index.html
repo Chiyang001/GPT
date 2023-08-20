@@ -346,7 +346,8 @@
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
     
-    <button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
+<button id="commend-button" class="category-button active" onclick="toggleCategory('commend'); scrollToContent()">👍炽阳推荐</button>
+<button id="textGeneration-button" class="category-button active" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
 <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
 <button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
 <button id="official-button" class="category-button" onclick="toggleCategory('official'); scrollToContent()">💼官方模型</button>
@@ -380,12 +381,33 @@
         </div>
     </div>
      
+     <div class="categories-container">
+        <div class="category" id="commend">
+            <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>AITianhu</h3>
+                    <p>这个网站GPT3.5、4.0全部免费，公益网站，GPT4目前能正常使用。</p>
+                    <a class="glowing-button" href="https://ai4.aitianhu.xyz/">了解更多</a>
+                </div>
+                <div class="tool-card">
+                    <h3>清华GPT</h3>
+                    <p>非常推荐使用完全免费，也不需要登录，支持GPT4、GPT3.5、克劳德等多个模型，并且不限次数。</p>
+                    <a class="glowing-button" href="http://www.zaiwen.top/#/">了解更多</a>
+                </div>
+            </div>
+     </div>
+     
+     
+     
+     
+     
+     
     <div class="categories-container">
         <div class="category" id="textGeneration">
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>AITianhu</h3>
-                    <p>这个网站GPT3.5全部免费，公益网站，GPT4目前无法使用。</p>
+                    <p>这个网站GPT3.5、4.0全部免费，公益网站，GPT4目前可以正常使用。</p>
                     <a class="glowing-button" href="https://ai4.aitianhu.xyz/">了解更多</a>
                 </div>
                 <div class="tool-card">
@@ -893,11 +915,20 @@
                     <a class="glowing-button" href="https://4693b0632ea88189fa.gradio.live/">了解更多</a>
                 </div>
                 <div class="tool-card">
-                    <h3>MIYA</h3>
-                    <p>这个网站真实能用，并且完全免费，但使用的人实在是太多了，可能会很卡，出图请选择Default。</p>
+                    <h3>清华GPT</h3>
+                    <p>完全免费，无需登录，不限次数，支持各种模型，包括二次元模型，三次元模型等。</p>
+                    <a class="glowing-button" href="http://www.zaiwen.top/#/">了解更多</a>
+                </div>
+            </div>
+            
+            <div class="featured-tools">
+                <div class="tool-card">
+                    <h3>miya</h3>
+                    <p>网站最近使用的人有一些多，可能比较卡，出图请选择default。</p>
                     <a class="glowing-button" href="miyagpt.com">了解更多</a>
                 </div>
             </div>
+            
           </div>
         </div>
        
@@ -1126,7 +1157,7 @@
     
         <div id="footer">
         <p>copyright 2023 炽阳001 保留所有权利。</p>
-        <p>网站部署于 GitHub version:V2.1.2</p>
+        <p>网站部署于 GitHub version:V2.1.3</p>
         <p><a href="certificate.html">免责声明</a></p>
         <p class="gradient-bg"><a href="thank.html">鸣谢名单</a></p>
         
