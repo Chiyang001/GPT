@@ -10,6 +10,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
+    
     /* 适用于手机设备 */
 @media only screen and (max-width: 600px) {
     body {
@@ -27,6 +28,7 @@
             padding: 100px 0;
             text-align: center;
             color: #ffffff;
+            margin-top: 100px;
         }
 
         /* Tool Categories */
@@ -93,6 +95,18 @@
             border-radius: 10px;
             position: relative;
             transition: transform 0.2s, box-shadow 0.2s;
+            animation: glow 1s infinite alternate;
+}
+
+/* 定义一个光晕动画 */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px blue;
+    }
+    to {
+        box-shadow: 0 0 30px green;
+    }
+}
         }
 
         .tool-card:hover {
@@ -102,17 +116,19 @@
 
         /* Glowing Button */
         .glowing-button {
-            background: linear-gradient(to right, #1a237e, #0d47a1);
-            color: #ffffff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-        }
+    background: url("https://gitcode.net/qq_37688711/gpt/-/raw/main/button.gif?inline=false") no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
 
         .glowing-button::before {
             content: "";
@@ -189,6 +205,7 @@
             font-family: Arial, sans-serif;
             background-color: #101010;
             color: #ffffff;
+            margin-top: 100px;
         }
 
         /* Header */
@@ -265,6 +282,19 @@
             border-radius: 10px;
             position: relative;
             transition: transform 0.2s, box-shadow 0.2s;
+                        animation: glow 1s infinite alternate;
+}
+
+/* 定义一个光晕动画 */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px blue;
+    }
+    to {
+        box-shadow: 0 0 30px green;
+    }
+}
+        }
         }
 
         .tool-card:hover {
@@ -274,17 +304,19 @@
 
         /* Glowing Button */
         .glowing-button {
-            background: linear-gradient(to right, #1a237e, #0d47a1);
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-        }
+    background: url("https://gitcode.net/qq_37688711/gpt/-/raw/main/button.gif?inline=false") no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
 
         .glowing-button::before {
             content: "";
@@ -360,7 +392,7 @@
 </head>
 <body>
    <video class="background-video" autoplay loop muted>
-        <source src="https://player.vimeo.com/external/368735195.sd.mp4?s=0407fdf37d328e677ba78802f66a1d6d1bbce148&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+        <source src="https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false" type="video/mp4">
         <!-- 你也可以在这里添加其他视频格式的 source 元素 -->
     </video>
     <div id="header">
@@ -785,14 +817,16 @@
                 </div>
                 <div class="tool-card">
                     <h3>CheeryChat</h3>
-                    <p>需要登录，但使用激活码可赠送两万额度，激活码：C0120CBF13C83E812C74DEEB3659E2E0。</p>
+                    <p>需要登录，但使用激活码可赠送两万额度，激活码：C0120CBF13C83E812C7
+                    4DEEB3659E2E0。</p>
                     <a class="glowing-button" href="https://gpt.cherrychat.org/">了解更多</a>
                 </div>
             </div>
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>奶鲨畅聊</h3>
-                    <p>这个网站需要登录，支持GPT3.5和4.0，不过4.0需要会员和登录。粉丝卡密：JQQIS702RFHTBB0DB4QCRBT4PIPYLLJ86OQ</p>
+                    <p>这个网站需要登录，支持GPT3.5和4.0，不过4.0需要会员和登录。粉丝卡密：JQQIS702RFHTBB0DB4QCR
+                    BT4PIPYLLJ86OQ</p>
                     <a class="glowing-button" href="https://chat02.sharkchat.cn/index.php">了解更多</a>
                 </div>
                 <div class="tool-card">
@@ -1059,10 +1093,11 @@
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>更新公告</h3>
-                    <p>V2.1.5版本（2023.8.21)更新公告：</p>
-                    <p>①新增了公告栏</p>
-                    <p>②将黑色背景改为视频动画背景</p>
-                    <p>③优化了前两个按钮默认为点击状态的问题</p>
+                    <p>V2.2.0版本（2023.8.22)更新公告：</p>
+                    <p>①优化了背景，视频动态背景更好看</p>
+                    <p>②优化了按钮界面样式</p>
+                    <p>③解决了部分网站文字描述过长，导致排版错误</p>
+                    <p>④给容器加了光晕效果</p>
                 </div>
             </div>
         </div>
@@ -1073,7 +1108,7 @@
     
         <div id="footer">
         <p>copyright 2023 炽阳001 保留所有权利。</p>
-        <p>网站部署于 GitHub version:V2.1.5</p>
+        <p>网站部署于 GitHub version:V2.2.0</p>
         <p><a href="certificate.html">免责声明</a></p>
         <p class="gradient-bg"><a href="thank.html">鸣谢名单</a></p>
         
