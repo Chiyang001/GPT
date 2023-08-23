@@ -214,6 +214,7 @@
 .scroll-to-top::before {
     content: "置顶";
     font-size:14px;
+    color: purple;
 }
 
 .modal {
@@ -234,6 +235,25 @@
     border-radius: 10px;
     text-align: center;
 }
+
+#themeButton {
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        #themeButton:hover {
+            background: linear-gradient(to right, #2980b9, #7d3c98);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -462,7 +482,24 @@
     text-align: center;
 }
 
+#themeButton {
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
 
+        #themeButton:hover {
+            background: linear-gradient(to right, #2980b9, #7d3c98);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        
     </style>
 </head>
 <body>
@@ -1263,6 +1300,8 @@
                     <p>⑧增加点击按钮之后自动下滑的距离，以免有些小伙伴们看不见
                     </p>
                     <p>⑨优化了界面排版，用的舒心，看的更舒心
+                    </p>
+                    <p>⑩解决了黑暗模式和浅色模式显示的问题
                     </p>
                 </div>
             </div>
