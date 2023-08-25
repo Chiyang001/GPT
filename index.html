@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>人机验证页面</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            color: #ff0000;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>请输入Base64编码文本：</h2>
+        <p>您正在进行人机验证，您需要输入一段由base64编码的文本</p>
+        <a href="http://www.jsons.cn/base64/">base64编码加密平台</a>
+        <p>建议您加密英文，中文可能验证出错</p>
+        <input type="text" id="base64Input" placeholder="在这里输入编码文本">
+        <button onclick="validateBase64()">提交</button>
+        <p id="resultMessage"></p>
+    </div>
+
+    <script>
+       function validateBase64() {
+            var input = document.getElementById("base64Input").value;
+            var resultMessage = document.getElementById("resultMessage");
+
+           
+            var lastVisitTimestamp = localStorage.getItem("lastVisitTimestamp");
+            var currentTime = Date.now();
+
+            try {
+                var decodedText = atob(input);
+
+                if (/^[\x20-\x7E]*$/.test(decodedText)) {
+               
+                    if (!localStorage.getItem("passwordVerified")) {
+                        
+                        localStorage.setItem("passwordVerified", "true");
+                    }
+
+                  
+                    if (lastVisitTimestamp) {
+                        
+                        if (currentTime - lastVisitTimestamp < 5000) {
+                            resultMessage.textContent = "刷新的次数过多，请稍后再试";
+                            return;
+                        }
+                    }
+
+                  
+                    localStorage.setItem("lastVisitTimestamp", currentTime);
+
+                    
+                    window.location.href = "https://chiyang001.github.io/GPT/home.html";
+                } else {
+                    resultMessage.textContent = "您输入的编码有误";
+                }
+            } catch (error) {
+                resultMessage.textContent = "您输入的编码有误";
+            }
+        }
+
+       
+        window.onload = function () {
+            if (localStorage.getItem("passwordVerified")) {
+                window.location.href = "https://chiyang001.github.io/GPT/home.html";
+            }
+        }
+    </script>
+</body>
+</html>
