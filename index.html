@@ -64,6 +64,11 @@
     </div>
 
     <script>
+        // Check if 'passcookie' cookie exists
+        var passCookie = document.cookie.split('; ').find(row => row.startsWith('passcookie='));
+        window.location.href = "home.html";
+        if (!passCookie) {
+            
         
 
        // 函数：验证用户输入的Base64编码文本
@@ -96,6 +101,7 @@
                 resultMessage.textContent = "您输入的编码有误";
             }
         }
+    }
             </script>
         
 </body>
