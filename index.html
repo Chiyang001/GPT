@@ -79,14 +79,14 @@
 
                 // 使用正则表达式检查解码后的文本是否是可打印字符
                 if (/^[\x20-\x7E]*$/.test(decodedText)) {
-                    // 如果用户首次验证，将密码验证标志设置为已验证
-                    if (!localStorage.getItem("passwordVerified")) {
-                        localStorage.setItem("passwordVerified", "true");
-                    }
+                    
 
                     
 
                     // 验证成功，重定向到主页
+                    // Set the 'passcookie' cookie
+        document.cookie = "passcookie=true; path=/;";
+
                     window.location.href = "https://chiyang001.github.io/GPT/home.html";
                 } else {
                     resultMessage.textContent = "您输入的编码有误";
@@ -96,9 +96,7 @@
                 resultMessage.textContent = "您输入的编码有误";
             }
         }
-        // Set the 'passcookie' cookie
-        document.cookie = "passcookie=true; path=/;";
-    </script>
+            </script>
         
 </body>
 </html>
