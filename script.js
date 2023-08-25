@@ -1,7 +1,7 @@
 // Check if 'passcookie' cookie exists
         var passCookie = document.cookie.split('; ').find(row => row.startsWith('passcookie='));
         if (!passCookie) {
-            alert("Access denied. You need to have 'passcookie' cookie to enter.");
+            alert("您需要先进行人机验证！");
             window.location.href = "index.html";
         }
     // 检测设备类型
