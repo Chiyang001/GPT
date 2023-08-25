@@ -64,52 +64,40 @@
     </div>
 
     <script>
-       function validateBase64() {
+        // Set the 'passcookie' cookie
+        document.cookie = "passcookie=true; path=/;";
+
+       // 函数：验证用户输入的Base64编码文本
+        function validateBase64() {
             var input = document.getElementById("base64Input").value;
             var resultMessage = document.getElementById("resultMessage");
 
-           
-            var lastVisitTimestamp = localStorage.getItem("lastVisitTimestamp");
-            var currentTime = Date.now();
+            
 
             try {
+                // 尝试将Base64编码文本解码
                 var decodedText = atob(input);
 
+                // 使用正则表达式检查解码后的文本是否是可打印字符
                 if (/^[\x20-\x7E]*$/.test(decodedText)) {
-               
+                    // 如果用户首次验证，将密码验证标志设置为已验证
                     if (!localStorage.getItem("passwordVerified")) {
-                        
                         localStorage.setItem("passwordVerified", "true");
                     }
 
-                  
-                    if (lastVisitTimestamp) {
-                        
-                        if (currentTime - lastVisitTimestamp < 5000) {
-                            resultMessage.textContent = "刷新的次数过多，请稍后再试";
-                            return;
-                        }
-                    }
-
-                  
-                    localStorage.setItem("lastVisitTimestamp", currentTime);
-
                     
+
+                    // 验证成功，重定向到主页
                     window.location.href = "https://chiyang001.github.io/GPT/home.html";
                 } else {
                     resultMessage.textContent = "您输入的编码有误";
                 }
             } catch (error) {
+                // 解码错误时显示错误消息
                 resultMessage.textContent = "您输入的编码有误";
             }
         }
 
-       
-        window.onload = function () {
-            if (localStorage.getItem("passwordVerified")) {
-                window.location.href = "https://chiyang001.github.io/GPT/home.html";
-            }
-        }
-    </script>
+        
 </body>
 </html>
