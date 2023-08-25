@@ -1,4 +1,16 @@
+function checkReferrer() {
+            var allowedReferrer = "https://chiyang001.github.io/GPT/"; // 指定的允许来源网站
 
+            // 检查来源页面是否是从指定来源跳转过来的
+            if (document.referrer === allowedReferrer) {
+                // 允许用户进入网站
+                alert("欢迎访问本网站！");
+            } else {
+                // 禁止用户进入网站
+                alert("禁止直接访问本网站！");
+                window.location.href = "https://chiyang001.github.io/GPT/"; // 你可以将用户重定向到其他页面
+            }
+}
     // 检测设备类型
     function detectDeviceType() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
