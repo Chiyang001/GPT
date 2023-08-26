@@ -1,8 +1,10 @@
-const referrer = document.referrer;
-    const isFromIndex = referrer.includes("index.html");
-
-    if (!isFromIndex) {
+const fromIndex = sessionStorage.getItem("fromIndex");
+    
+    if (!fromIndex) {
       window.location.href = "index.html";
+    } else {
+     
+      sessionStorage.removeItem("fromIndex");
     }
     // 检测设备类型
     function detectDeviceType() {
