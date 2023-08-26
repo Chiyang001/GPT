@@ -1,39 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Password Verification</title>
+    <title>Login Page</title>
 </head>
 <body>
-  <h1>Password Verification</h1>
-  <form id="passwordForm">
-    <input type="password" id="passwordInput" placeholder="Enter password">
-    <button type="submit">Verify Password</button>
-  </form>
-
-  <div id="result"></div>
-
-  <script>
-    document.getElementById("passwordForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      var password = document.getElementById("passwordInput").value;
-
-      fetch('http://127.0.0.1:5000/verify-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ password: password })
-      })
-      .then(function(response) {
-        if (response.status === 204) {
-          document.getElementById("result").innerText = "Password is correct!";
-          window.location.href = response.headers.get('Location');
-        } else {
-          document.getElementById("result").innerText = "Password is incorrect!";
-        }
-      });
-    });
-  </script>
+    <h1>Login Page</h1>
+    <form method="post" action="/verify">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
