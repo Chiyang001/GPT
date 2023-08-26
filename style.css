@@ -243,9 +243,7 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
         }
 
-.hidden-content {
-      display: none;
-}
+
         
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
@@ -493,7 +491,4 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
         }
 
-.hidden-content {
-      display: none;
-}
-   
+
