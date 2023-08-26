@@ -26,8 +26,9 @@
         body: JSON.stringify({ password: password })
       })
       .then(function(response) {
-        if (response.ok) {
+        if (response.status === 204) {
           document.getElementById("result").innerText = "Password is correct!";
+          window.location.href = response.headers.get('Location');
         } else {
           document.getElementById("result").innerText = "Password is incorrect!";
         }
