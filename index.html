@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>人机验证页面</title>
+    <title>密码验证页面</title>
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
@@ -25,7 +25,7 @@
             margin-top: 0;
         }
 
-        input[type="text"] {
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -55,47 +55,36 @@
 <body>
     <div class="container">
         <h2>请输入密码：</h2>
-        <p>您正在进行人机验证，请输入密码。</p>
         <input type="password" id="passwordInput" placeholder="在这里输入密码">
         <button onclick="validatePassword()">提交</button>
         <p id="resultMessage"></p>
     </div>
 
     <script>
-        var passCookie = document.cookie.split('; ').find(row => row.startsWith('passcookie='));
-        if (passCookie) {
-            window.location.href = "https://chiyang001.github.io/GPT/home.html";
-        }
-
-        function setCookie(key, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = key + "=" + value + expires + "; path=/;";
-        }
-
         function validatePassword() {
             var password = document.getElementById("passwordInput").value;
             var resultMessage = document.getElementById("resultMessage");
 
             // 发送密码验证请求到服务器
-            fetch('http://127.0.0.1:5000/check_password', {
+            fetch('http://192.168.1.7:5000/check_password', {
                 method: 'POST',
-                body: new URLSearchParams({
-                    password: password
-                })
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'password=' + encodeURIComponent(password)
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                if (data === 'Password is correct') {
-                    // 验证成功，重定向到主页并设置cookie
-                    setCookie('passcookie', 'true', 1);
-                    window.location.href = "https://chiyang001.github.io/GPT/home.html";
+                if (data.status === 'success') {
+                    // 验证成功
+                    resultMessage.textContent = data.message;
+                    // 设置cookie
+                    document.cookie = 'passcookie=true; path=/;';
+                    // 重定向到主页
+                    window.location.href = 'https://chiyang001.github.io/GPT/home.html';
                 } else {
-                    resultMessage.textContent = data;
+                    // 验证失败
+                    resultMessage.textContent = data.message;
                 }
             })
             .catch(error => {
