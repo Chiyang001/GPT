@@ -10,33 +10,31 @@
 <body>
   <div class="container">
     <h1>人机验证</h1>
-    <p>复制“炽阳001GPT”这段话到输入框，点击确认：</p>
-    <input id="verificationInput" type="text">
-    <button onclick="verify()">确认</button>
+    <p>请输入炽阳001所给的key，若没有请找网站管理员获取</p>
+    <input id="passwordInput" type="text">
+    <button onclick="verifyPassword()">验证</button>
     <p id="errorText" class="error"></p>
   </div>
 
   <script>
-    function verify() {
-      const inputText = document.getElementById("verificationInput").value;
-      if (inputText === "炽阳001GPT") {
-        const randomCookieName = btoa(Date.now().toString()); // 使用当前时间生成随机cookie名称
-        const randomCookieValue = generateRandomBase64String(10000);
-        document.cookie = `${randomCookieName}=${randomCookieValue}`;
+    function verifyPassword() {
+      const inputPassword = document.getElementById("passwordInput").value;
+      const base64Part = inputPassword.substring(7); 
+
+      if (inputPassword.startsWith("cy-GPT") && isValidBase64(base64Part)) {
+        document.cookie = "passcookie=true"; 
         window.location.href = "home.html";
       } else {
         document.getElementById("errorText").textContent = "人机验证失败";
       }
     }
 
-    function generateRandomBase64String(length) {
-      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-      let result = "";
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters.charAt(randomIndex);
+    function isValidBase64(string) {
+      try {
+        return btoa(atob(string)) === string;
+      } catch (error) {
+        return false;
       }
-      return result;
     }
   </script>
 </body>
