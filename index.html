@@ -1,98 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>密码验证页面</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-        }
-
-        .container {
-            width: 400px;
-            margin: 100px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 3px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        p {
-            color: #ff0000;
-            font-size: 14px;
-        }
-    </style>
+  <title>Password Verification</title>
 </head>
 <body>
-    <div class="container">
-        <h2>请输入密码：</h2>
-        <input type="password" id="passwordInput" placeholder="在这里输入密码">
-        <button onclick="validatePassword()">提交</button>
-        <p id="resultMessage"></p>
-    </div>
+  <h1>Password Verification</h1>
+  <form id="passwordForm">
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button type="submit">Verify Password</button>
+  </form>
 
-    <script>
-        function validatePassword() {
-            var password = document.getElementById("passwordInput").value;
-            var resultMessage = document.getElementById("resultMessage");
+  <div id="result"></div>
 
-            // 发送密码验证请求到服务器
-            fetch('http://192.168.1.7:5000/check_password', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: 'password=' + encodeURIComponent(password)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    // 验证成功
-                    resultMessage.textContent = data.message;
-                    // 设置cookie
-                    document.cookie = 'passcookie=true; path=/;';
-                    // 重定向到主页
-                    window.location.href = 'https://chiyang001.github.io/GPT/home.html';
-                } else {
-                    // 验证失败
-                    resultMessage.textContent = data.message;
-                }
-            })
-            .catch(error => {
-                // 发生错误
-                console.error(error);
-                resultMessage.textContent = '发生错误，请重试';
-            });
+  <script>
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var password = document.getElementById("passwordInput").value;
+
+      fetch('http://127.0.0.1:5000/verify-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password: password })
+      })
+      .then(function(response) {
+        if (response.ok) {
+          document.getElementById("result").innerText = "Password is correct!";
+        } else {
+          document.getElementById("result").innerText = "Password is incorrect!";
         }
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
