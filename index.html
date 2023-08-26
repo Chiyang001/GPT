@@ -54,12 +54,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>请输入Base64编码文本：</h2>
-        <p>您正在进行人机验证，您需要输入一段由base64编码的文本</p>
-        <a href="http://www.jsons.cn/base64/">base64编码加密平台</a>
-        <p>建议您加密英文，中文可能验证出错</p>
-        <input type="text" id="base64Input" placeholder="在这里输入编码文本">
-        <button onclick="validateBase64()">提交</button>
+        <h2>请输入密码：</h2>
+        <p>您正在进行人机验证，请输入密码。</p>
+        <input type="password" id="passwordInput" placeholder="在这里输入密码">
+        <button onclick="validatePassword()">提交</button>
         <p id="resultMessage"></p>
     </div>
 
@@ -68,41 +66,42 @@
         if (passCookie) {
             window.location.href = "https://chiyang001.github.io/GPT/home.html";
         }
-            
-        
 
-       // 函数：验证用户输入的Base64编码文本
-        function validateBase64() {
-            var input = document.getElementById("base64Input").value;
+        function setCookie(key, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = key + "=" + value + expires + "; path=/;";
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("passwordInput").value;
             var resultMessage = document.getElementById("resultMessage");
 
-            
-
-            try {
-                // 尝试将Base64编码文本解码
-                var decodedText = atob(input);
-
-                // 使用正则表达式检查解码后的文本是否是可打印字符
-                if (/^[\x20-\x7E]*$/.test(decodedText)) {
-                    
-
-                    
-
-                    // 验证成功，重定向到主页
-                    // Set the 'passcookie' cookie
-        document.cookie = "passcookie=true; path=/;";
-
+            // 发送密码验证请求到服务器
+            fetch('http://127.0.0.1:5000/check_password', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    password: password
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'Password is correct') {
+                    // 验证成功，重定向到主页并设置cookie
+                    setCookie('passcookie', 'true', 1);
                     window.location.href = "https://chiyang001.github.io/GPT/home.html";
                 } else {
-                    resultMessage.textContent = "您输入的编码有误";
+                    resultMessage.textContent = data;
                 }
-            } catch (error) {
-                // 解码错误时显示错误消息
-                resultMessage.textContent = "您输入的编码有误";
-            }
+            })
+            .catch(error => {
+                console.error(error);
+            });
         }
-    
-            </script>
-        
+    </script>
 </body>
 </html>
