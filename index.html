@@ -1,86 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>人机验证</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    
-    .container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    
-    p {
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-    
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+    /* 添加你的样式 */
   </style>
 </head>
 <body>
   <div class="container">
     <h1>人机验证</h1>
-    <p>请复制这句话“炽阳001 and bilibili”到输入框：</p>
+    <p>复制“炽阳001GPT”这段话到输入框，点击确认：</p>
     <input id="verificationInput" type="text">
-    <button onclick="verify()">验证</button>
+    <button onclick="verify()">确认</button>
+    <p id="errorText" class="error"></p>
   </div>
 
   <script>
-    function generateRandomKey(length, characters) {
-      let randomKey = "";
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        randomKey += characters.charAt(randomIndex);
-      }
-      return randomKey;
-    }
-
     function verify() {
-      var inputText = document.getElementById("verificationInput").value;
-      if (inputText === "炽阳001 and bilibili") {
-        const randomPart2 = generateRandomKey(20, "ABCDE");
-        const randomPart3 = Math.floor(Math.random() * (150 - 10 + 1)) + 10;
-        const randomPart4 = "~@#$%";
-        const randomPart5 = generateRandomKey(500, "KLMNP");
-
-        const finalKey = `cy-GPT001${randomPart2}${randomPart3}${randomPart4}${randomPart5}`;
-        document.cookie = `verification_key=${finalKey}`;
+      const inputText = document.getElementById("verificationInput").value;
+      if (inputText === "炽阳001GPT") {
+        const randomCookieName = btoa(Date.now().toString()); // 使用当前时间生成随机cookie名称
+        const randomCookieValue = generateRandomBase64String(10000);
+        document.cookie = `${randomCookieName}=${randomCookieValue}`;
         window.location.href = "home.html";
       } else {
-        alert("人机验证失败");
+        document.getElementById("errorText").textContent = "人机验证失败";
       }
+    }
+
+    function generateRandomBase64String(length) {
+      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+      let result = "";
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+      }
+      return result;
     }
   </script>
 </body>
