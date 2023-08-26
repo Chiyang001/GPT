@@ -1,26 +1,25 @@
-    function checkCookie() {
-      const cookies = document.cookie.split("; ");
-      let verificationKey = "";
-      for (const cookie of cookies) {
-        const [name, value] = cookie.split("=");
-        if (name === "verification_key") {
-          verificationKey = value;
-          break;
-        }
-      }
-
-      if (verificationKey) {
-        const regex = /^cy-GPT001[A-E]{20}(1[0-4][0-9]|150)(~|\@|\#|\$|\%)[K-P]{500}$/;
-        if (verificationKey.match(regex)) {
-          // 验证通过，继续执行你的代码
-        } else {
-          window.location.href = "index.html";
-        }
-      } else {
-        window.location.href = "index.html";
+const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+    let validCookieFound = false;
+    
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+      if (cookieName.length > 0 && cookieName.length <= 10000 && isValidBase64(cookieName)) {
+        validCookieFound = true;
+        break;
       }
     }
 
+    if (!validCookieFound) {
+      window.location.href = "index.html";
+    }
+    
+    function isValidBase64(string) {
+      try {
+        return btoa(atob(string)) === string;
+      } catch (error) {
+        return false;
+      }
+    }
     checkCookie();
     // 检测设备类型
     function detectDeviceType() {
