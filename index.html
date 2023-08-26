@@ -17,6 +17,20 @@
   </div>
 
   <script>
+    const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+    let passCookieFound = false;
+    
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+      if (cookieName === "passcookie" && cookieValue === "true") {
+        passCookieFound = true;
+        break;
+      }
+    }
+
+    if (!passCookieFound) {
+      window.location.href = "index.html";
+    }
     function verifyPassword() {
       const inputPassword = document.getElementById("passwordInput").value;
       const base64Part = inputPassword.substring(7); 
