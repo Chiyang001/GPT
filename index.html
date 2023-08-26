@@ -88,7 +88,9 @@
                 }
             })
             .catch(error => {
+                // 发生错误
                 console.error(error);
+                resultMessage.textContent = '发生错误，请重试';
             });
         }
     </script>
