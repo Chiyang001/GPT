@@ -1,10 +1,16 @@
-const fromIndex = sessionStorage.getItem("fromIndex");
+const cookies = document.cookie.split(";").map(cookie => cookie.trim());
+    let passCookieFound = false;
     
-    if (!fromIndex) {
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+      if (cookieName === "passcookie" && cookieValue === "true") {
+        passCookieFound = true;
+        break;
+      }
+    }
+
+    if (!passCookieFound) {
       window.location.href = "index.html";
-    } else {
-     
-      sessionStorage.removeItem("fromIndex");
     }
     // 检测设备类型
     function detectDeviceType() {
