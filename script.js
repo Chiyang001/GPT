@@ -1,26 +1,9 @@
-const cookies = document.cookie.split(";").map(cookie => cookie.trim());
-    let validCookieFound = false;
-    
-    for (const cookie of cookies) {
-      const [cookieName, cookieValue] = cookie.split("=");
-      if (cookieName.length > 0 && cookieName.length <= 10000 && isValidBase64(cookieName)) {
-        validCookieFound = true;
-        break;
-      }
-    }
+const referrer = document.referrer;
+    const isFromIndex = referrer.includes("index.html");
 
-    if (!validCookieFound) {
+    if (!isFromIndex) {
       window.location.href = "index.html";
     }
-    
-    function isValidBase64(string) {
-      try {
-        return btoa(atob(string)) === string;
-      } catch (error) {
-        return false;
-      }
-    }
-    checkCookie();
     // 检测设备类型
     function detectDeviceType() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
