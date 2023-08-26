@@ -11,36 +11,43 @@
   <div class="container">
     <h1>人机验证</h1>
     <p>请输入炽阳001所给的key，若没有请找网站管理员获取</p>
-    <input id="passwordInput" type="text">
-    <button onclick="verifyPassword()">验证</button>
+    <input id="key1Input" type="text" placeholder="key1">
+    <input id="key2Input" type="text" placeholder="key2">
+    <button onclick="verifyKeys()">验证</button>
     <p id="errorText" class="error"></p>
   </div>
 
   <script>
-    const cookies = document.cookie.split(";").map(cookie => cookie.trim());
-    let passCookieFound = false;
-    
-    for (const cookie of cookies) {
-      const [cookieName, cookieValue] = cookie.split("=");
-      if (cookieName === "passcookie" && cookieValue === "true") {
-        passCookieFound = true;
-        break;
-      }
-    }
+    function verifyKeys() {
+      const inputKey1 = document.getElementById("key1Input").value;
+      const inputKey2 = document.getElementById("key2Input").value;
 
-    if (passCookieFound) {
-      window.location.href = "home.html";
-    }
-    function verifyPassword() {
-      const inputPassword = document.getElementById("passwordInput").value;
-      const base64Part = inputPassword.substring(7); 
-
-      if (inputPassword.startsWith("cy-GPT") && isValidBase64(base64Part)) {
+      if (isValidKey1(inputKey1) && isValidKey2(inputKey2)) {
         document.cookie = "passcookie=true"; 
         window.location.href = "home.html";
       } else {
         document.getElementById("errorText").textContent = "人机验证失败";
       }
+    }
+
+    function isValidKey1(key1) {
+      const base64Part = key1.substring(7);
+      return key1.startsWith("cy-GPT") && isValidBase64(base64Part);
+    }
+
+    function isValidKey2(inputKey2) {
+      const key2Characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const now = new Date();
+      const year = now.getFullYear().toString().substr(-2);
+      const month = (now.getMonth() + 1).toString().padStart(2, "0");
+      const day = now.getDate().toString().padStart(2, "0");
+      const hour = now.getHours().toString().padStart(2, "0");
+      const minute = now.getMinutes().toString().padStart(2, "0");
+      const currentTime = `${year}${month}${day}${hour}${minute}`;
+
+      const key2 = inputKey2.split('').map(char => key2Characters.indexOf(char)).join('');
+      const timeDifference = Math.abs(parseInt(currentTime) - parseInt(key2));
+      return timeDifference <= 3;
     }
 
     function isValidBase64(string) {
