@@ -1,9 +1,4 @@
-// Check if 'passcookie' cookie exists
-        var passCookie = document.cookie.split('; ').find(row => row.startsWith('passcookie='));
-        if (!passCookie) {
-            alert("您需要先进行人机验证！");
-            window.location.href = "index.html";
-        }
+
     // 检测设备类型
     function detectDeviceType() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
