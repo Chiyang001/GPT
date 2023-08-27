@@ -1,17 +1,4 @@
-const cookies = document.cookie.split(";").map(cookie => cookie.trim());
-    let passCookieFound = false;
-    
-    for (const cookie of cookies) {
-      const [cookieName, cookieValue] = cookie.split("=");
-      if (cookieName === "passcookie" && cookieValue === "true") {
-        passCookieFound = true;
-        break;
-      }
-    }
 
-    if (!passCookieFound) {
-      window.location.href = "index.html";
-    }
     // 检测设备类型
     function detectDeviceType() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
