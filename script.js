@@ -213,9 +213,11 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.backgroundColor = "#303030";
             card.style.border = "1px solid #444444";
         });
+        currentTheme = ''; // Reset current theme
     }
 
     function setPurpleTheme() {
+        resetTheme(); // Reset previous theme
         toolCards.forEach(card => {
             card.style.animation = "glow 1s infinite alternate";
             card.style.boxShadow = "0 0 30px blue";
@@ -224,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setAutumnTheme() {
+        resetTheme(); // Reset previous theme
         toolCards.forEach(card => {
             card.style.animation = "none";
             card.style.boxShadow = "0 0 10px yellow";
@@ -232,22 +235,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         currentTheme = 'autumn';
     }
-
-    // Additional logic to reset theme if changing from autumn to purple
-    autumnThemeButton.addEventListener("click", function() {
-        if (currentTheme === 'purple') {
-            resetTheme();
-            setBackgroundVideo("autumn.mp4");
-            setAutumnTheme();
-        }
-    });
-
-    // Additional logic to reset theme if changing from purple to autumn
-    purpleThemeButton.addEventListener("click", function() {
-        if (currentTheme === 'autumn') {
-            resetTheme();
-            setBackgroundVideo("video.mp4");
-            setPurpleTheme();
-        }
-    });
 });
