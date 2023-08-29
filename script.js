@@ -176,7 +176,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const purpleThemeButton = document.getElementById("purpleThemeButton");
     const autumnThemeButton = document.getElementById("autumnThemeButton");
     const backgroundVideo = document.querySelector(".background-video");
-    const toolCards = document.querySelectorAll(".tool-card"); // Select all tool cards
+    const toolCards = document.querySelectorAll(".tool-card");
+
+    let currentTheme = ''; // Track the current theme
 
     themeButton.addEventListener("click", function() {
         themeModal.style.display = "block";
@@ -184,34 +186,68 @@ document.addEventListener("DOMContentLoaded", function() {
 
     defaultThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        backgroundVideo.style.display = "none";
-
-        toolCards.forEach(card => {
-            card.style.animation = "none";
-            card.style.boxShadow = "none";
-        });
+        resetTheme();
     });
 
     purpleThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        backgroundVideo.style.display = "block";
-
-        toolCards.forEach(card => {
-            card.style.animation = "glow 1s infinite alternate";
-            card.style.boxShadow = "0 0 30px blue";
-        });
+        setBackgroundVideo("video.mp4"); // Set the default video
+        setPurpleTheme();
     });
 
     autumnThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        backgroundVideo.style.display = "block";
-        backgroundVideo.src = "https://gitcode.net/qq_37688711/gpt/-/raw/main/autumn.mp4?inline=false"; // Update the video source
+        setBackgroundVideo("autumn.mp4"); // Set the autumn video
+        setAutumnTheme();
+    });
 
+    function setBackgroundVideo(videoUrl) {
+        backgroundVideo.style.display = "block";
+        backgroundVideo.src = videoUrl;
+    }
+
+    function resetTheme() {
+        toolCards.forEach(card => {
+            card.style.animation = "none";
+            card.style.boxShadow = "none";
+            card.style.backgroundColor = "#303030";
+            card.style.border = "1px solid #444444";
+        });
+    }
+
+    function setPurpleTheme() {
+        toolCards.forEach(card => {
+            card.style.animation = "glow 1s infinite alternate";
+            card.style.boxShadow = "0 0 30px blue";
+        });
+        currentTheme = 'purple';
+    }
+
+    function setAutumnTheme() {
         toolCards.forEach(card => {
             card.style.animation = "none";
             card.style.boxShadow = "0 0 10px yellow";
             card.style.backgroundColor = "#b34f1d";
             card.style.border = "2px solid yellow";
         });
+        currentTheme = 'autumn';
+    }
+
+    // Additional logic to reset theme if changing from autumn to purple
+    autumnThemeButton.addEventListener("click", function() {
+        if (currentTheme === 'purple') {
+            resetTheme();
+            setBackgroundVideo("autumn.mp4");
+            setAutumnTheme();
+        }
+    });
+
+    // Additional logic to reset theme if changing from purple to autumn
+    purpleThemeButton.addEventListener("click", function() {
+        if (currentTheme === 'autumn') {
+            resetTheme();
+            setBackgroundVideo("video.mp4");
+            setPurpleTheme();
+        }
     });
 });
