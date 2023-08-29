@@ -39,10 +39,11 @@ h1 {
 
 .tab-content {
   max-height: 0;
-  overflow: hidden;
+  overflow-y: hidden;
   transition: max-height 0.3s ease-in-out;
 }
 
 .tab.active .tab-content {
-  max-height: 10000px; /* 根据实际内容调整 */
+  max-height: 300px; /* 调整显示的最大高度 */
+  overflow-y: auto;
 }
