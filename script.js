@@ -134,24 +134,17 @@ function animateSubtitle() {
 
 
         // 从给定的 JSON 数据中提取时间信息
-function extractTimeFromJSON(jsonData) {
-    const utcDatetime = jsonData.utc_datetime;
-    const datetime = new Date(utcDatetime);
-    return datetime;
-}
+function extractconst startTimeMillis = Date.UTC(2023, 7, 14, 3, 30);
+const startTimestamp = performance.now();
 
 // 计算经过的时间并更新显示
-async function displayUptime() {
-    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
-    const data = await response.json();
-    const currentTime = extractTimeFromJSON(data);
+function displayUptime() {
+    const currentTimeMillis = startTimeMillis + (performance.now() - startTimestamp);
+    const uptime = new Date(currentTimeMillis);
 
-    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
-    const uptimeMillis = currentTime - startTime;
-
-    const minutes = Math.floor((uptimeMillis / (1000 * 60)) % 60);
-    const hours = Math.floor((uptimeMillis / (1000 * 60 * 60)) % 24);
-    const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
+    const minutes = uptime.getMinutes();
+    const hours = uptime.getHours() - 8; // 修正为北京时间
+    const days = Math.floor(currentTimeMillis / (1000 * 60 * 60 * 24));
 
     const uptimeElement = document.getElementById('uptime-value');
     uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟`;
@@ -159,8 +152,9 @@ async function displayUptime() {
 
 window.onload = function() {
     displayUptime();
-    setInterval(displayUptime, 1000); // 每秒更新一次计时器
+    setInterval(displayUptime, 1000 * 60); // 每分钟更新一次计时器
 };
+
 
 
 //点击按钮自动从顶部下滑一段距离
