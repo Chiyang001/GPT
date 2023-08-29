@@ -17,7 +17,7 @@
             padding: 100px 0;
             text-align: center;
             color: #ffffff;
-            margin-top: -100px;
+            margin-top: 100px;
         }
 
         /* Tool Categories */
@@ -253,7 +253,7 @@
             font-family: Arial, sans-serif;
             background-color: #101010;
             color: #ffffff;
-            margin-top: 100px;
+            
         }
 
         /* Header */
@@ -263,7 +263,7 @@
             padding: 150px 0;
             text-align: center;
             color: #ffffff;
-            margin-top: -100px
+            margin-top: 50px
         }
 
         /* Tool Categories */
