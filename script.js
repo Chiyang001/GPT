@@ -191,13 +191,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     purpleThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        setBackgroundVideo("video.mp4"); // Set the default video
+        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false"); // Set the default video
         setPurpleTheme();
     });
 
     autumnThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        setBackgroundVideo("autumn.mp4"); // Set the autumn video
+        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/autumn.mp4?inline=false"); // Set the autumn video
         setAutumnTheme();
     });
 
