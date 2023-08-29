@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const themeModal = document.getElementById("themeModal");
     const defaultThemeButton = document.getElementById("defaultThemeButton");
     const purpleThemeButton = document.getElementById("purpleThemeButton");
+    const autumnThemeButton = document.getElementById("autumnThemeButton");
     const backgroundVideo = document.querySelector(".background-video");
     const toolCards = document.querySelectorAll(".tool-card"); // Select all tool cards
 
@@ -185,7 +186,6 @@ document.addEventListener("DOMContentLoaded", function() {
         themeModal.style.display = "none";
         backgroundVideo.style.display = "none";
 
-        // Loop through all tool cards and remove glow animation and shadow
         toolCards.forEach(card => {
             card.style.animation = "none";
             card.style.boxShadow = "none";
@@ -196,12 +196,21 @@ document.addEventListener("DOMContentLoaded", function() {
         themeModal.style.display = "none";
         backgroundVideo.style.display = "block";
 
-        // Loop through all tool cards and re-add glow animation and shadow
         toolCards.forEach(card => {
             card.style.animation = "glow 1s infinite alternate";
             card.style.boxShadow = "0 0 30px blue";
         });
     });
-});
 
-   
+    autumnThemeButton.addEventListener("click", function() {
+        themeModal.style.display = "none";
+        backgroundVideo.style.display = "none";
+
+        toolCards.forEach(card => {
+            card.style.animation = "none";
+            card.style.boxShadow = "0 0 10px yellow";
+            card.style.backgroundColor = "#b34f1d";
+            card.style.border = "2px solid yellow";
+        });
+    });
+});
