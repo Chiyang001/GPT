@@ -134,7 +134,7 @@ function animateSubtitle() {
 
 // 从 NTP 时间服务器获取当前时间
 async function getCurrentTime() {
-    const response = await fetch('http://worldtimeapi.org/api/ip');
+    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
     const data = await response.json();
     return new Date(data.utc_datetime);
 }
@@ -145,13 +145,13 @@ async function displayUptime() {
     const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
     const uptimeMillis = currentTime - startTime;
 
-    const seconds = Math.floor(uptimeMillis / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
+    const seconds = Math.floor(uptimeMillis / 1000) % 60;
+    const minutes = Math.floor(uptimeMillis / (1000 * 60)) % 60;
+    const hours = Math.floor(uptimeMillis / (1000 * 60 * 60)) % 24;
+    const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
 
     const uptimeElement = document.getElementById('uptime-value');
-    uptimeElement.textContent = `${days} 天, ${hours % 24} 小时, ${minutes % 60} 分钟, ${seconds % 60} 秒`;
+    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒`;
 }
 
 window.onload = function() {
