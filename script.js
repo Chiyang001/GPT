@@ -204,13 +204,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setPurpleTheme() {
-        setBackgroundVideo("video.mp4");
+        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false");
         setPurpleToolCards();
         currentTheme = 'purple';
     }
 
     function setAutumnTheme() {
-        setBackgroundVideo("autumn.mp4");
+        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/autumn.mp4?inline=false");
         setAutumnToolCards();
         currentTheme = 'autumn';
     }
