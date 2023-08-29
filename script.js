@@ -186,34 +186,22 @@ document.addEventListener("DOMContentLoaded", function() {
     defaultThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
         resetTheme();
-        setBackgroundVideo(""); // Remove video source
     });
 
     purpleThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
         resetTheme();
-        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false"); // Set the default video
         setPurpleTheme();
     });
 
     autumnThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
         resetTheme();
-        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/autumn.mp4?inline=false"); // Set the autumn video
         setAutumnTheme();
     });
 
-    function setBackgroundVideo(videoUrl) {
-        if (videoUrl) {
-            backgroundVideo.style.display = "block";
-            backgroundVideo.src = videoUrl;
-        } else {
-            backgroundVideo.style.display = "none";
-            backgroundVideo.src = "";
-        }
-    }
-
     function resetTheme() {
+        setBackgroundVideo("");
         toolCards.forEach(card => {
             card.style.animation = "none";
             card.style.boxShadow = "none";
@@ -224,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setPurpleTheme() {
+        setBackgroundVideo("video.mp4");
         toolCards.forEach(card => {
             card.style.animation = "glow 1s infinite alternate";
             card.style.boxShadow = "0 0 30px blue";
@@ -232,18 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setAutumnTheme() {
-        toolCards.forEach(card => {
-            card.style.animation = "none";
-            card.style.boxShadow = "0 0 10px yellow";
-            card.style.backgroundColor = "#b34f1d";
-            card.style.border = "2px solid yellow";
-        });
-        currentTheme = 'autumn';
-    }
-});
-
-    function setAutumnTheme() {
-        resetTheme(); // Reset previous theme
+        setBackgroundVideo("autumn.mp4");
         toolCards.forEach(card => {
             card.style.animation = "none";
             card.style.boxShadow = "0 0 10px yellow";
