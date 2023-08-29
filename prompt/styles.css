@@ -44,5 +44,5 @@ h1 {
 }
 
 .tab.active .tab-content {
-  max-height: 500px; /* 根据实际内容调整 */
+  max-height: 10000px; /* 根据实际内容调整 */
 }
