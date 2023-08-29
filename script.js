@@ -132,9 +132,7 @@ function animateSubtitle() {
 }
 
 
-
-        // 从给定的 JSON 数据中提取时间信息
-function extractconst startTimeMillis = Date.UTC(2023, 7, 14, 3, 30);
+const startTimeMillis = Date.UTC(2023, 7, 14, 3, 30);
 const startTimestamp = performance.now();
 
 // 计算经过的时间并更新显示
@@ -154,6 +152,7 @@ window.onload = function() {
     displayUptime();
     setInterval(displayUptime, 1000 * 60); // 每分钟更新一次计时器
 };
+
 
 
 
