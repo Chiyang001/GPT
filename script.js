@@ -133,9 +133,17 @@ function animateSubtitle() {
 
 
 
-        function displayUptime() {
-    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30)); // 北京时间换算为 UTC
-    const currentTime = new Date();
+        // 获取当前北京时间
+async function getBeijingTime() {
+    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
+    const data = await response.json();
+    return new Date(data.utc_datetime);
+}
+
+// 计算经过的时间并更新显示
+async function displayUptime() {
+    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
+    const currentTime = await getBeijingTime();
     const uptimeMillis = currentTime - startTime;
 
     const milliseconds = uptimeMillis % 1000;
@@ -148,8 +156,10 @@ function animateSubtitle() {
     uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒, ${milliseconds} 毫秒`;
 }
 
-// 在 window.onload 函数中使用以下代码调用 displayUptime 函数
-setInterval(displayUptime, 1); // 每毫秒更新一次计时器
+window.onload = function() {
+    displayUptime();
+    setInterval(displayUptime, 1000); // 每秒更新一次计时器
+};
 
 //点击按钮自动从顶部下滑一段距离
         function scrollToContent() {
