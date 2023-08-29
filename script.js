@@ -133,33 +133,35 @@ function animateSubtitle() {
 
 
 
-        // 获取当前北京时间
-async function getBeijingTime() {
-    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
-    const data = await response.json();
-    return new Date(data.utc_datetime);
+        // 从给定的 JSON 数据中提取时间信息
+function extractTimeFromJSON(jsonData) {
+    const utcDatetime = jsonData.utc_datetime;
+    const datetime = new Date(utcDatetime);
+    return datetime;
 }
 
 // 计算经过的时间并更新显示
 async function displayUptime() {
+    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
+    const data = await response.json();
+    const currentTime = extractTimeFromJSON(data);
+
     const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
-    const currentTime = await getBeijingTime();
     const uptimeMillis = currentTime - startTime;
 
-    const milliseconds = uptimeMillis % 1000;
-    const seconds = Math.floor((uptimeMillis / 1000) % 60);
     const minutes = Math.floor((uptimeMillis / (1000 * 60)) % 60);
     const hours = Math.floor((uptimeMillis / (1000 * 60 * 60)) % 24);
     const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
 
     const uptimeElement = document.getElementById('uptime-value');
-    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒, ${milliseconds} 毫秒`;
+    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟`;
 }
 
 window.onload = function() {
     displayUptime();
     setInterval(displayUptime, 1000); // 每秒更新一次计时器
 };
+
 
 //点击按钮自动从顶部下滑一段距离
         function scrollToContent() {
