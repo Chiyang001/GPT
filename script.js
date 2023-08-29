@@ -132,59 +132,24 @@ function animateSubtitle() {
 }
 
 
-// 从指定 URL 获取页面内容
-// 从指定 URL 获取页面内容
-async function fetchPageContent(url) {
-    const response = await fetch(url);
-    const text = await response.text();
-    return text;
+
+        function displayUptime() {
+    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30)); // 北京时间换算为 UTC
+    const currentTime = new Date();
+    const uptimeMillis = currentTime - startTime;
+
+    const milliseconds = uptimeMillis % 1000;
+    const seconds = Math.floor((uptimeMillis / 1000) % 60);
+    const minutes = Math.floor((uptimeMillis / (1000 * 60)) % 60);
+    const hours = Math.floor((uptimeMillis / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
+
+    const uptimeElement = document.getElementById('uptime-value');
+    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒, ${milliseconds} 毫秒`;
 }
 
-// 从页面内容中提取日期和时间信息并计算经过的时间
-async function displayUptime() {
-    const pageContent = await fetchPageContent('http://www.timebie.com/cn/beijing.php');
-    
-    // 查找当前日期和时间信息的位置
-    const currentDateIndex = pageContent.indexOf('Current Date:');
-    const currentTimeIndex = pageContent.indexOf('Current Time:');
-    
-    if (currentDateIndex !== -1 && currentTimeIndex !== -1) {
-        // 提取当前日期和时间信息
-        const currentDateInfo = pageContent.substring(currentDateIndex, currentTimeIndex);
-        const currentTimeInfo = pageContent.substring(currentTimeIndex);
-        
-        // 解析日期和时间信息
-        const currentDateMatch = currentDateInfo.match(/\w+\s*,\s*(\w+)\s+(\d+)\s+(\d{4})/);
-        const currentTimeMatch = currentTimeInfo.match(/(\d+):(\d+):(\d+)\s+(AM|PM)/);
-        
-        if (currentDateMatch && currentTimeMatch) {
-            const [, month, day, year] = currentDateMatch;
-            const [, hours, minutes, seconds] = currentTimeMatch;
-            
-            const currentTime = new Date(`${month} ${day}, ${year} ${hours}:${minutes}:${seconds}`);
-            const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
-            const uptimeMillis = currentTime - startTime;
-
-            const secondsElapsed = Math.floor(uptimeMillis / 1000);
-            const minutesElapsed = Math.floor(uptimeMillis / (1000 * 60));
-            const hoursElapsed = Math.floor(uptimeMillis / (1000 * 60 * 60));
-            const daysElapsed = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
-
-            const uptimeElement = document.getElementById('uptime-value');
-            uptimeElement.textContent = `${daysElapsed} 天, ${hoursElapsed} 小时, ${minutesElapsed} 分钟, ${secondsElapsed} 秒`;
-        }
-    }
-}
-
-window.onload = function() {
-    displayUptime();
-    setInterval(displayUptime, 1000); // 每秒更新一次计时器
-};
-
-
-
-
-
+// 在 window.onload 函数中使用以下代码调用 displayUptime 函数
+setInterval(displayUptime, 1); // 每毫秒更新一次计时器
 
 //点击按钮自动从顶部下滑一段距离
         function scrollToContent() {
