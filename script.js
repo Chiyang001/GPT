@@ -204,7 +204,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     autumnThemeButton.addEventListener("click", function() {
         themeModal.style.display = "none";
-        backgroundVideo.style.display = "none";
+        backgroundVideo.style.display = "block";
+        backgroundVideo.src = "https://gitcode.net/qq_37688711/gpt/-/raw/main/autumn.mp4?inline=false"; // Update the video source
 
         toolCards.forEach(card => {
             card.style.animation = "none";
