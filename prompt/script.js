@@ -14,18 +14,13 @@ const copyButtons = document.querySelectorAll('.copy-button');
 
 // 遍历复制按钮，为每个按钮添加点击事件
 copyButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const content = button.parentNode.textContent; // 获取父元素的文本内容
-    copyToClipboard(content.trim()); // 复制文本内容到剪贴板
+  button.addEventListener('click', async () => {
+    const content = button.parentNode.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(content);
+      console.log('内容已成功复制到剪贴板');
+    } catch (error) {
+      console.error('复制到剪贴板时出错:', error);
+    }
   });
 });
-
-// 复制文本到剪贴板的函数
-function copyToClipboard(text) {
-  const textarea = document.createElement('textarea');
-  textarea.value = text;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
-}
