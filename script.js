@@ -132,32 +132,46 @@ function animateSubtitle() {
 }
 
 
-// 从 NTP 时间服务器获取当前时间
-async function getCurrentTime() {
-    const response = await fetch('http://worldtimeapi.org/api/timezone/Asia/Shanghai');
-    const data = await response.json();
-    return new Date(data.utc_datetime);
+// 从指定 URL 获取页面内容
+async function fetchPageContent(url) {
+    const response = await fetch(url);
+    const text = await response.text();
+    return text;
 }
 
-// 计算经过的时间并更新显示
+// 从页面内容中提取北京时间并计算经过的时间
 async function displayUptime() {
-    const currentTime = await getCurrentTime();
-    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
-    const uptimeMillis = currentTime - startTime;
+    const pageContent = await fetchPageContent('http://www.timebie.com/cn/beijing.php');
+    
+    // 使用 DOM 解析库（如 DOMParser）来提取页面中的时间信息
+    // 请根据页面结构和内容适当修改以下代码
+    
+    // 示例：假设页面中有一个 ID 为 "current-time" 的元素显示北京时间
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(pageContent, 'text/html');
+    const currentTimeElement = doc.getElementById('current-time');
+    
+    if (currentTimeElement) {
+        const currentTimeString = currentTimeElement.textContent;
+        const currentTime = new Date(currentTimeString);
+        const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
+        const uptimeMillis = currentTime - startTime;
 
-    const seconds = Math.floor(uptimeMillis / 1000) % 60;
-    const minutes = Math.floor(uptimeMillis / (1000 * 60)) % 60;
-    const hours = Math.floor(uptimeMillis / (1000 * 60 * 60)) % 24;
-    const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
+        const seconds = Math.floor(uptimeMillis / 1000) % 60;
+        const minutes = Math.floor(uptimeMillis / (1000 * 60)) % 60;
+        const hours = Math.floor(uptimeMillis / (1000 * 60 * 60)) % 24;
+        const days = Math.floor(uptimeMillis / (1000 * 60 * 60 * 24));
 
-    const uptimeElement = document.getElementById('uptime-value');
-    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒`;
+        const uptimeElement = document.getElementById('uptime-value');
+        uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟, ${seconds} 秒`;
+    }
 }
 
 window.onload = function() {
     displayUptime();
     setInterval(displayUptime, 1000); // 每秒更新一次计时器
 };
+
 
 
 
