@@ -132,26 +132,33 @@ function animateSubtitle() {
 }
 
 
-const startTimeMillis = Date.UTC(2023, 7, 14, 3, 30);
-const startTimestamp = performance.now();
+// 从 NTP 时间服务器获取当前时间
+async function getCurrentTime() {
+    const response = await fetch('http://worldtimeapi.org/api/ip');
+    const data = await response.json();
+    return new Date(data.utc_datetime);
+}
 
 // 计算经过的时间并更新显示
-function displayUptime() {
-    const currentTimeMillis = startTimeMillis + (performance.now() - startTimestamp);
-    const uptime = new Date(currentTimeMillis);
+async function displayUptime() {
+    const currentTime = await getCurrentTime();
+    const startTime = new Date(Date.UTC(2023, 7, 14, 3, 30));
+    const uptimeMillis = currentTime - startTime;
 
-    const minutes = uptime.getMinutes();
-    const hours = uptime.getHours() - 8; // 修正为北京时间
-    const days = Math.floor(currentTimeMillis / (1000 * 60 * 60 * 24));
+    const seconds = Math.floor(uptimeMillis / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
 
     const uptimeElement = document.getElementById('uptime-value');
-    uptimeElement.textContent = `${days} 天, ${hours} 小时, ${minutes} 分钟`;
+    uptimeElement.textContent = `${days} 天, ${hours % 24} 小时, ${minutes % 60} 分钟, ${seconds % 60} 秒`;
 }
 
 window.onload = function() {
     displayUptime();
-    setInterval(displayUptime, 1000 * 60); // 每分钟更新一次计时器
+    setInterval(displayUptime, 1000); // 每秒更新一次计时器
 };
+
 
 
 
