@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function setDefaultTheme() {
-        setBackgroundVideo("");
+        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/studio_video_1693712338394.mp4?inline=false");
         resetToolCards();
         currentTheme = 'default';
     }
