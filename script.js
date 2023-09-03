@@ -167,6 +167,7 @@ scrollToTopButton.addEventListener('click', () => {
   });
 });
 
+//这个是主题设置代码
 document.addEventListener("DOMContentLoaded", function() {
     const themeButton = document.getElementById("themeButton");
     const themeModal = document.getElementById("themeModal");
@@ -245,4 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.border = "2px solid yellow";
         });
     }
+
+    // Set default theme on website load
+    setDefaultTheme();
 });
