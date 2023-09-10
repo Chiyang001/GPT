@@ -39,8 +39,10 @@
 <button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
 <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
 <button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
-<button id="official-button" class="category-button" onclick="toggleCategory('official'); scrollToContent()">💼官方模型</button>
 <button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📜更新公告</button>
+<button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
+
+
 
 </div>
 
@@ -75,40 +77,41 @@
         </div>
     </div>
      
+
+        
+   
+        
+     
      <div class="categories-container">
+    
         <div class="category" id="commend">
         <p>这一分类下的网站均为免费实用网站，无需翻墙</p>
             <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>AITianhu</h3>
-                    <p>这个网站GPT3.5、4.0全部免费，公益网站，GPT4目前无法使用。</p>
-                    <a class="glowing-button" href="https://evndt.aitianhu.site/#/chat/1002">进入网站</a>
-                </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>MIYA</h3>
                     <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是可能布局对手机版用户不是特别友好。</p>
                     <a class="glowing-button" href="https://www.miyadns.com/#/index">进入网站</a>
                 </div>
             </div>
               <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ChatGPT-T</h3>
                     <p>这个网站允许使用GPT3.5和4.0，不过4.0注册之后有1000token，3.5回复速度快。</p>
                     <a class="glowing-button" href="https://chatgptt.co/chat">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>清华GPT</h3>
                     <p>非常推荐使用完全免费，也不需要登录，支持GPT4、GPT3.5、克劳德等多个模型，并且不限次数。4.0请选择GLM模型。</p>
                     <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
                 </div>
               </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>chatDia</h3>
                     <p>登陆后支持免费无限制使用GPT3.5。</p>
                     <a class="glowing-button" href="https://chat.inglo.cn/#/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>仿ChatGPT</h3>
                     <p>界面完全模仿ChatGPT，免费GPT3.5和GPT4，登录就行。</p>
                     <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/chat/new">进入网站</a>
@@ -130,245 +133,238 @@
         
         <div class="category" id="free">
             <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>AITianhu</h3>
-                    <p>这个网站GPT3.5、4.0全部免费，公益网站，但GPT4目前无法使用。</p>
-                    <a class="glowing-button" href="https://evndt.aitianhu.site/#/chat/1002">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>清华GPT</h3>
                     <p>非常推荐使用完全免费，也不需要登录，支持GPT4、GPT3.5、克劳德等多个模型，并且不限次数。4.0请选择GLM模型。</p>
                     <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>MIYA</h3>
                     <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是可能布局对手机版用户不是特别友好。</p>
                     <a class="glowing-button" href="https://www.miyadns.com/#/index">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>GPT账号网站</h3>
                     <p>这个网站允许使用GPT3.5，有多个接口用来使用，回复速度快，推荐使用。</p>
                     <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html?v=2">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ChatGPT-T</h3>
                     <p>这个网站允许使用GPT3.5和4.0，不过4.0注册之后有1000token，3.5回复速度快。</p>
                     <a class="glowing-button" href="https://chatgptt.co/chat">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ICode联盟</h3>
                     <p>这个网站允许使用GPT3.5，但网站布局有点奇怪，手机端看不见输入内容，而且不支持流式输出。</p>
                     <a class="glowing-button" href="https://yy123.ink/chatgpt">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>小傅哥GPT</h3>
                     <p>本人未试过，需要进公众号获取验证码。</p>
                     <a class="glowing-button" href="https://chatgpt.itedus.cn/#/chat">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>bito</h3>
                     <p>外国网站，无需翻墙也能加载，完全免费无次数限制，可以转载开发工具也可以作为浏览器插件，确定就是总是用英文回答。</p>
                     <a class="glowing-button" href="https://bito.ai/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>WeTab</h3>
                     <p>目前已知最好用的插件，支持edge和chrome插件，手机可使用狐猴浏览器安装。</p>
                     <a class="glowing-button" href="https://www.wetab.link/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AI助理</h3>
                     <p>GPT3.5首选！回答速度快！支持提示词商店，但是GPT4需要付费，GPT3是可以免费的次数限制使用的，国内也能打开，不过进入之前需要扫描公众号登录</p>
                     <a class="glowing-button" href="https://chat.xyhelper.com.cn">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>1Chat</h3>
                     <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，并且还有几个自带备用网站。</p>
                     <a class="glowing-button" href="https://1.11chat.cc/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AIChat</h3>
                     <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，虽然连了网，但是似乎没什么卵用。</p>
                     <a class="glowing-button" href="https://c.binjie.fun/#/chat/1691020665346">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>WoChat</h3>
                     <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，这个网站支持直接翻译文字，也支持和GPT对话。</p>
                     <a class="glowing-button" href="https://chat1.wobcw.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Tudouyun</h3>
                     <p>网站需要登录，但是不需要注册账号，你需要输入这个邀请码：1rEZ0*@~vwbDH3Cc 如果使用GPT4模型会报错。</p>
                     <a class="glowing-button" href="https://gpt.tudouyun.link/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>国外GPT</h3>
                     <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
                     <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
                 </div>
             </div>
                         <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Quickchat AI</h3>
                     <p>Quickchat AI使公司能够构建自己的多语言AI助手，由GPT - 3等生成式AI模型提供支持。感谢我们的无代码平台</p>
                     <a class="glowing-button" href="https://www.quickchat.ai/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>DrinkWater.ai</h3>
                     <p>通过 Airtable 和 Zapier 的集成定制关于 ChatGPT 的一切。</p>
                     <a class="glowing-button" href="https://drinkwater.ai/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ForA.Chat</h3>
                     <p>和其他基于OpenAI GPT-3的人物聊天，比如贾斯汀·特鲁多……</p>
                     <a class="glowing-button" href="https://fora.chat/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>灵境AI</h3>
                     <p>灵境AI，一款激发灵感的AI对话机器人。灵境AI提供AIGC的丰富创作</p>
                     <a class="glowing-button" href="https://lingjingai.cn/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AI建筑知识问答</h3>
                     <p>一个做别墅设计的网站，集成ChatGPT并根据建筑行业的知识做训练，利用AI帮助建筑相关从业者回答专业问题做参考</p>
                     <a class="glowing-button" href="https://www.modaiyun.com/mdy/ask/index">进入网站</a>
                 </div>
             </div>    
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>edaly</h3>
                     <p>人工智能驱动的教育技术 SaaS 使教育工作者和学习者能够在全球范围内与远程教育建立联系。</p>
                     <a class="glowing-button" href="https://edaly.co/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Monica</h3>
                     <p>https://monica.im/</p>
                     <a class="glowing-button" href="https://monica.im/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>PlayPhrase.me</h3>
                     <p>PlayPhrase.me是一个在线电影短语搜索网，集合了80多部电影和6万多个电影短语。</p>
                     <a class="glowing-button" href="https://playphrase.me/#/search">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>仿ChatGPT</h3>
                     <p>界面完全模仿ChatGPT，免费GPT3.5和GPT4，登录就行。</p>
                     <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/chat/new">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>inworld.ai</h3>
                     <p>人工智能角色将改变日常生活——从虚拟世界到我们想象中的西部世界。我们正在使科幻小说中的东西成为现实。</p>
                     <a class="glowing-button" href="https://www.inworld.ai/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>chatDia</h3>
                     <p>登陆后支持免费无限制使用GPT3.5。</p>
                     <a class="glowing-button" href="https://chat.inglo.cn/#/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>convai</h3>
                     <p>设计基于对话的角色和基于语音的游戏。</p>
                     <a class="glowing-button" href="https://convai.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>alethea.ai</h3>
                     <p>与互联网彻底改变内容分发的方式一样，人工智能正在彻底改变内容创作。</p>
                     <a class="glowing-button" href="https://alethea.ai/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>gemsouls</h3>
                     <p>gemsouls 是一个人工智能平台，支持虚拟角色及其与现实世界的联系。</p>
                     <a class="glowing-button" href="https://www.mygemsouls.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>万花筒GPT</h3>
                     <p>免费无障碍，无需科学的上网方式，无需注册账号，可以直接使用的chatGPT！</p>
                     <a class="glowing-button" href="https://lab.aiwht.com/chat">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>circlel abs</h3>
                     <p>打造全球最大的AI NPC平台</p>
                     <a class="glowing-button" href="https://circlelabs.xyz/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Ask Seneca</h3>
                     <p>AskSeneca 是一个使用自然语言处理来回答问题的聊天机器人。</p>
                     <a class="glowing-button" href="https://seneca.dylancastillo.co/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Soofy</h3>
                     <p>通过ai，帮助提高交流水平，学习新语言</p>
                     <a class="glowing-button" href="https://soofy.io/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Cody</h3>
                     <p>商业人工智能助理</p>
                     <a class="glowing-button" href="https://www.meetcody.ai/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Chatbase</h3>
                     <p>只要上传一个pdf文件，就可以得到一个基于GPT的聊天机器人的链接，它可以回答上面的任何问题。</p>
                     <a class="glowing-button" href="https://www.chatbase.co/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>NexChatGPT</h3>
                     <p>火爆全网的IDEA插件，支持IDEA全家桶，全网下载量突破6w！</p>
                     <a class="glowing-button" href="https://blog.vqlai.com/nexchatgpt-info/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>charactorGPT</h3>
                     <p>AI生成虚拟人</p>
                     <a class="glowing-button" href="https://alethea.ai/characterGPT.html">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Easy-Peasy.AI</h3>
                     <p>Easy-Peasy.AI 是一种 AI 内容工具，可帮助用户将内容创建速度提高 10 倍。</p>
                     <a class="glowing-button" href="https://easy-peasy.ai/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>LangoTalk</h3>
                     <p>通过与人工智能聊天，学习西班牙语、英语、法语、德语、荷兰语或意大利语的速度提高6倍。</p>
                     <a class="glowing-button" href="https://www.langotalk.org/">进入网站</a>
@@ -376,12 +372,12 @@
                
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>JustLearn</h3>
                     <p>你可以使用Justlearn创建AI朋友，并与他们对话。</p>
                     <a class="glowing-button" href="https://www.justlearn.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Yoodli AI</h3>
                     <p>通过他们的人工智能演讲教练的个性化和私人反馈，提高你的沟通技巧。</p>
                     <a class="glowing-button" href="https://app.yoodli.ai/">进入网站</a>
@@ -389,7 +385,7 @@
             </div>
             <div class="featured-tools">
                 
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ChatGenius</h3>
                     <p>使用Chat Genius体验对话的未来--基于GPT的人工智能聊天机器人应用</p>
                     <a class="glowing-button" href="https://chatgenius.tech/">进入网站</a>
@@ -397,19 +393,19 @@
             </div>
             <div class="featured-tools">
                
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Replika</h3>
                     <p>关心的AI伴侣。总是在这里倾听和交谈。永远在你身边。</p>
                     <a class="glowing-button" href="https://replika.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>思知</h3>
                     <p>思知机器人、知识图谱、聊天机器人、微信机器人、认知机器人、机器人api、聊天机器人api。</p>
                     <a class="glowing-button" href="https://www.ownthink.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>550智慧大脑</h3>
                     <p>一群喜欢《流浪地球》朋友做的550ai产品，目前支持人机交互对话。</p>
                     <a class="glowing-button" href="https://550w.fun/#/login?redirect=%2F">进入网站</a>
@@ -417,7 +413,7 @@
             </div>
             <div class="featured-tools">
                
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Konjer</h3>
                     <p>问你最喜欢的书一个问题。与历史人物或虚构人物聊天。</p>
                     <a class="glowing-button" href="https://www.konjer.xyz/">进入网站</a>
@@ -425,43 +421,43 @@
             </div>
             <div class="featured-tools">
                 
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>HuggingChat</h3>
                     <p>ChatGPT 的第一个开源替代品：HuggingChat 由 Open Assistant 的最新模型提供支持</p>
                     <a class="glowing-button" href="https://huggingface.co/chat/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AI Chat Bestie</h3>
                     <p>AI Chat Bestie 是一种增强 ChatGPT 用户体验的工具，允许更快的响应、可搜索的聊天记录，并且无需注册。</p>
                     <a class="glowing-button" href="https://aichatbestie.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>BrightBot</h3>
                     <p>在几分钟内将 GPT 支持的聊天机器人添加到您的网站，并根据 您的数据 进行训练。</p>
                     <a class="glowing-button" href="https://www.brightbot.app/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AIbstract</h3>
                     <p>AIbstract 是一种软件解决方案，它使用人工智能技术实时生成和流式传输个性化、原创和免版税的音乐，对音乐技能没有任何先决条件。</p>
                     <a class="glowing-button" href="https://aibstract.fr/presentation">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>BanterAI-和你最喜欢的虚拟名人聊天</h3>
                     <p>跨越时空，和你最喜欢的音乐家、演员、历史人物聊天。BanterAI可以实时回答您的问题和陈述。</p>
                     <a class="glowing-button" href="https://banterai.app/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ChatMindAI</h3>
                     <p>这个网站需要登录，自带各种丰富的聊天机器人。</p>
                     <a class="glowing-button" href="https://beta.chatmindai.net/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>CheeryChat</h3>
                     <p>需要登录，但使用激活码可赠送两万额度，激活码：C0120CBF13C83E812C7
                     4DEEB3659E2E0。</p>
@@ -469,49 +465,49 @@
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>奶鲨畅聊</h3>
                     <p>这个网站需要登录，支持GPT3.5和4.0，不过4.0需要会员和登录。粉丝卡密：JQQIS702RFHTBB0DB4QCR
                     BT4PIPYLLJ86OQ</p>
                     <a class="glowing-button" href="https://chat02.sharkchat.cn/index.php">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>GPT Talk</h3>
                     <p>这个网站不需要登录，支持多个平台使用。</p>
                     <a class="glowing-button" href="https://gpttalkapp.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>核桃</h3>
                     <p>这个网站提问3句话后需要进微信公众号登录，支持GPT3.5。</p>
                     <a class="glowing-button" href="https://ai.minihuo.com/#/chat/1002">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>开放猫</h3>
                     <p>这个网站需要登录，注册后只有10猫粮，不推荐使用。</p>
                     <a class="glowing-button" href="https://gpttalkapp.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>实时聊天机器人</h3>
                     <p>不需要登录，支持GPT3.5和GPT4。</p>
                     <a class="glowing-button" href="https://ppp.mygpt.bid/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ebot</h3>
                     <p>网站无需登录回答迅速，支持GPT3.5。</p>
                     <a class="glowing-button" href="https://ebot3.bus1.skybyte.me/#/chat/1002">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>hello ai</h3>
                     <p>网站不需要登录，支持GPT3.5。</p>
                     <a class="glowing-button" href="https://free.anzz.top/zh">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>theb ai</h3>
                     <p>这个网站需要登录，具体什么样子UP主也没有用过。</p>
                     <a class="glowing-button" href="https://chatbot.theb.ai/">进入网站</a>
@@ -522,49 +518,54 @@
         
         <div class="category" id="vpn">
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <h3>AITianhu</h3>
+                    <p>这个网站GPT3.5、4.0全部免费，公益网站，但GPT4目前无法使用。</p>
+                    <a class="glowing-button" href="https://evndt.aitianhu.site/#/chat/1002">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>国外GPT</h3>
                     <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
                     <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">    
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>WRTN</h3>
                     <p>不稳定，需要使用魔法。</p>
                     <a class="glowing-button" href="https://wrtn.ai">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Ylokh</h3>
                     <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
                     <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AMZ Chat</h3>
                     <p>需要登录，有积分限制。</p>
                     <a class="glowing-button" href="https://chat.52amz.com/chat">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>GPT Panda</h3>
                     <p>支持GPT3.5和GPT4，但需要登录，每个账号注册后享有100次免费积分，其余需要充钱。</p>
                     <a class="glowing-button" href="https://gptpanda.xyz/shop">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>ChatYoutube</h3>
                     <p>贴Youtube视频地址，就可以针对视频进行ChatGPT聊天讨论了。</p>
                     <a class="glowing-button" href="https://newzone.top/chatgpt/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Open Assistant</h3>
                     <p>Open Assistant 是一个对话式 AI 项目，旨在通过提供令人惊叹的对话式 AI 来改善世界。</p>
                     <a class="glowing-button" href="https://open-assistant.io/">进入网站</a>
@@ -577,12 +578,12 @@
                  
         <div class="category" id="imageProcessing">
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>国外绘画网站</h3>
                     <p>绘画者首选网站。国外AI绘画网站不需要翻墙，也能够很流畅的使用，并且支持一次性生成多张图片，而且免费无限制，界面很简洁。</p>
                     <a class="glowing-button" href="https://images.ylokh.xyz/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Vega AI</h3>
                     <p>网站需要登录，但免费支持各种图像生成，自含各种模型不限制次数，真实好用，画图及其推荐网站，专业绘画人必备。</p>
                     <a class="glowing-button" href="https://rightbrain.art/">进入网站</a>
@@ -590,14 +591,14 @@
             </div>
           <div class="category" id="imageProcessing">
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>清华GPT</h3>
                     <p>完全免费，无需登录，不限次数，支持各种模型，包括二次元模型，三次元模型等。</p>
                     <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>liblibai</h3>
                     <p>电脑端才能使用，手机端无法使用。</p>
                     <a class="glowing-button" href="https://www.liblibai.com/sd?id=1692700759011">进入网站</a>
@@ -608,144 +609,144 @@
  
         <div class="category" id="work">
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Gamma</h3>
                     <p>可以用于创建网站或者是PPT文档之类，是一个很实用的GPT工具网站，每个账户注册只要有400的余额。</p>
                     <a class="glowing-button" href="https://gamma.app/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>GPT网站开发者代码</h3>
                     <p>这个是开发者可以开发使用的开源代码，想要搭建专属GPT网站的小伙伴有福啦！</p>
                     <a class="glowing-button" href="https://github.com/ZS520L/GPT4-MidJourney-API/blob/main/%E5%A4%A7%E4%BE%A0GPT4.ipynb">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Cursor</h3>
                     <p>最强AI编辑器 可以根据你的描述在当前文件自动生成代码。</p>
                     <a class="glowing-button" href="https://www.cursor.sh/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>亿图脑图</h3>
                     <p>国内首款实现AIGC“文生脑图”全端上线的脑图软件。</p>
                     <a class="glowing-button" href="https://www.edrawsoft.cn/mindmaster/?AI-bot">进入网站</a>
                 </div>
             </div>    
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>GitMind · 思乎</h3>
                     <p>GitMind · 思乎是一款非常好用又免费的思维导图软件</p>
                     <a class="glowing-button" href="https://gitmind.cn/?ref=ai-bot.cn">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Taskade</h3>
                     <p>它可能会是你最喜欢的全平台协作工具，颜值太高了。</p>
                     <a class="glowing-button" href="https://www.taskade.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>WPS AI</h3>
                     <p>“WPS AI”是金山办公旗下具备了大语言模型能力的一款生成式人工智能应用，也是中国协同办公赛道首个类ChatGPT式应用。</p>
                     <a class="glowing-button" href="https://ai.wps.cn/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>博思AI白板</h3>
                     <p>博思AI白板，AI自动生成文字和思维导图。</p>
                     <a class="glowing-button" href="https://boardmix.cn/ai-whiteboard/">进入网站</a>
                 </div>
             </div>    
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>AmyMind</h3>
                     <p>开箱即用的在线AI思维导图工具</p>
                     <a class="glowing-button" href="https://amymind.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>美图AI PPT</h3>
                     <p>美图秀秀旗下新出的制作PPT的AI工具。</p>
                     <a class="glowing-button" href="https://design.meitu.com/ppt/">进入网站</a>
                 </div>
             </div>    
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>飞书妙记</h3>
                     <p>飞书智能会议纪要和快捷语音识别转文字。</p>
                     <a class="glowing-button" href="https://www.feishu.cn/product/minutes">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>周报生成器</h3>
                     <p>可以用AI生成周报。</p>
                     <a class="glowing-button" href="https://weeklyreport.avemaria.fun/zh">进入网站</a>
                 </div>
             </div>  
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>事半</h3>
                     <p>一款可以用来写文章，写剧本，写教案，绘图，写工作总结，包括支持抠图，修图的AI工具。</p>
                     <a class="glowing-button" href="https://halfwork.cn/tool">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Ask Your PDF</h3>
                     <p>AskYourPdf 是一个人工智能聊天系统，使用户能够以更高效、更愉快的方式与 PDF 文档进行交互。。</p>
                     <a class="glowing-button" href="https://askyourpdf.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>LightPDF</h3>
                     <p>LightPDF 的人工智能文档聊天机器人是一个免费的在线工具，允许用户即时分析和提取 PDF、Word、Excel 和 PPT 文档中的数据。</p>
                     <a class="glowing-button" href="https://lightpdf.com/chatdoc">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>您的一站式GPT</h3>
                     <p>这里留了一个空，就给我自己打广告吧。</p>
                     <a class="glowing-button" href="">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>gamma</h3>
                     <p>自动化完成PPT。</p>
                     <a class="glowing-button" href="https://gamma.app/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>mindshow</h3>
                     <p>MindShow是一款全新的在线演示工具，它可以帮助用户快速、简便地创建漂亮的PPT演示文稿。</p>
                     <a class="glowing-button" href="https://www.mindshow.fun/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>MotionGo-Chatppt</h3>
                     <p>MotionGo是必优科技（原口袋动画团队）全新升级的一款PPT动画插件，可兼容WPS和Office软件，是一款轻量级产品，可以让PPT动效表达更加专业。</p>
                     <a class="glowing-button" href="https://motion.yoo-ai.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Tome</h3>
                     <p>Tome 是一个协作式 AI 合作伙伴，可帮助您使用任何类型的内容创建引人入胜的故事。</p>
                     <a class="glowing-button" href="https://beta.tome.app/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Ajelix</h3>
                     <p>Ajelix 是一款 AI Excel & Google Sheets 工具，可帮助用户以 10 倍的速度编写和解释公式、翻译电子表格、生成模板以及编写 VBA 脚。</p>
                     <a class="glowing-button" href="https://ajelix.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Excelformulabot</h3>
                     <p>ExcelFormulaBot 是一种人工智能工具，可帮助用户在几秒钟内解决 Excel 和 Google 表格问题。</p>
                     <a class="glowing-button" href="https://excelformulabot.com/">进入网站</a>
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>酷表ChatExcel</h3>
                     <p>ChatExcel帮你处理Excel表格，上传你的文件，输入你的需求，AI自动就帮主你处理。</p>
                     <a class="glowing-button" href="https://chatexcel.com/">进入网站</a>
                 </div>
-                <div class="tool-card">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>秘塔写作猫</h3>
                     <p>秘塔写作猫已经拥有数百万用户，成立北京和成都两大研发中心，在AIGC、文档辅助创作、智能合同等方向上开展研发与产品落地。</p>
                     <a class="glowing-button" href="https://xiezuocat.com/">进入网站</a>
@@ -755,78 +756,17 @@
             
             
             
-         <div class="category" id="official">
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>ChatGPT</h3>
-                    <a class="glowing-button" href="https://chat.openai.com/">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>Claude</h3>
-                    <a class="glowing-button" href="https://www.anthropic.com/product">进入网站</a>
-                </div>
-           
-          
-                <div class="tool-card">
-                    <h3>文心一言</h3>
-                    <a class="glowing-button" href="https://yiyan.baidu.com/">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>360智脑</h3>
-                    <a class="glowing-button" href="https://ai.360.cn/?ref=aikxy.com">进入网站</a>
-                </div>
-            </div>
-            
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>序列猴子开放平台</h3>
-                    <a class="glowing-button" href="https://openapi.mobvoi.com/largemodel-application">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>天工大模型官网</h3>
-                    <a class="glowing-button" href="https://chat.singularity-ai.com/">进入网站</a>
-                </div>
-            
-            
-                <div class="tool-card">
-                    <h3>秘塔写作猫</h3>
-                    <a class="glowing-button" href="https://xiezuocat.com/#/">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>讯飞星火认知大模型</h3>
-                    <a class="glowing-button" href="https://xinghuo.xfyun.cn/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>通义大模型</h3>
-                    <a class="glowing-button" href="https://tongyi.aliyun.com/">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>MOSS</h3>
-                    <a class="glowing-button" href="https://moss.fastnlp.top/">进入网站</a>
-                </div>
-            
-            
-                <div class="tool-card">
-                    <h3>ChatGLM</h3>
-                    <a class="glowing-button" href="https://chatglm.cn/">进入网站</a>
-                </div>
-                <div class="tool-card">
-                    <h3>SenseChat</h3>
-                    <a class="glowing-button" href="https://chat.sensetime.com/wb/">进入网站</a>
-                </div>
-            </div>
-         </div>
+        
          
       <div class="categories-container">
         <div class="category" id="notice">
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>更新公告</h3>
-                    <p>V2.2.4版本（2023.9.3)更新公告：</p>
-                    <p>①优化了卡片排版</p>
-                    <p>②解决那部分官方浏览器进入网站只有视频的问题</p>
+                    <p>V2.2.5版本（2023.9.10)更新公告：</p>
+                    <p>①新增收藏文件夹模式</p>
+                    <p>②删除官方模型</p>
+                    <p>③调整了部分网站分类</p>
                     
                     
                 </div>
@@ -840,7 +780,7 @@
         <div id="footer">
         <p>copyright 2023 炽阳GPT（原炽阳001） 保留所有权利。</p>
         <p>QQ技术讨论群：906261857</p>
-        <p>网站部署于 GitHub Version: V2.2.4</p>
+        <p>网站部署于 GitHub Version: V2.2.5</p>
         <p><a href="certificate.html">免责声明</a></p>
         <div style="text-align:center; width:100%;">
           <marquee direction="up" scrollamount="1">
