@@ -243,6 +243,15 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .tool-logo img {
+    border-radius: 50%; /* 将图像变成圆形 */
+    width: 50px; /* 调整logo的宽度 */
+    height: 50px; /* 调整logo的高度 */
+    display: block; /* 确保图像居中 */
+    margin: 0 auto; /* 居中 */
+}
+
+
 
         
 /* 适用于平板和电脑设备 */
@@ -491,3 +500,11 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
         }
+        
+        .tool-logo img {
+    border-radius: 50%; /* 将图像变成圆形 */
+    width: 50px; /* 调整logo的宽度 */
+    height: 50px; /* 调整logo的高度 */
+    display: block; /* 确保图像居中 */
+    margin: 0 auto; /* 居中 */
+}
