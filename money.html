@@ -7,35 +7,111 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000; /* 宇宙背景，深色背景代表夜空 */
+            overflow: hidden; /* 隐藏超出视窗的内容 */
             text-align: center;
             margin: 0;
             padding: 0;
+        }
+
+        /* 星星点缀 */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        /* 星球效果 */
+        .planet {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: planet-float 5s ease-in-out infinite, change-color 10s ease-in-out infinite; /* 漂浮动画和颜色切换动画 */
+        }
+
+        /* 漂浮动画 */
+        @keyframes planet-float {
+            0% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* 颜色切换动画 */
+        @keyframes change-color {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                background: radial-gradient(circle, #ff0000, #00ff00, #0000ff); /* 渐变颜色，示例为红、绿、蓝 */
+            }
+            10%, 30%, 50%, 70%, 90% {
+                background: radial-gradient(circle, #00ff00, #0000ff, #ff0000); /* 渐变颜色，示例为绿、蓝、红 */
+            }
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明的白色容器背景 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
         }
 
         h1 {
             color: #333;
+            font-size: 24px;
         }
 
         p {
             color: #777;
+            font-size: 18px;
         }
 
         #wechat-code {
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.2s;
+        }
+
+        #wechat-code:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
+    <!-- 星星点缀 -->
+    <div class="star" style="left: 50%; top: 30%;"></div>
+    <div class="star" style="left: 70%; top: 90%;"></div>
+    <div class="star" style="left: 40%; top: 30%;"></div>
+    <div class="star" style="left: 20%; top: 28%;"></div>
+    <div class="star" style="left: 45%; top: 60%;"></div>
+    <div class="star" style="left: 15%; top: 15%;"></div>
+    <!-- 更多星星... -->
+
+    <!-- 星球效果 -->
+    <div class="planet" style="left: 20%; top: 50%;"></div>
+    <div class="planet" style="left: 70%; top: 70%;"></div>
+    <div class="planet" style="left: 30%; top: 45%;"></div>
+    <div class="planet" style="left: 90%; top: 75%;"></div>
+    <div class="planet" style="left: 55%; top: 25%;"></div>
+    <div class="planet" style="left: 80%; top: 30%;"></div>
+    
+    <!-- 更多星球... -->
+
     <div class="container">
         <h1>欢迎使用我的微信收款码</h1>
         <p>扫描下方的微信收款码进行付款。</p>
