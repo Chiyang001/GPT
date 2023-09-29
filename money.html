@@ -45,7 +45,22 @@
             }
         }
 
-  
+        /* 进度条样式 */
+        #loader-container {
+            width: 100%;
+            height: 4px; /* 进度条高度 */
+            background-color: #333; /* 进度条背景色 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+        #loader-bar {
+            width: 0; /* 初始宽度为0，加载时逐渐增加 */
+            height: 100%;
+            background-color: #00ff00; /* 进度条颜色 */
+        }
 
         .container {
             max-width: 600px;
@@ -94,13 +109,33 @@
     <div class="star" style="left: 15%; top: 15%;"></div>
     <!-- 更多星星... -->
 
-  
+    <!-- 进度条容器 -->
+    <div id="loader-container">
+        <div id="loader-bar"></div>
+    </div>
 
     <div class="container">
         <h1>欢迎使用我的微信收款码</h1>
         <p>扫描下方的微信收款码进行付款。</p>
         <p>网站部署在国外服务器，图片显示可能较慢</p>
-        <img id="wechat-code" src="mm_facetoface_collect_qrcode_1695976288631.png" alt="我的微信收款码">
+        <img id="wechat-code" src="mm_facetoface_collect_qrcode_1695976288631.png" alt="我的微信收款码" onload="loadComplete()">
     </div>
+
+    <script>
+        // 当图片加载完成后调用此函数
+        function loadComplete() {
+            // 隐藏加载进度条
+            document.querySelector('#loader-container').style.display = 'none';
+        }
+
+        // 监听图片加载进度
+        const wechatCodeImg = document.querySelector('#wechat-code');
+        wechatCodeImg.addEventListener('load', function () {
+            // 计算加载完成百分比
+            const loaderBar = document.querySelector('#loader-bar');
+            loaderBar.style.width = '100%';
+            setTimeout(loadComplete, 300); // 延迟一段时间后隐藏进度条，以确保用户看到100%的进度
+        });
+    </script>
 </body>
 </html>
