@@ -7,6 +7,8 @@
       }
     }
 
+
+
     // 页面加载时根据设备类型跳转
     window.onload = function() {
       var deviceType = detectDeviceType();
@@ -25,7 +27,7 @@
 
 function animateTitle() {
     const title = document.getElementById('title');
-    const titleText = "您的 GPT 工具";
+    const titleText = "ChatGPTHub";
     const cursor = document.createElement('span');
     cursor.id = 'cursor';
     cursor.textContent = '|';
@@ -65,7 +67,7 @@ function animateTitle() {
 
 function animateSubtitle() {
     const subtitle = document.getElementById('subtitle');
-    const subtitleText = "您的 GPT 动力工具一站式资源。";
+    const subtitleText = "碧血涌兮知识源，羽翼丰盈创新潮。聚慧结心免费舞，拂尘扬起智慧桥。";
     const cursor = document.createElement('span');
     cursor.id = 'cursor';
     cursor.textContent = '|';
@@ -99,6 +101,21 @@ function animateSubtitle() {
         }
     }, 100); // Type a character every 100ms
 }
+
+//这是弹窗代码
+// 获取弹窗和关闭按钮的元素
+var overlay = document.getElementById('overlay');
+var closeButton = document.getElementById('closeButton');
+
+// 当页面加载完毕后显示弹窗
+window.addEventListener('load', function() {
+    overlay.style.display = 'flex';
+});
+
+// 点击关闭按钮隐藏弹窗
+closeButton.addEventListener('click', function() {
+    overlay.style.display = 'none';
+});
 
 
 
@@ -312,4 +329,5 @@ updateFavoritesList();
 function goToFavoritePage() {
     window.location.href = 'favorite.html';
 }
+
 

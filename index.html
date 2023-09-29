@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
 
-    <title>您的 GPT 工具</title>
+    <title>ChatGPTHub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div id="header">
-        <h1 id="title" style="background: linear-gradient(to right, #8a4df5, #0d47a1); -webkit-background-clip: text; color: transparent;">您的 GPT 工具</h1>
+        <h1 id="title" style="background: linear-gradient(to right, #8a4df5, #0d47a1); -webkit-background-clip: text; color: transparent;">ChatGPTHub</h1>
         <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
@@ -39,18 +39,21 @@
 <button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
 <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
 <button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
+</div>
+        <div class="category-container">
+<button id="ai-button" class="category-button" onclick="toggleCategory('ai'); scrollToContent()">🌐AI合集</button>
 <button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📜更新公告</button>
 <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
+         </div>
 
 
 
-</div>
 
 
 <div class="featured-tools">
     <div class="tool-card">
         <h3>体验微软Bing AI</h3>
-        <p>点击进入微软Bing AI，尽情体验强大的GPT-4功能。</p>
+        <p>点击进入微软Bing AI，尽情体验强大的GPT-4功能。（最近似乎这个方法用不了了，还是老老实实用镜像网站吧）</p>
         <a class="purple-button" href="https://kdocs.cn/l/ce18FZLhAFG8?f=201">点击查看教程</a>
     </div>
     <div class="tool-card">
@@ -62,6 +65,13 @@
 </div>
  
     
+<div class="overlay" id="overlay">
+    <div class="popup">
+        <h2>网站公告</h2>
+        <p>网站已由原来的“您的GPT工具”更名为“ChatGPTHub”。</p>
+        <button id="closeButton">我已知晓</button>
+    </div>
+</div>
     
    
     
@@ -89,10 +99,20 @@
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
+                    <img src="logo/DM_20230929093630_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>伊莉思</h3>
+                    <p>算是非常良心的一个网站了，登录之后每三小时有50次的GPT4，并且支持官方GPT插件，可联网搜索， GPT3无限制。</p>
+                    <a class="glowing-button" href="https://ylsapp.com/">进入网站</a>
+                </div>      
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
                     <img src="logo/miya.png" alt="网站Logo">
                     </div>
                     <h3>MIYA</h3>
-                    <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是可能布局对手机版用户不是特别友好。</p>
+                    <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是现在可能无法正常使用。</p>
                     <a class="glowing-button" href="https://www.miyadns.com/#/index">进入网站</a>
                 </div>
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
@@ -195,6 +215,16 @@
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
+                    <img src="logo/DM_20230929093630_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>伊莉思</h3>
+                    <p>算是非常良心的一个网站了，登录之后每三小时有50次的GPT4，并且支持官方GPT插件，可联网搜索， GPT3无限制。</p>
+                    <a class="glowing-button" href="https://ylsapp.com/">进入网站</a>
+                </div>      
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
                     <img src="logo/wukong-ai-icon.png" alt="网站Logo">
                     </div>
                     <h3>小悟空</h3>
@@ -278,7 +308,7 @@
                     <img src="logo/miya.png" alt="网站Logo">
                     </div>
                     <h3>MIYA</h3>
-                    <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是可能布局对手机版用户不是特别友好。</p>
+                    <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是现在可能无法正常使用。</p>
                     <a class="glowing-button" href="https://www.miyadns.com/#/index">进入网站</a>
                 </div>
             </div>
@@ -954,17 +984,40 @@
             </div>
         </div>
             
-            
-            
-        
+        <div class="category" id="ai">
+        <p>这些网站都是从b站上面收集过来的AI合集网站，与该网站互补，可搭配使用</p>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/langlogo.png" alt="网站Logo">
+                    </div>
+                    <h3>1AIBOX</h3>
+                    <p>里面包含了各种比较优秀的已收录的GPT网站，种类齐全，比较推荐。</p>
+                    <a class="glowing-button" href="https://www.1aibox.com/">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/270a9bf59462f45b9bae07d7bbed287689c2a114.jpg" alt="网站Logo">
+                    </div>
+                    <h3>AIGC</h3>
+                    <p>小海疼来了UP主自制网站。</p>
+                    <a class="glowing-button" href="https://xht.aust001.com/">进入网站</a>
+                </div>
+            </div>
+        </div>
          
       <div class="categories-container">
         <div class="category" id="notice">
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>更新公告</h3>
-                    <p>V2.2.6版本（2023.9.24)更新公告：</p>
-                    <p>①上架了多个GPT镜像网站。</p>
+                    <p>V2.3.0版本（2023.9.29)更新公告：</p>
+                    <p>①新增一个类别--AI网站集合。</p>
+                    <p>②更新了一些网站。</p>
+                    <p>③网站正式命名为ChatGPTHub。</p>
+                    <p>④优化了一下网站排版</p>
+                    <p>⑤更新了免责声明</p>
+                    <p>⑥优化了一下UI界面</p>
                     
                     
                 </div>
@@ -978,7 +1031,7 @@
         <div id="footer">
         <p>copyright 2023 炽阳GPT（原炽阳001） 保留所有权利。</p>
         <p>QQ技术讨论群：906261857</p>
-        <p>网站部署于 GitHub Version: V2.2.7</p>
+        <p>网站部署于 GitHub Version: V2.3.0</p>
         <p><a href="certificate.html">免责声明</a></p>
         <div style="text-align:center; width:100%;">
           <marquee direction="up" scrollamount="1">
