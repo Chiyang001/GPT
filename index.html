@@ -20,6 +20,8 @@
         <source src="https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false" type="video/mp4">
         <!-- 你也可以在这里添加其他视频格式的 source 元素 -->
     </video>
+    
+    
     <button id="themeButton">切换主题</button>
     <div id="themeModal" class="modal">
         <div class="modal-content">
@@ -34,27 +36,33 @@
         <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
         <p>请先选择您需要的资源分类：</p>
         <div class="category-container">
-    
 <button id="commend-button" class="category-button" onclick="toggleCategory('commend'); scrollToContent()">👍炽阳推荐</button>
 <button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
 <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
-<button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
-</div>
+        </div>
         <div class="category-container">
+<button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
 <button id="ai-button" class="category-button" onclick="toggleCategory('ai'); scrollToContent()">🌐AI合集</button>
+<button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
+        </div>
+        <div class="category-container">
+        <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️其他工具</button>
 <button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📜更新公告</button>
 <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
-         </div>
-
+        </div>
+    </div>
 
 
 
 
 <div class="featured-tools">
     <div class="tool-card">
-        <h3>ChatGPT API_KEY免费领取</h3>
-        <p>这个网站可以每天有一美元的额度，足够使用一天了</p>
-        <a class="purple-button" href="https://faucet.openkey.cloud/">立即免费领取</a>
+        <main>
+        <div class="greeting-container">
+            <p id="greeting">点击按钮生成祝福语🌙</p>
+        </div>
+        <button id="generate-button">🥮生成祝福语</button>
+        </main>
     </div>
     <div class="tool-card">
         <h3>GPT破解提示词</h3>
@@ -65,14 +73,7 @@
 </div>
  
     
-<div class="overlay" id="overlay">
-    <div class="popup">
-        <h2>网站公告</h2>
-        <p>网站已由原来的“您的GPT工具”更名为“ChatGPTHub”。</p>
-        <button id="closeButton">我已知晓</button>
-    </div>
-</div>
-    
+
    
     
     <div class="featured-tools">
@@ -98,6 +99,68 @@
         <div class="category" id="commend">
         <p>这一分类下的网站均为免费实用网站，无需翻墙</p>
             <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>ChatBOTAI</h3>
+                    <p>GPT3无需登陆使用，无其他限制。</p>
+                    <a class="glowing-button" href="http://www.aiptl.com:3000/zh">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/DM_20230930091844_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>aiptl</h3>
+                    <p>GPT资讯站，文章不定期更新。</p>
+                    <a class="glowing-button" href="http://aiptl.com/">进入网站</a>
+                </div>            
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>GEEKGPT</h3>
+                    <p>GPT3无需登陆使用，虽然有GPT4，但是假的。</p>
+                    <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/DM_20230930091131_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>mixer box</h3>
+                    <p>破解官方GPT第一人。</p>
+                    <a class="glowing-button" href="https://chatai.mixerbox.com/chat">进入网站</a>
+                </div>            
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>多个GPT账号网站在线用</h3>
+                    <p>有1000多个GPT账号免费在线使用，无需登陆。</p>
+                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>FakeGPT</h3>
+                    <p>官方GPT加自制网站运行，完全是在官方基础上破解。</p>
+                    <a class="glowing-button" href="https://chat.zhile.io/auth/login?v=5">进入网站</a>
+                </div>            
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>AnirudhGPT</h3>
+                    <p>支持GPT、plugin插件、Claude、Palm。</p>
+                    <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/login">进入网站</a>
+                </div>      
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
                     <img src="logo/DM_20230929093630_001.svg" alt="网站Logo">
@@ -213,6 +276,60 @@
         </div>
         
         <div class="category" id="free">
+                <div class="featured-tools">
+                    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>ChatBOTAI</h3>
+                    <p>GPT3无需登陆使用，无其他限制。</p>
+                    <a class="glowing-button" href="http://www.aiptl.com:3000/zh">进入网站</a>
+                    </div>
+                   <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/DM_20230930091844_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>aiptl</h3>
+                    <p>GPT资讯站，文章不定期更新。</p>
+                    <a class="glowing-button" href="http://aiptl.com/">进入网站</a>
+                    </div>            
+                </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>GEEKGPT</h3>
+                    <p>GPT3无需登陆使用，虽然有GPT4，但是假的。</p>
+                    <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/DM_20230930091131_001.svg" alt="网站Logo">
+                    </div>
+                    <h3>mixer box</h3>
+                    <p>破解官方GPT第一人。</p>
+                    <a class="glowing-button" href="https://chatai.mixerbox.com/chat">进入网站</a>
+                </div>            
+            </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>多个GPT账号网站在线用</h3>
+                    <p>有1000多个GPT账号免费在线使用，无需登陆。</p>
+                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>FakeGPT</h3>
+                    <p>官方GPT加自制网站运行，完全是在官方基础上破解。</p>
+                    <a class="glowing-button" href="https://chat.zhile.io/auth/login?v=5">进入网站</a>
+                </div>            
+            </div>
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
@@ -221,7 +338,15 @@
                     <h3>伊莉思</h3>
                     <p>算是非常良心的一个网站了，登录之后每三小时有50次的GPT4，并且支持官方GPT插件，可联网搜索， GPT3无限制。</p>
                     <a class="glowing-button" href="https://ylsapp.com/">进入网站</a>
-                </div>      
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>AnirudhGPT</h3>
+                    <p>支持GPT、plugin插件、Claude、Palm。</p>
+                    <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/login">进入网站</a>
+                </div>            
             </div>
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
@@ -1005,24 +1130,78 @@
                     <a class="glowing-button" href="https://xht.aust001.com/">进入网站</a>
                 </div>
             </div>
+            <div class="featured-tools">
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/aigcloop-log4.svg" alt="网站Logo">
+                    </div>
+                    <h3>AIGC LOOP</h3>
+                    <p>GPT和其他网站合集。</p>
+                    <a class="glowing-button" href="https://aigcloop.com/">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <div class="tool-logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    </div>
+                    <h3>小海疼的网站</h3>
+                    <p>好像没有怎么更新了，先放在这里吧。</p>
+                    <a class="glowing-button" href="http://aust001.pythonanywhere.com/menu2">进入网站</a>
+                </div>
+            </div>
         </div>
+         
+    <div class="category" id="account">
+      <div class="featured-tools">
+        <div class="tool-card">
+        <h3>ChatGPT API_KEY免费领取</h3>
+        <p>这个网站可以每天有一美元的额度，足够使用一天了</p>
+        <a class="purple-button" href="https://faucet.openkey.cloud/">立即免费领取</a>
+        </div>
+        <div class="tool-card">
+        <h3>ChatGPT账号共享网站</h3>
+        <p>不定期更新免费的GPT和GPT plus账号，请合理使用，不要更改账号密码，或私自滥用！！</p>
+        <a class="purple-button" href="https://aiai.info/">免费获取账号</a>
+        </div>
+      </div>
+    </div>
+        
+    <div class="category" id="tool">
+      <div class="featured-tools">
+        <div class="tool-card">
+        <h3>获取免费二级域名</h3>
+        <p>这个网站可以免费获取二级域名，有100多次获取二级域名的机会，可绑定到自己的网站</p>
+        <a class="purple-button" href="http://domain.angid.eu.org/login">立即免费领取</a>
+        </div>
+        <div class="tool-card">
+        <h3>网站压力测试</h3>
+        <p>这个网站可以免费进行ddos或更高级的压力测试，仅供学习使用，严禁作违法使用，否则后果自负！！</p>
+        <a class="purple-button" href="https://stresser.su/login">点击此按钮表明你已同意以上说明</a>
+        </div>
+      </div>
+      <div class="featured-tools">
+        <div class="tool-card">
+        <h3>免费VPN梯子分享</h3>
+        <p>违法的事情作者不做，哼~🤪</p>
+        
+        </div>
+        
+      </div>
+    </div>
+         
+         
          
       <div class="categories-container">
         <div class="category" id="notice">
             <div class="featured-tools">
                 <div class="tool-card">
                     <h3>更新公告</h3>
-                    <p>V2.3.0版本（2023.9.29)更新公告：</p>
-                    <p>①新增一个类别--AI网站集合。</p>
-                    <p>②更新了一些网站。</p>
-                    <p>③网站正式命名为ChatGPTHub。</p>
-                    <p>④优化了一下网站排版</p>
-                    <p>⑤更新了免责声明</p>
-                    <p>⑥优化了一下UI界面</p>
-                    <p>⑦新增令牌领取网站</p>
-                    <p>⑧新增捐赠功能</p>
-                    <p>⑨新增免费APIkey获取网站</p>
-                    
+                    <p>V2.3.1版本（2023.9.30)更新公告：</p>
+                    <p>①新增两个类别--账号合集，其他工具。</p>
+                    <p>②更新了多个特别实用、免费的GPT网站。</p>
+                    <p>③新增中秋祝福语随机生成--中秋国庆节限定。</p>
+                    <p>④删除公告。</p>
+                    <p>⑤解决了进入网站有些官方浏览器有视频播放无法正常使用的问题</p>
+                  
                 </div>
             </div>
         </div>
@@ -1034,7 +1213,7 @@
         <div id="footer">
         <p>copyright 2023 炽阳GPT（原炽阳001） 保留所有权利。</p>
         <p>QQ技术讨论群：906261857</p>
-        <p>网站部署于 GitHub Version: V2.3.0</p>
+        <p>网站部署于 GitHub Version: V2.3.1</p>
         <p><a href="certificate.html">免责声明</a></p>
         <div style="text-align:center; width:100%;">
           <marquee direction="up" scrollamount="1">

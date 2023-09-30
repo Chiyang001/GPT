@@ -1,3 +1,71 @@
+const greetings = [
+    "中秋佳节，团圆幸福！",
+    "明月皎皎，中秋快乐！",
+    "团圆的时刻，幸福的时刻，中秋节快乐！",
+    "月圆人团圆，中秋节祝福你快乐安康！",
+    "吉祥如意，幸福美满，中秋快乐！",
+    "欢度中秋，幸福与你同在。",
+    "月到是秋分外明，又是一年团圆时。",
+    "中秋之夜，月明星稀，人团家圆，幸福美满。",
+    "圆圆的月儿皎洁清亮，团团的你我幸福欢笑。",
+    "家庭幸福又平安，幸福美满情更浓。",
+    "庆中秋，聚天伦，吃月饼，品美酒，团团圆圆更幸福。",
+    "月圆，人更圆，中秋佳节，幸福团圆。",
+    "明月如镜，团圆如意，愿你中秋快乐，幸福永远。",
+    "中秋之夜，团圆之夜，愿幸福与你同在。",
+    "秋水共长天一色，人间有情最牵绊。中秋团圆美如画，幸福平安儿女情。",
+    "月到是秋分外明，又是一年团圆时。愿你中秋快乐，幸福美满。",
+    "一轮明月送来幸福，一缕清风寄去问候。中秋节祝福你，幸福安康多多。",
+    "中秋佳节，家庭团圆，幸福美满。",
+    "明月千里寄相思，团圆中秋倍思亲。",
+    "中秋祝福：月圆人更圆，团圆幸福一辈子。",
+    "愿你中秋佳节，幸福美满，团圆快乐，事事顺心。",
+    "祝愿中秋节，团团圆圆，美满幸福，家庭和睦。",
+    "中秋佳节到了，祝你团团圆圆，幸福美满。",
+    "月圆情更圆，中秋佳节团圆时。",
+    "中秋节，愿你事事如意，幸福美满。",
+    "愿你中秋幸福美满，快乐无边，团团圆圆。",
+    "中秋之夜，明月共祝福，幸福美满。",
+    "月到中秋分外明，人团家圆笑开颜。",
+    "中秋佳节，美满团圆，幸福安康。",
+    "团团圆圆中秋节，美满幸福步步高。",
+    "月儿圆圆满满幸福团，愿你幸福久久长。",
+    "圆圆的月儿皎洁明，团团的你我情更深。",
+    "中秋佳节，团团圆圆，幸福美满。",
+    "祝中秋节快乐，团团圆圆，幸福美满。",
+    "中秋夜，月明星稀，团圆幸福无比。",
+    "中秋佳节，愿你幸福安康，团团圆圆。",
+    "圆月圆圆，团团圆圆，幸福围绕，笑容常驻。",
+    "明月高挂中秋夜，美满幸福无边界。",
+    "中秋佳节，家人团聚，幸福满满。",
+    "美丽的中秋夜，幸福的团圆夜。",
+    "中秋团圆的时刻，幸福美满的时刻。",
+    "中秋佳节，祝你团团圆圆，幸福满满。",
+    "中秋之夜，团团圆圆，幸福甜蜜。",
+    "月圆人团圆，幸福美满。",
+    "中秋夜，团团圆圆，幸福无限。",
+    "中秋佳节，愿你幸福如意，团团圆圆。",
+    "月圆人更圆，中秋团圆更幸福。",
+    "中秋之夜，团团圆圆，幸福无边。",
+    "中秋佳节，愿你幸福美满，团团圆圆。",
+    "明月如镜，团圆幸福。",
+    "中秋佳节，家人团聚，幸福满满。",
+    "月圆人团圆，幸福美满。",
+    "中秋之夜，团团圆圆，幸福甜蜜。",
+    "中秋佳节，祝你团团圆圆，幸福美满。"
+];
+
+const greetingElement = document.getElementById("greeting");
+const generateButton = document.getElementById("generate-button");
+
+generateButton.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * greetings.length);
+    const randomGreeting = greetings[randomIndex];
+    greetingElement.textContent = randomGreeting;
+});
+        
+            
+                
     // 检测设备类型
     function detectDeviceType() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -102,20 +170,7 @@ function animateSubtitle() {
     }, 100); // Type a character every 100ms
 }
 
-//这是弹窗代码
-// 获取弹窗和关闭按钮的元素
-var overlay = document.getElementById('overlay');
-var closeButton = document.getElementById('closeButton');
 
-// 当页面加载完毕后显示弹窗
-window.addEventListener('load', function() {
-    overlay.style.display = 'flex';
-});
-
-// 点击关闭按钮隐藏弹窗
-closeButton.addEventListener('click', function() {
-    overlay.style.display = 'none';
-});
 
 
 
@@ -191,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const defaultThemeButton = document.getElementById("defaultThemeButton");
     const purpleThemeButton = document.getElementById("purpleThemeButton");
     const autumnThemeButton = document.getElementById("autumnThemeButton");
-    const backgroundVideo = document.querySelector(".background-video");
+    const backgroundElement = document.querySelector(".background-video");
     const toolCards = document.querySelectorAll(".tool-card");
 
     let currentTheme = ''; // Track the current theme
@@ -216,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function setDefaultTheme() {
-        setBackgroundVideo("https://gitcode.net/qq_37688711/gpt/-/raw/main/studio_video_1693712338394.mp4?inline=false");
+        setBackgroundImage("black.jpg"); // Replace with your image URL
         resetToolCards();
         currentTheme = 'default';
     }
@@ -234,7 +289,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function setBackgroundVideo(videoSource) {
-        backgroundVideo.src = videoSource;
+        backgroundElement.style.backgroundImage = "none"; // Remove any background image
+        backgroundElement.src = videoSource; 
+    }
+
+    function setBackgroundImage(imageSource) {
+        backgroundElement.src = ""; // Remove the video source
+        backgroundElement.style.backgroundImage = `url(${imageSource})`;
+        backgroundElement.style.backgroundSize = "cover"; // Cover the entire element
+        backgroundElement.style.backgroundPosition = "center"; // Center the image
+        backgroundElement.style.backgroundRepeat = "no-repeat"; // Don't repeat the image
     }
 
     function resetToolCards() {
@@ -267,6 +331,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Set default theme on website load
     setDefaultTheme();
 });
+
 
 // 初始化收藏夹数据
 var favorites = [];
