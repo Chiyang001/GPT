@@ -280,7 +280,7 @@ button:hover {
 }
 
 .mooncake {
-    font-size: 2em;
+    font-size: 3em;  /* Adjusted the font-size */
     position: absolute;
     top: -5%;
     opacity: 0;
@@ -297,11 +297,10 @@ button:hover {
       opacity: 1;
     }
     100% {
-      transform: translateY(calc(4000% + 2em));  /* Adjusted the translateY value */
+      transform: translateY(calc(100% + 3em));
       opacity: 0;
     }
   }
-
 
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
@@ -587,7 +586,7 @@ button:hover {
 
 
   .mooncake {
-    font-size: 2em;
+    font-size: 3em;  /* Adjusted the font-size */
     position: absolute;
     top: -5%;
     opacity: 0;
@@ -604,7 +603,7 @@ button:hover {
       opacity: 1;
     }
     100% {
-      transform: translateY(calc(4000% + 2em));  /* Adjusted the translateY value */
+      transform: translateY(calc(100% + 3em));
       opacity: 0;
     }
   }

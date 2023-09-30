@@ -64,13 +64,13 @@ generateButton.addEventListener("click", () => {
     greetingElement.textContent = randomGreeting;
 });
         
-const numberOfMooncakes = 10;
+const numberOfMooncakes = 10;  /* Adjusted the number of mooncakes */
   for (let i = 0; i < numberOfMooncakes; i++) {
     const mooncake = document.createElement('div');
     mooncake.textContent = '🥮';
     mooncake.className = 'mooncake';
     mooncake.style.left = Math.random() * 100 + 'vw';
-    mooncake.style.animationDuration = Math.random() * 3 + 10 + 's';
+    mooncake.style.animationDuration = Math.random() * 5 + 5 + 's';
     mooncake.style.animationDelay = Math.random() * 2 + 's';
     document.body.appendChild(mooncake);
   }
