@@ -278,6 +278,31 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+
+.mooncake {
+    font-size: 2em;
+    position: absolute;
+    top: -5%;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(calc(4000% + 2em));  /* Adjusted the translateY value */
+      opacity: 0;
+    }
+  }
+
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -559,3 +584,27 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+
+
+  .mooncake {
+    font-size: 2em;
+    position: absolute;
+    top: -5%;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(calc(4000% + 2em));  /* Adjusted the translateY value */
+      opacity: 0;
+    }
+  }

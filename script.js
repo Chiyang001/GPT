@@ -64,7 +64,16 @@ generateButton.addEventListener("click", () => {
     greetingElement.textContent = randomGreeting;
 });
         
-            
+const numberOfMooncakes = 10;
+  for (let i = 0; i < numberOfMooncakes; i++) {
+    const mooncake = document.createElement('div');
+    mooncake.textContent = '🥮';
+    mooncake.className = 'mooncake';
+    mooncake.style.left = Math.random() * 100 + 'vw';
+    mooncake.style.animationDuration = Math.random() * 3 + 10 + 's';
+    mooncake.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(mooncake);
+  }
                 
     // 检测设备类型
     function detectDeviceType() {
