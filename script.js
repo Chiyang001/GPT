@@ -107,7 +107,7 @@ function animateTitle() {
     const titleText = "ChatGPTHub";
     const cursor = document.createElement('span');
     cursor.id = 'cursor';
-    cursor.textContent = '|';
+    cursor.textContent = '●';
     let cursorVisible = true;
 
     title.textContent = ''; // Clear the title initially
@@ -147,7 +147,7 @@ function animateSubtitle() {
     const subtitleText = "碧血涌兮知识源，羽翼丰盈创新潮。聚慧结心免费舞，拂尘扬起智慧桥。";
     const cursor = document.createElement('span');
     cursor.id = 'cursor';
-    cursor.textContent = '|';
+    cursor.textContent = '●';
     let cursorVisible = true;
 
     subtitle.textContent = ''; // Clear the subtitle initially
