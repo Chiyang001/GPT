@@ -115,6 +115,7 @@
             position: relative;
             overflow: hidden;
             text-decoration: none;
+           
         }
 
         .glowing-button::before {
@@ -251,19 +252,6 @@
     margin: 0 auto; /* 居中 */
 }
 
-.main {
-    padding: 20px;
-}
-
-.greeting-container {
-    background: linear-gradient(to bottom, #ffec40, #ffcc00);
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-
         
 button {
     background-color: #3498db;
@@ -279,29 +267,23 @@ button:hover {
     background-color: #2980b9;
 }
 
-.mooncake {
-    font-size: 3em;  /* Adjusted the font-size */
-    position: absolute;
-    top: -5%;
-    opacity: 0;
-    animation: fall linear infinite;
-  }
-  @keyframes fall {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(calc(100% + 3em));
-      opacity: 0;
-    }
+@keyframes gradient {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 100%; }
   }
 
+  .container {
+    width: 200px;
+    height: 50px; /* 更新高度以适应一行文本 */
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background-size: 200% 200%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradient 5s linear infinite; /* 设置渐变动画 */
+  }
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -420,6 +402,7 @@ button:hover {
             position: relative;
             overflow: hidden;
             text-decoration: none;
+            
         }
 
         .glowing-button::before {
@@ -557,19 +540,6 @@ button:hover {
     margin: 0 auto; /* 居中 */
 }
 
-.main {
-    padding: 20px;
-}
-
-.greeting-container {
-    background: linear-gradient(to bottom, #ffec40, #ffcc00);
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-
 button {
     background-color: #3498db;
     color: #fff;
@@ -584,26 +554,50 @@ button:hover {
     background-color: #2980b9;
 }
 
-
-  .mooncake {
-    font-size: 3em;  /* Adjusted the font-size */
-    position: absolute;
-    top: -5%;
-    opacity: 0;
-    animation: fall linear infinite;
+@keyframes gradient {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 100%; }
   }
-  @keyframes fall {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(calc(100% + 3em));
-      opacity: 0;
-    }
+
+  .container {
+    width: 250px;
+    height: 50px; /* 更新高度以适应一行文本 */
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background-size: 200% 200%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradient 5s linear infinite; /* 设置渐变动画 */
+  }
+  
+  @keyframes lightBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .light-container {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background-size: 200% 200%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .light-container::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    opacity: 0.8;
+    animation: lightBorder 5s linear infinite;
   }
