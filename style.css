@@ -284,6 +284,70 @@ button:hover {
     align-items: center;
     animation: gradient 5s linear infinite; /* 设置渐变动画 */
   }
+
+.leaderboard-container {
+            width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .leaderboard h2 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .leaderboard ul {
+            list-style: none;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        .leaderboard li {
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+
+        .leaderboard li:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+
+        .leaderboard li:nth-child(1),
+        .leaderboard li:nth-child(2),
+        .leaderboard li:nth-child(3) {
+            background-color: #ffcc00;
+        }
+
+        .leaderboard li .rank {
+            font-weight: bold;
+            width: 60px;
+            color: #000;
+        }
+
+        .leaderboard li .site-name {
+            flex-grow: 1;
+            margin: 0 10px;
+            font-weight: bold; /* 设置网站名称为粗体 */
+            color: #000; /* 设置文字颜色为黑色 */
+        }
+
+        .leaderboard li .enter-button {
+            background: linear-gradient(to bottom, #FF7F50, #FF6347); /* 渐变色背景 */
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px; /* 添加圆角 */
+        }
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -601,3 +665,67 @@ button:hover {
     opacity: 0.8;
     animation: lightBorder 5s linear infinite;
   }
+  
+.leaderboard-container {
+            width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            overflow-x: auto;
+        }
+
+        .leaderboard h2 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .leaderboard ul {
+            list-style: none;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        .leaderboard li {
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+
+        .leaderboard li:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+
+        .leaderboard li:nth-child(1),
+        .leaderboard li:nth-child(2),
+        .leaderboard li:nth-child(3) {
+            background-color: #ffcc00;
+        }
+
+        .leaderboard li .rank {
+            font-weight: bold;
+            width: 60px;
+            color: #000;
+        }
+
+        .leaderboard li .site-name {
+            flex-grow: 1;
+            margin: 0 10px;
+            font-weight: bold; /* 设置网站名称为粗体 */
+            color: #000; /* 设置文字颜色为黑色 */
+        }
+
+        .leaderboard li .enter-button {
+            background: linear-gradient(to bottom, #FF7F50, #FF6347); /* 渐变色背景 */
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px; /* 添加圆角 */
+        }
