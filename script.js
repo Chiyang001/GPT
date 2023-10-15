@@ -1,3 +1,27 @@
+// 搜索框代码
+function searchWebsites() {
+    var searchInput = document.getElementById('search-input').value.toLowerCase();
+    var toolCards = document.querySelectorAll('.tool-card');
+    var searchResultsContainer = document.getElementById('search-results');
+    searchResultsContainer.innerHTML = ''; // 清空之前的搜索结果
+
+    toolCards.forEach(function(card) {
+        var title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(searchInput)) {
+            var listItem = document.createElement('li');
+            listItem.className = 'search-result-item';
+            listItem.innerHTML = card.innerHTML; // 复制卡片内容到列表项
+            searchResultsContainer.appendChild(listItem);
+        }
+    });
+
+    if (searchResultsContainer.children.length === 0) {
+        searchResultsContainer.innerHTML = '<p>未找到匹配的结果。</p>';
+    }
+}
+
+
+
 // 获取所有的 .glowing-button 元素
     var buttons = document.querySelectorAll('.glowing-button');
 

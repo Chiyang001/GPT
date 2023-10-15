@@ -348,6 +348,41 @@ button:hover {
             border: none;
             border-radius: 5px; /* 添加圆角 */
         }
+        
+/* 样式可以根据你的网站设计进行定制 */
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#search-input {
+    padding: 5px;
+    width: 300px;
+    color: white; /* 设置输入框中的文字颜色为白色 */
+}
+
+
+
+.search-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-list li {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    color: black; /* 设置列表中的文字颜色为黑色 */
+}
+
+
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -729,3 +764,35 @@ button:hover {
             border: none;
             border-radius: 5px; /* 添加圆角 */
         }
+        
+/* 样式可以根据你的网站设计进行定制 */
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#search-input {
+    padding: 5px;
+    width: 300px;
+    color: white; /* 设置输入框中的文字颜色为白色 */
+}
+
+
+
+.search-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-list li {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    color: black; /* 设置列表中的文字颜色为黑色 */
+}
