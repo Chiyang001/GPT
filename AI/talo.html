@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>塔罗牌占卜</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .card-info {
+            font-size: 16px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>塔罗牌占卜</h1>
+    <h1>仅供娱乐，请勿当真</h1><h1>只抽一张卡哦~抽多了不准确</h1>
+    
+    <div class="container" id="card-container"></div>
+    <button onclick="drawCard()">抽取一张卡牌</button>
+
+    <script>
+        // 30张塔罗牌的信息
+        const tarotCards = [
+    { title: "塔罗牌1", info: "对自己保持坚定的信念，成功将会到来。" },
+    { title: "塔罗牌2", info: "现在是时候放松并享受生活的美好。" },
+    { title: "塔罗牌3", info: "勇敢地面对挑战，你将变得更加坚强。" },
+    { title: "塔罗牌4", info: "你的创意将在未来取得巨大的成就。" },
+    { title: "塔罗牌5", info: "与朋友和家人分享你的快乐时刻。" },
+    { title: "塔罗牌6", info: "珍惜爱情，它是生命中最宝贵的礼物。" },
+    { title: "塔罗牌7", info: "在决策之前要深思熟虑，远见将指引你。" },
+    { title: "塔罗牌8", info: "寻找内在平衡，会带来内心的和谐。" },
+    { title: "塔罗牌9", info: "别让过去的错误影响你的未来，继续前进。" },
+    { title: "塔罗牌10", info: "新的机遇即将到来，准备好迎接它。" },
+    { title: "塔罗牌11", info: "时机已经成熟，采取行动吧！" },
+    { title: "塔罗牌12", info: "快乐是内在的状态，从内心感受它。" },
+    { title: "塔罗牌13", info: "相信自己，你有无限的潜力。" },
+    { title: "塔罗牌14", info: "对待他人时要多一点耐心和善意。" },
+    { title: "塔罗牌15", info: "学会放手，让自然的流动来指引你。" },
+    { title: "塔罗牌16", info: "困难只是磨练你的机会，不要害怕。" },
+    { title: "塔罗牌17", info: "用智慧和冷静来解决问题。" },
+    { title: "塔罗牌18", info: "分享你的财富，回馈社会。" },
+    { title: "塔罗牌19", info: "爱和幸福在家庭中找到。" },
+    { title: "塔罗牌20", info: "今天的付出将为明天的奖励埋下种子。" },
+    { title: "塔罗牌21", info: "寻找灵感，你会发现它就在你身边。" },
+    { title: "塔罗牌22", info: "过去的经验塑造了你，但不要被它困住。" },
+    { title: "塔罗牌23", info: "追求自己的梦想，它们将成为现实。" },
+    { title: "塔罗牌24", info: "宇宙对你充满了爱和祝福。" },
+    { title: "塔罗牌25", info: "将焦点放在当下，享受此刻。" },
+    { title: "塔罗牌26", info: "坚信你的直觉，它会指引你正确的方向。" },
+    { title: "塔罗牌27", info: "接受生活的变化，它们是成长的机会。" },
+    { title: "塔罗牌28", info: "用善良和慷慨来改善世界。" },
+    { title: "塔罗牌29", info: "宁静的心境将带来内在的平和。" },
+    { title: "塔罗牌30", info: "好运正当时，抓住机会，追求梦想！" },
+    { title: "塔罗牌31", info: "在孤独中寻找内心的智慧。" },
+    { title: "塔罗牌32", info: "面对困难，不要害怕，你有能力克服。" },
+    { title: "塔罗牌33", info: "坚守自己的信仰，它将为你指引道路。" },
+    { title: "塔罗牌34", info: "与他人建立深刻的情感联系。" },
+    { title: "塔罗牌35", info: "勇往直前，成功在前方等待着你。" },
+    { title: "塔罗牌36", info: "保持乐观，积极的态度将改变一切。" },
+    { title: "塔罗牌37", info: "找到平衡，让生活更加和谐。" },
+    { title: "塔罗牌38", info: "用智慧来引导你的行动。" },
+    { title: "塔罗牌39", info: "不要忘记珍惜每一天的美好。" },
+    { title: "塔罗牌40", info: "与大自然建立联系，找到灵感。" },
+    { title: "塔罗牌41", info: "勇敢面对变化，它们将带来机会。" },
+    { title: "塔罗牌42", info: "对待他人要充满爱和善意。" },
+    { title: "塔罗牌43", info: "在寻找答案时，聆听内心的声音。" },
+    { title: "塔罗牌44", info: "用智慧和洞察力来解决问题。" },
+    { title: "塔罗牌45", info: "接受变化，它们将带来成长。" },
+    { title: "塔罗牌46", info: "分享你的才华，造福他人。" },
+    { title: "塔罗牌47", info: "内心的平和将带来安宁。" },
+    { title: "塔罗牌48", info: "充分利用好运，追求你的梦想。" },
+    { title: "塔罗牌49", info: "发掘潜力，实现梦想。" },
+    { title: "塔罗牌50", info: "宇宙充满爱和祝福，接受它们。" },
+    { title: "塔罗牌51", info: "专注当下，享受此刻的美好。" },
+    { title: "塔罗牌52", info: "相信你的直觉，它会指引你。" },
+    { title: "塔罗牌53", info: "变化是成长的机会，迎接它们。" },
+    { title: "塔罗牌54", info: "以善良和慷慨改善世界。" },
+    { title: "塔罗牌55", info: "平和的内心将带来宁静。" },
+    { title: "塔罗牌56", info: "抓住机会，追求你的梦想。" },
+    { title: "塔罗牌57", info: "探索未知，发现新的可能性。" },
+    { title: "塔罗牌58", info: "独立行动，实现自己的目标。" },
+    { title: "塔罗牌59", info: "在艺术中找到表达自己的方式。" },
+    { title: "塔罗牌60", info: "与家人建立更深刻的联系。" },
+    { title: "塔罗牌61", info: "勇于探索未知的领域。" },
+    { title: "塔罗牌62", info: "逆境中成长，不断进步。" },
+    { title: "塔罗牌63", info: "用爱来化解冲突，促进和平。" },
+    { title: "塔罗牌64", info: "感恩生活中的一切，珍惜每一刻。" },
+    { title: "塔罗牌65", info: "勇敢地表达自己，发挥潜力。" },
+    { title: "塔罗牌66", info: "与自然和谐共处，获得启发。" },
+    { title: "塔罗牌67", info: "在冒险中寻找生活的乐趣。" },
+    { title: "塔罗牌68", info: "通过自我反思，不断成长。" },
+    { title: "塔罗牌69", info: "克服障碍，实现目标。" },
+    { title: "塔罗牌70", info: "建立强大的社会联系，互相支持。" },
+    { title: "塔罗牌71", info: "积极面对生活的挑战，迎接成长。" },
+    { title: "塔罗牌72", info: "用智慧指导你的决策，迈向成功。" },
+    { title: "塔罗牌73", info: "传播爱与友善，影响他人的生活。" },
+    { title: "塔罗牌74", info: "在宁静中找到答案和启示。" },
+    { title: "塔罗牌75", info: "克服困难，实现个人成长。" },
+    { title: "塔罗牌76", info: "保持专注，实现自己的愿望。" },
+    { title: "塔罗牌77", info: "用心来实现梦想，创造美好未来。" },
+    { title: "塔罗牌78", info: "追求知识和智慧，扩展视野。" },
+    { title: "塔罗牌79", info: "与他人建立深刻的情感联系。" },
+    { title: "塔罗牌80", info: "寻找内心的和谐，实现平衡。" },
+    { title: "塔罗牌81", info: "以希望和信念为指导，前行。" },
+    { title: "塔罗牌82", info: "表达自己，分享内心的声音。" },
+    { title: "塔罗牌83", info: "在自我反思中寻找答案。" },
+    { title: "塔罗牌84", info: "勇敢面对生活的起伏，坚强成长。" },
+    { title: "塔罗牌85", info: "感恩并回馈社会，造福他人。" },
+    { title: "塔罗牌86", info: "与亲人建立深厚的亲情关系。" },
+    { title: "塔罗牌87", info: "突破束缚，勇敢探索新世界。" },
+    { title: "塔罗牌88", info: "逆境中找到坚韧，迈向成功。" },
+    { title: "塔罗牌89", info: "用爱来协调关系，促进和谐。" },
+    { title: "塔罗牌90", info: "珍惜每一刻，享受生活的美好。" },
+    { title: "塔罗牌91", info: "实现梦想，释放内在潜力。" },
+    { title: "塔罗牌92", info: "与大自然和谐共生，获得灵感。" },
+    { title: "塔罗牌93", info: "勇往直前，探索未知的领域。" },
+    { title: "塔罗牌94", info: "通过自我提升，不断超越。" },
+    { title: "塔罗牌95", info: "以宽容和理解来建立和平。" },
+    { title: "塔罗牌96", info: "感恩生活的每个阶段，珍惜经历。" },
+    { title: "塔罗牌97", info: "勇敢表达自己，实现自身目标。" },
+    { title: "塔罗牌98", info: "在创意中找到灵感，创造独特之处。" },
+    { title: "塔罗牌99", info: "与家人和朋友共同成长，互相支持。" },
+    { title: "塔罗牌100", info: "用坚持和勇气，追求自己的梦想。" }
+];
+
+
+        function drawCard() {
+            const randomIndex = Math.floor(Math.random() * tarotCards.length);
+            const selectedCard = tarotCards[randomIndex];
+
+            const cardContainer = document.getElementById("card-container");
+            cardContainer.innerHTML = `
+                <div class="card">
+                    <div class="card-title">${selectedCard.title}</div>
+                    <div class="card-info">${selectedCard.info}</div>
+                </div>
+            `;
+        }
+        
+    </script>
+</body>
+</html>
