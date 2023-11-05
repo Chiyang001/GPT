@@ -197,7 +197,7 @@ setInterval(displayUptime, 1); // 每毫秒更新一次计时器
 //点击按钮自动从顶部下滑一段距离
         function scrollToContent() {
     window.scrollTo({
-        top: 800, // 滚动的目标位置，这里设置为800px
+        top: 1000, // 滚动的目标位置，这里设置为1000px
         behavior: 'smooth' // 平滑滚动效果
     });
 }
