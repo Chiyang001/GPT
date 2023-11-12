@@ -13,29 +13,7 @@
     
 </head>
 <body>
-   <div id="menu-container">
-        <button id="menu-button" onclick="toggleMenu()">...</button>
-        <div id="menu">
-            <a onclick="showPopup('announcement-popup')">更新公告</a>
-            <a onclick="showPopup('version-popup')">网站版本</a>
-        </div>
-    </div>
-
-    <div id="announcement-popup" class="popup">
-        <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
-        <p>更新公告（2023.11）</p>
-        <p>⚪布局更新</p>
-        <p>1.右上角新增菜单栏</p>
-        <p>2.公告移至菜单栏</p>
-        <p>3.版本查询移至菜单栏</p>
-        <p>⚪界面更新</p>
-        <p>1.新增欢迎页面</p>
-    </div>
-
-    <div id="version-popup" class="popup">
-        <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.0.0</p>
-    </div>
+  
 
    <div class="scroll-to-top" id="scrollToTop">
      <span class="arrow"></span>
@@ -73,7 +51,7 @@
         </div>
         <div class="category-container">
         <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️其他工具</button>
-<button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📜公告/AI尝鲜</button>
+<button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📱AI尝鲜</button>
 <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
         </div>
     </div>
@@ -981,17 +959,7 @@
          
       <div class="categories-container">
         <div class="category" id="notice">
-            <div class="featured-tools">
-                <div class="tool-card">
-                    <h3>更新公告</h3>
-                    <p>V2.3.7版本（2023.11.4)更新公告：</p>
-                    <p>①新增部分好用的GPT网站，如讯飞星火</p>
-                    <p>②调整按钮顶部下滑大小</p>
-                  
-                  
-                </div>
-                
-            </div>
+            
                 <div class="tool-card">
                   <h3>AI 作诗</h3>
                  
