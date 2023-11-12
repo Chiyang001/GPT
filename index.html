@@ -43,38 +43,13 @@
   .button-container {
     display: flex;
     justify-content: center;
-  }
+    width: 300%; /* 设置为100%或者你需要的宽度值 */
+    max-width: 440px; /* 限制最大宽度，根据需要调整 */
+    margin-top: 10px; /* 根据需要调整上边距 */
+}
 
-  .button-wrapper {
-    position: relative;
-    display: inline-block;
-  }
 
-  .button-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
-  .button-wrapper button {
-    position: relative;
-    z-index: 1;
-    background-color: #3C46FF;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 200px; /* 调整按钮的宽度 */
-  }
-
-  .button-wrapper button:hover {
-    background-color: #0000FF;
-  }
 </style>
 
     <body class="antialiased">
@@ -252,30 +227,21 @@
                 <div class="relative flex grow flex-col items-center justify-between bg-white px-5 py-8 text-black dark:bg-black dark:text-white sm:rounded-t-[30px] md:rounded-none md:px-6">
                     <nav class="flex w-full justify-start px-6 pb-8 md:hidden md:px-6 lg:px-8">
                         <h1 aria-label="ChatGPT by OpenAI">
-                            <div class="flex cursor-default items-center text-[20px] font-bold leading-none lg:text-[22px]">
-                              <div>
-                              ChatGPTHUB <span class="font-circle">●</span>
-                              </div>
-                            </div></h1>
+                            <div id="typing-animation" class="flex cursor-default items-center text-[20px] font-bold leading-none lg:text-[22px]">
+    <div id="typed-text">ChatGPTHUB</div>
+    <span id="cursor" class="font-circle">●</span>
+</div></h1>
                     </nav>
-                    <div class="relative flex w-full grow flex-col items-center justify-center">
-    <h2 class="text-center text-[20px] leading-[1.2] md:text-[32px] md:leading-8">Get Started From Here</h2>
-    <div class="mt-5 w-full max-w-[440px]">
-        <div class="grid gap-x-3 gap-y-2 sm:grid-cols-2 sm:gap-y-0">
-            <div class="button-container flex justify-center"> <!-- Updated: Added "flex" and "justify-center" -->
-                <div class="button-wrapper">
-                    <button data-testid="login-button" onclick="redirectToMain()">
-                        <div class="relative -top-[1px]">
-                            立即体验
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-                        </div>
+                    <div class="relative flex w-full grow flex-col items-center justify-center">    
+                        <h2 class="text-center text-[20px] leading-[1.2] md:text-[32px] md:leading-8">Get Started</h2>
+                        <div class="mt-5 w-full max-w-[440px]">
+                            <div class="grid gap-x-3 gap-y-2 sm:grid-cols-2 sm:gap-y-0">
+                         
+  <button class="relative flex h-12 items-center justify-center rounded-md text-center text-base font-medium bg-[#3C46FF] text-[#fff] hover:bg-[#0000FF]" data-testid="login-button" onclick="redirectToMain()">
+                              <div class="relative -top-[1px]">
+                              进入网站
+                              </div></button>
+                        
                     </div>
                     <div class="mt-10 flex flex-col justify-center ">
                         <div class="flex justify-center text-[#cdcdcd] md:mb-3">
@@ -293,6 +259,40 @@
   function redirectToMain() {
     window.location.href = "main.html";
   }
+  // 获取需要的元素
+const typedTextElement = document.getElementById("typed-text");
+const cursorElement = document.getElementById("cursor");
+
+// 定义要显示的文本和光标
+const textToType = "ChatGPTHUB";
+const cursorSymbol = "●";
+
+// 设置初始文本和光标状态
+typedTextElement.innerText = "";
+cursorElement.style.opacity = "1";
+
+// 创建打字机动画函数
+function typeWriter(index) {
+    if (index < textToType.length) {
+        // 逐步显示文本
+        typedTextElement.innerText += textToType.charAt(index);
+        // 通过 setTimeout 调度下一个字符
+        setTimeout(() => typeWriter(index + 1), 100);
+    } else {
+        // 文本显示完毕后，光标闪烁
+        setTimeout(() => cursorBlink(), 500);
+    }
+}
+
+// 创建光标闪烁函数
+function cursorBlink() {
+    cursorElement.style.opacity = (cursorElement.style.opacity === "0") ? "1" : "0";
+    // 通过 setTimeout 调度下一次闪烁
+    setTimeout(() => cursorBlink(), 500);
+}
+
+// 启动打字机动画
+typeWriter(0);
 </script>
     </body>
     
