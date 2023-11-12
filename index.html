@@ -67,8 +67,8 @@
                     </nav>
                     <div class="flex flex-col text-[32px] leading-[1.2] md:text-[40px]" aria-hidden="true">
                         <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-100 translate-y-[calc(-50%-1em)] delay-[500ms]">
-                            <div class="relative font-bold">
-                              提供免费、实用的GPT网站合集
+                            <div id="computer-text" class="relative font-bold">
+                            提供免费、实用的GPT网站合集
                             </div>
                             <div class="relative">
                               <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
@@ -293,6 +293,29 @@ function cursorBlink() {
 
 // 启动打字机动画
 typeWriter(0);
+
+// 获取需要的元素
+const computerTextElement = document.getElementById("computer-text");
+
+// 定义要显示的文本和光标
+const computerTextToType = "提供免费、实用的GPT网站合集";
+
+// 设置初始文本
+computerTextElement.innerText = "";
+
+// 创建打字机动画函数
+function typeComputerText(index) {
+    if (index < computerTextToType.length) {
+        // 逐步显示文本
+        computerTextElement.innerText += computerTextToType.charAt(index);
+        // 通过 setTimeout 调度下一个字符
+        setTimeout(() => typeComputerText(index + 1), 100);
+    }
+}
+
+// 启动打字机动画
+typeComputerText(0);
+
 </script>
     </body>
     
