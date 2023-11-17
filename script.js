@@ -125,7 +125,7 @@ function animateTitle() {
 
 function animateSubtitle() {
     const subtitle = document.getElementById('subtitle');
-    const subtitleText = "碧血涌兮知识源，羽翼丰盈创新潮。聚慧结心免费舞，拂尘扬起智慧桥。";
+    const subtitleText = "用免费的网站，换取无价的体验。";
     const cursor = document.createElement('span');
     cursor.id = 'cursor';
     cursor.textContent = '●';
