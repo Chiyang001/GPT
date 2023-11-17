@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTHub帮助中心</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            font-size: 35px;
+            color: #333;
+        }
+        .search {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .question {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .question h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .answer {
+            display: none;
+            padding: 10px;
+            white-space: nowrap; /* Ensures text doesn't wrap */
+            overflow: hidden; /* Hides overflowed text */
+            animation: typing 1.5s steps(40, end), blink-caret 0.75s infinite;
+        }
+        .answer p {
+            margin: 5px 0;
+        }
+
+       
+    </style>
+    <script>
+    function toggleAnswer(question) {
+        var answer = question.nextElementSibling;
+        var computedStyle = window.getComputedStyle(answer);
+
+        if (computedStyle.display === "none" || answer.style.display === "") {
+            answer.style.display = "block";
+        } else {
+            answer.style.display = "none";
+        }
+    }
+
+    function search() {
+        var input, filter, questions, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        questions = document.getElementsByClassName('question');
+
+        for (i = 0; i < questions.length; i++) {
+            txtValue = questions[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                questions[i].style.display = '';
+            } else {
+                questions[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</head>
+<body>
+    <header>ChatGPTHub帮助中心</header>
+    <div class="search">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="搜索问题">
+    </div>
+    <div class="content">
+        <div class="question" onclick="toggleAnswer(this)">
+            <h3>Q：ChatGPTHub的捐助/破解提示词/B站/版本/公告按钮为什么不见了？</h3>
+        </div>
+        <div class="answer">
+            <p>这些按钮已经移至右上角更多按钮中，点击“更多”即可查看</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="question" onclick="toggleAnswer(this)">
+            <h3>Q：ChatGPTHUB网站会更新吗？</h3>
+        </div>
+        <div class="answer">
+            <p>会的，一般1-2周会对网站进行更新</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="question" onclick="toggleAnswer(this)">
+            <h3>Q：如何使用ChatGPTHub？</h3>
+        </div>
+        <div class="answer">
+            <p>要使用ChatGPTHub，请按照以下步骤操作：</p>
+           
+                <p>访问我们的网站：https://chiyang001.github.io/GPT/</p>
+                <p>选择你需要的类型</p>
+                <p>选择你需要的网站</p>
+                <p>你可以尽情的享受AI对话啦</p>
+           
+        </div>
+    </div>
+    <div class="content">
+        <div class="question" onclick="toggleAnswer(this)">
+            <h3>Q：如何联系ChatGPTHub开发者？</h3>
+        </div>
+        <div class="answer">
+            <p>要联系ChatGPTHub开发者，请加QQ好友：3083248889，并注明请求来源</p>
+        </div>
+    </div>
+</body>
+</html>

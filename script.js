@@ -1,3 +1,21 @@
+
+// 菜单栏代码
+function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function showPopup(popupId) {
+    document.getElementById(popupId).style.display = 'block';
+    document.getElementById('menu').style.display = 'none';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling of the background content
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling of the background content
+}
+
 // 搜索框代码
 function searchWebsites() {
     var searchInput = document.getElementById('search-input').value.toLowerCase();

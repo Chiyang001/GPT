@@ -1,1002 +1,322 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.oaistatic.com/_next/static/media/apple-touch-icon.59f2e898.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.oaistatic.com/_next/static/media/favicon-32x32.be48395e.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.oaistatic.com/_next/static/media/favicon-16x16.9b8dbb69.png">
+        <link rel="preconnect" href="https://cdn.oaistatic.com">
+        <meta name="title" content="ChatGPT: Get instant answers, find inspiration, learn something new">
+        <meta name="description" content="ChatGPT is a free-to-use AI system. Use it for engaging conversations, gain insights, automate tasks, and witness the future of AI, all in one place.">
+        <meta name="keywords" content="ai chat,ai,chap gpt,chat gbt,chat gpt 3,chat gpt login,chat gpt website,chat gpt,chat gtp,chat openai,chat,chatai,chatbot gpt,chatg,chatgpt login,chatgpt,gpt chat,open ai,openai chat,openai chatgpt,openai">
+        <meta property="og:description" content="A conversational AI system that listens, learns, and challenges">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="ChatGPT">
+        <meta property="og:image" content="https://cdn.oaistatic.com/_next/static/media/chatgpt-share-og.49cbbffe.png">
+        <meta property="og:url" content="https://chat.openai.com">
+        <meta name="apple-itunes-app" content="app-id=6448311069">
+        <title>ChatGPTHUB</title>
+        <meta name="description" content="ChatGPT is an AI-powered language model developed by OpenAI, capable of generating human-like text based on context and past conversations.">
+        <meta name="next-head-count" content="18">
+        <link rel="preload" href="https://cdn.oaistatic.com/_next/static/media/soehne-buch.13189857.woff2" as="font" crossorigin="">
+        <link rel="preload" href="https://cdn.oaistatic.com/_next/static/media/soehne-halbfett.977f1845.woff2" as="font" crossorigin="">
+        <link rel="preload" href="https://cdn.oaistatic.com/_next/static/media/soehne-mono-buch.de677af1.woff2" as="font" crossorigin="">
+        <link rel="preload" href="https://cdn.oaistatic.com/_next/static/media/soehne-mono-halbfett.b082e8e2.woff2" as="font" crossorigin="">
+        <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous">
+        <link rel="preload" href="https://cdn.oaistatic.com/_next/static/css/705d609c271e4900.css" as="style">
+        <link rel="stylesheet" href="https://cdn.oaistatic.com/_next/static/css/705d609c271e4900.css" data-n-g="">
+        <noscript data-n-css=""></noscript>
+        <script defer nomodule="" src="https://cdn.oaistatic.com/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/webpack-d272197eb95dfcd0.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/framework-10a404587b40544b.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/main-2c03450a19a7bc03.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/pages/_app-b14e291e0e3b1733.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/8504-99e757dd206d32ab.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/6848-c7c149c307b8bd17.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/chunks/pages/auth/login-d5cbe75e0941177f.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/wtXFegAXt6bfbujLr1e7S/_buildManifest.js" defer></script>
+        <script src="https://cdn.oaistatic.com/_next/static/wtXFegAXt6bfbujLr1e7S/_ssgManifest.js" defer></script>
+    </head>
+    <style>
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 300%; /* 设置为100%或者你需要的宽度值 */
+    max-width: 440px; /* 限制最大宽度，根据需要调整 */
+    margin-top: 10px; /* 根据需要调整上边距 */
+}
+
+
+
+</style>
+
+    <body class="antialiased">
+        <div id="__next">
+            <script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script>
+            <div class="flex min-h-full w-screen flex-col sm:supports-[min-height:100dvh]:min-h-[100dvh] md:grid md:grid-cols-2 lg:grid-cols-[60%_40%]">
+                <div class="relative hidden flex-1 flex-col justify-center px-5 pt-8 text-[#FE7600] dark:text-[#D292FF] md:flex md:px-6 md:py-[22px] lg:px-8">
+                    <nav class="left-0 top-8 flex w-full px-6 sm:absolute md:top-[22px] md:px-6 lg:px-8">
+                        <h1 aria-label="ChatGPT by OpenAI">
+                            <div id="typing-animation" class="flex cursor-default items-center text-[20px] font-bold leading-none lg:text-[22px]">
+                              <div>
+                              ChatGPTHUB <span class="font-circle">●</span>
+                              </div>
+                            </div></h1>
+                    </nav>
+                    <div class="flex flex-col text-[32px] leading-[1.2] md:text-[40px]" aria-hidden="true">
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-100 translate-y-[calc(-50%-1em)] delay-[500ms]">
+                            <div id="computer-text" class="relative font-bold">
+                            提供免费、实用的GPT网站合集
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">as</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> table</span><span class="inline transition-opacity duration-300 hidden"> of</span><span class="inline transition-opacity duration-300 hidden"> pros</span><span class="inline transition-opacity duration-300 hidden"> and</span><span class="inline transition-opacity duration-300 hidden"> cons</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">into</span><span class="inline transition-opacity duration-300 opacity-0"> three</span><span class="inline transition-opacity duration-300 opacity-0"> key</span><span class="inline transition-opacity duration-300 opacity-0"> points</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0 translate-y-[calc(-50%-1em-16px)]">
+                            <div class="relative font-bold">
+                              Recommend a dish
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">to</span><span class="inline transition-opacity duration-300 hidden"> bring</span><span class="inline transition-opacity duration-300 hidden"> to</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> pot</span><span class="inline transition-opacity duration-300 hidden">luck</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">to</span><span class="inline transition-opacity duration-300 opacity-0"> impress</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> date</span><span class="inline transition-opacity duration-300 opacity-0"> who</span><span class="inline transition-opacity duration-300 opacity-0">'s</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> pick</span><span class="inline transition-opacity duration-300 opacity-0">y</span><span class="inline transition-opacity duration-300 opacity-0"> eater</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Brainstorm names
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">for</span><span class="inline transition-opacity duration-300 hidden"> an</span><span class="inline transition-opacity duration-300 hidden"> orange</span><span class="inline transition-opacity duration-300 hidden"> cat</span><span class="inline transition-opacity duration-300 hidden"> we</span><span class="inline transition-opacity duration-300 hidden">'re</span><span class="inline transition-opacity duration-300 hidden"> adopting</span><span class="inline transition-opacity duration-300 hidden"> from</span><span class="inline transition-opacity duration-300 hidden"> the</span><span class="inline transition-opacity duration-300 hidden"> shelter</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">for</span><span class="inline transition-opacity duration-300 opacity-0"> my</span><span class="inline transition-opacity duration-300 opacity-0"> fantasy</span><span class="inline transition-opacity duration-300 opacity-0"> football</span><span class="inline transition-opacity duration-300 opacity-0"> team</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Help me debug
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">why</span><span class="inline transition-opacity duration-300 hidden"> the</span><span class="inline transition-opacity duration-300 hidden"> linked</span><span class="inline transition-opacity duration-300 hidden"> list</span><span class="inline transition-opacity duration-300 hidden"> appears</span><span class="inline transition-opacity duration-300 hidden"> empty</span><span class="inline transition-opacity duration-300 hidden"> after</span><span class="inline transition-opacity duration-300 hidden"> I</span><span class="inline transition-opacity duration-300 hidden">'ve</span><span class="inline transition-opacity duration-300 hidden"> reversed</span><span class="inline transition-opacity duration-300 hidden"> it</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">a</span><span class="inline transition-opacity duration-300 opacity-0"> Python</span><span class="inline transition-opacity duration-300 opacity-0"> script</span><span class="inline transition-opacity duration-300 opacity-0"> autom</span><span class="inline transition-opacity duration-300 opacity-0">ating</span><span class="inline transition-opacity duration-300 opacity-0"> daily</span><span class="inline transition-opacity duration-300 opacity-0"> reports</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Draft an email
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">to</span><span class="inline transition-opacity duration-300 hidden"> request</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> quote</span><span class="inline transition-opacity duration-300 hidden"> from</span><span class="inline transition-opacity duration-300 hidden"> local</span><span class="inline transition-opacity duration-300 hidden"> pl</span><span class="inline transition-opacity duration-300 hidden">umbers</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">request</span><span class="inline transition-opacity duration-300 opacity-0">ing</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> deadline</span><span class="inline transition-opacity duration-300 opacity-0"> extension</span><span class="inline transition-opacity duration-300 opacity-0"> for</span><span class="inline transition-opacity duration-300 opacity-0"> my</span><span class="inline transition-opacity duration-300 opacity-0"> project</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Write a thank-you note
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">to</span><span class="inline transition-opacity duration-300 hidden"> my</span><span class="inline transition-opacity duration-300 hidden"> interviewer</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">to</span><span class="inline transition-opacity duration-300 opacity-0"> our</span><span class="inline transition-opacity duration-300 opacity-0"> babys</span><span class="inline transition-opacity duration-300 opacity-0">itter</span><span class="inline transition-opacity duration-300 opacity-0"> for</span><span class="inline transition-opacity duration-300 opacity-0"> the</span><span class="inline transition-opacity duration-300 opacity-0"> last</span><span class="inline transition-opacity duration-300 opacity-0">-</span><span class="inline transition-opacity duration-300 opacity-0">minute</span><span class="inline transition-opacity duration-300 opacity-0"> help</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Suggest fun activities
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">for</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> family</span><span class="inline transition-opacity duration-300 hidden"> of</span><span class="inline transition-opacity duration-300 hidden"> 4</span><span class="inline transition-opacity duration-300 hidden"> to</span><span class="inline transition-opacity duration-300 hidden"> do</span><span class="inline transition-opacity duration-300 hidden"> indoors</span><span class="inline transition-opacity duration-300 hidden"> on</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> rainy</span><span class="inline transition-opacity duration-300 hidden"> day</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">for</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> team</span><span class="inline transition-opacity duration-300 opacity-0">-</span><span class="inline transition-opacity duration-300 opacity-0">building</span><span class="inline transition-opacity duration-300 opacity-0"> day</span><span class="inline transition-opacity duration-300 opacity-0"> with</span><span class="inline transition-opacity duration-300 opacity-0"> remote</span><span class="inline transition-opacity duration-300 opacity-0"> employees</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Improve my post
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">for</span><span class="inline transition-opacity duration-300 hidden"> hiring</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> store</span><span class="inline transition-opacity duration-300 hidden"> associate</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">for</span><span class="inline transition-opacity duration-300 opacity-0"> selling</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> used</span><span class="inline transition-opacity duration-300 opacity-0"> vacuum</span><span class="inline transition-opacity duration-300 opacity-0"> in</span><span class="inline transition-opacity duration-300 opacity-0"> good</span><span class="inline transition-opacity duration-300 opacity-0"> condition</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Plan a trip
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">to</span><span class="inline transition-opacity duration-300 hidden"> experience</span><span class="inline transition-opacity duration-300 hidden"> Seoul</span><span class="inline transition-opacity duration-300 hidden"> like</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> local</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">to</span><span class="inline transition-opacity duration-300 opacity-0"> see</span><span class="inline transition-opacity duration-300 opacity-0"> the</span><span class="inline transition-opacity duration-300 opacity-0"> northern</span><span class="inline transition-opacity duration-300 opacity-0"> lights</span><span class="inline transition-opacity duration-300 opacity-0"> in</span><span class="inline transition-opacity duration-300 opacity-0"> Norway</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Give me ideas
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">for</span><span class="inline transition-opacity duration-300 hidden"> what</span><span class="inline transition-opacity duration-300 hidden"> to</span><span class="inline transition-opacity duration-300 hidden"> do</span><span class="inline transition-opacity duration-300 hidden"> with</span><span class="inline transition-opacity duration-300 hidden"> my</span><span class="inline transition-opacity duration-300 hidden"> kids</span><span class="inline transition-opacity duration-300 hidden">'</span><span class="inline transition-opacity duration-300 hidden"> art</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">for</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> customer</span><span class="inline transition-opacity duration-300 opacity-0"> loyalty</span><span class="inline transition-opacity duration-300 opacity-0"> program</span><span class="inline transition-opacity duration-300 opacity-0"> in</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> small</span><span class="inline transition-opacity duration-300 opacity-0"> bookstore</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0">
+                            <div class="relative font-bold">
+                              Write a text
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">that</span><span class="inline transition-opacity duration-300 hidden"> goes</span><span class="inline transition-opacity duration-300 hidden"> with</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> kitten</span><span class="inline transition-opacity duration-300 hidden"> gif</span><span class="inline transition-opacity duration-300 hidden"> for</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> friend</span><span class="inline transition-opacity duration-300 hidden"> having</span><span class="inline transition-opacity duration-300 hidden"> a</span><span class="inline transition-opacity duration-300 hidden"> rough</span><span class="inline transition-opacity duration-300 hidden"> day</span><span class="inline-block font-circle delay-[300ms]">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">asking</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> friend</span><span class="inline transition-opacity duration-300 opacity-0"> to</span><span class="inline transition-opacity duration-300 opacity-0"> be</span><span class="inline transition-opacity duration-300 opacity-0"> my</span><span class="inline transition-opacity duration-300 opacity-0"> plus</span><span class="inline transition-opacity duration-300 opacity-0">-</span><span class="inline transition-opacity duration-300 opacity-0">one</span><span class="inline transition-opacity duration-300 opacity-0"> at</span><span class="inline transition-opacity duration-300 opacity-0"> a</span><span class="inline transition-opacity duration-300 opacity-0"> wedding</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 flex w-full flex-col px-5 transition-[transform,opacity] duration-500 md:pl-6 md:pr-8 lg:pl-8 lg:pr-10 opacity-0 translate-y-[calc(-50%-1em+16px)]">
+                            <div class="relative font-bold">
+                              Help me pick
+                            </div>
+                            <div class="relative">
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 hidden">a</span><span class="inline transition-opacity duration-300 hidden"> gift</span><span class="inline transition-opacity duration-300 hidden"> for</span><span class="inline transition-opacity duration-300 hidden"> my</span><span class="inline transition-opacity duration-300 hidden"> dad</span><span class="inline transition-opacity duration-300 hidden"> who</span><span class="inline transition-opacity duration-300 hidden"> loves</span><span class="inline transition-opacity duration-300 hidden"> fishing</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                              <div class="absolute left-0 top-0 max-w-[650px] transition-opacity duration-300">
+                              <span class="inline transition-opacity duration-300 opacity-0">an</span><span class="inline transition-opacity duration-300 opacity-0"> outfit</span><span class="inline transition-opacity duration-300 opacity-0"> that</span><span class="inline transition-opacity duration-300 opacity-0"> will</span><span class="inline transition-opacity duration-300 opacity-0"> look</span><span class="inline transition-opacity duration-300 opacity-0"> good</span><span class="inline transition-opacity duration-300 opacity-0"> on</span><span class="inline transition-opacity duration-300 opacity-0"> camera</span><span class="inline-block font-circle delay-[300ms] scale-0 transition-transform duration-300">●</span>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex grow flex-col items-center justify-between bg-white px-5 py-8 text-black dark:bg-black dark:text-white sm:rounded-t-[30px] md:rounded-none md:px-6">
+                    <nav class="flex w-full justify-start px-6 pb-8 md:hidden md:px-6 lg:px-8">
+                        <h1 aria-label="ChatGPT by OpenAI">
+                            <div id="typing-animation" class="flex cursor-default items-center text-[20px] font-bold leading-none lg:text-[22px]">
+    <div id="typed-text">ChatGPTHUB</div>
+    <span id="cursor" class="font-circle">●</span>
+</div></h1>
+                    </nav>
+                    <div class="relative flex w-full grow flex-col items-center justify-center">    
+                       
+                        <div class="mt-5 w-full max-w-[440px]">
+                            <div class="grid gap-x-3 gap-y-2 sm:grid-cols-2 sm:gap-y-0">
+                         
+  <button class="relative flex h-12 items-center justify-center rounded-md text-center text-base font-medium bg-[#3C46FF] text-[#fff] hover:bg-[#0000FF]" data-testid="login-button" onclick="redirectToMain()">
+                              <div class="relative -top-[1px]">
+                              进入网站
+                              </div></button>
+                        
+                    </div>
+                    <div class="mt-10 flex flex-col justify-center ">
+                        <div class="flex justify-center text-[#cdcdcd] md:mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1180 320" width="118" height="32" fill="currentColor" class="h-[22px] w-auto">
+                              
+                            </svg>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="absolute left-0 right-0 top-0 z-[2]"></div>
+        </div>
+        <script>
+  function redirectToMain() {
+    window.location.href = "main.html";
+  }
+  // 获取需要的元素
+const typedTextElement = document.getElementById("typed-text");
+const cursorElement = document.getElementById("cursor");
+
+// 定义要显示的文本和光标
+const textToType = "ChatGPTHUB";
+const cursorSymbol = "●";
+
+// 设置初始文本和光标状态
+typedTextElement.innerText = "";
+cursorElement.style.opacity = "1";
+
+// 创建打字机动画函数
+function typeWriter(index) {
+    if (index < textToType.length) {
+        // 逐步显示文本
+        typedTextElement.innerText += textToType.charAt(index);
+        // 通过 setTimeout 调度下一个字符
+        setTimeout(() => typeWriter(index + 1), 100);
+    } else {
+        // 文本显示完毕后，光标闪烁
+        setTimeout(() => cursorBlink(), 500);
+    }
+}
+
+// 创建光标闪烁函数
+function cursorBlink() {
+    cursorElement.style.opacity = (cursorElement.style.opacity === "0") ? "1" : "0";
+    // 通过 setTimeout 调度下一次闪烁
+    setTimeout(() => cursorBlink(), 500);
+}
+
+// 启动打字机动画
+typeWriter(0);
+
+// 获取需要的元素
+const computerTextElement = document.getElementById("computer-text");
+
+// 定义要显示的文本和光标
+const computerTextToType = "提供免费、实用的GPT网站合集";
+
+// 设置初始文本
+computerTextElement.innerText = "";
+
+// 创建打字机动画函数
+function typeComputerText(index) {
+    if (index < computerTextToType.length) {
+        // 逐步显示文本
+        computerTextElement.innerText += computerTextToType.charAt(index);
+        // 通过 setTimeout 调度下一个字符
+        setTimeout(() => typeComputerText(index + 1), 100);
+    }
+}
+
+// 启动打字机动画
+typeComputerText(0);
+
+</script>
+    </body>
     
-
-    <meta charset="UTF-8">
-
-    <title>ChatGPTHub</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-</head>
-<body>
-  
-
-   <div class="scroll-to-top" id="scrollToTop">
-     <span class="arrow"></span>
-   </div>
-   <video class="background-video" autoplay loop muted>
-        <source src="https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false" type="video/mp4">
-        <!-- 你也可以在这里添加其他视频格式的 source 元素 -->
-    </video>
-    
-    
-    <button id="themeButton">切换主题</button>
-    <div id="themeModal" class="modal">
-        <div class="modal-content">
-            <h2 style="background: linear-gradient(to right, blue, purple); -webkit-background-clip: text; color: transparent;">选择主题</h2>
-            <button id="defaultThemeButton">默认主题</button>
-            <button id="purpleThemeButton">紫色动画主题</button>
-            <button id="autumnThemeButton">秋日主题</button>
-        </div>
-    </div>
-    <div id="header">
-        <h1 id="title" style="background: linear-gradient(to right, #8a4df5, #0d47a1); -webkit-background-clip: text; color: transparent;">ChatGPTHub</h1>
-        <p id="subtitle">您的 GPT 动力工具一站式资源。</p>
-        <div class="container">
-        <p>请先选择您需要的资源分类：</p>
-        </div>
-        <div class="category-container">
-<button id="commend-button" class="category-button" onclick="toggleCategory('commend'); scrollToContent()">📊排行榜</button>
-<button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
-<button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
-        </div>
-        <div class="category-container">
-<button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
-<button id="ai-button" class="category-button" onclick="toggleCategory('ai'); scrollToContent()">🌐AI合集</button>
-<button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
-        </div>
-        <div class="category-container">
-        <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️其他工具</button>
-<button id="notice-button" class="category-button" onclick="toggleCategory('notice'); scrollToContent()">📱AI尝鲜</button>
-<button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
-        </div>
-    </div>
-
-
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="搜索网站">
-        <button onclick="searchWebsites()">搜索</button>
-    </div>
-    <ul id="search-results" class="search-list">
-        <!-- 这里将显示搜索结果 -->
-    </ul>
-
-<div class="featured-tools">
-  
-    <div class="tool-card">
-        <h3>GPT破解提示词</h3>
-        <p>想要体验不一样的GPT，来这里就对了。</p>
-        <a class="purple-button" href="https://chiyang001.github.io/GPT/prompt/">点击查看教程</a>
-    </div>
-    <div class="tool-card">
-        <h3>NewBing国内版</h3>
-        <p>不需要梯子，密码是：fishhome666，如果有遇到提示反复人机验证或时无效域，请尝试点击右上角的一键重置按钮</p>
-        <a class="purple-button" href="https://newbing.fishhome.link">立即体验</a>
-    </div>
-        </div>
-</div>
- 
-    
-
-   
-    
-    <div class="featured-tools">
-        <div class="tool-card">
-            <h3>开发者B站</h3>
-            <p>每一个优秀的开发者都有一个优秀的传播平台。</p>
-            <a class="glowing-button" href="https://m.bilibili.com/space/404891612">进入网站</a>
-        </div>
-        <div class="tool-card">
-            <h3>捐助开发者</h3>
-            <p>本网站属于公益项目，没有其他收入来源，如果您觉得这个网站还行，可以尝试进行捐助以支持开发者，开发者将不胜感激🤗</p>
-            <a class="glowing-button" href="money.html">捐赠爱心</a>
-        </div>
-    </div>
-     
-
-        
-   
-        
-     
-     <div class="categories-container">
-    
-        <div class="category" id="commend">
-
-    <div class="leaderboard">
-        <h2>排行榜</h2>
-        <ul>
-            <li>
-                <span class="rank">1</span>
-                <span class="site-name">小叮当GPT</span>
-                <span class="enter-button" onclick="location.href='http://chat.qaqgpt.com/chat'">进入</span>
-            </li>
-            <li>
-                <span class="rank">2</span>
-                <span class="site-name">清华GPT</span>
-                <span class="enter-button" onclick="location.href='http://www.zaiwen.top/#/'">进入</span>
-            </li>
-            <li>
-                <span class="rank">3</span>
-                <span class="site-name">ChatGPT-T</span>
-                <span class="enter-button" onclick="location.href='https://chatgptt.co/chat'">进入</span>
-            </li>
-            <li>
-                <span class="rank">4</span>
-                <span class="site-name">伊莉思</span>
-                <span class="enter-button" onclick="location.href='https://ylsapp.com/'">进入</span>
-            </li>
-            <li>
-                <span class="rank">5</span>
-                <span class="site-name">FeelGPT</span>
-                <span class="enter-button" onclick="location.href='https://feel-gpt.top/chat'">进入</span>
-            </li>
-            <li>
-                <span class="rank">6</span>
-                <span class="site-name">FakeGPT</span>
-                <span class="enter-button" onclick="location.href='https://chat.zhile.io/auth/login?v=5'">进入</span>
-            </li>
-            <li>
-                <span class="rank">7</span>
-                <span class="site-name">GeekGPT Chat</span>
-                <span class="enter-button" onclick="location.href='https://chat.geekgpt.org/'">进入</span>
-            </li>
-            <li>
-                <span class="rank">8</span>
-                <span class="site-name">ChatGPT Plus</span>
-                <span class="enter-button" onclick="location.href='https://chat.tinycms.xyz:3002'">进入</span>
-            </li>
-            <li>
-                <span class="rank">9</span>
-                <span class="site-name">讯飞星火</span>
-                <span class="enter-button" onclick="location.href='https://xinghuo.xfyun.cn/'">进入</span>
-            </li>
-        </ul>
-    </div>
-        </div>
-     </div>
-     
-     
-     
-     
-     
-<div class="category" id="textGeneration">
-  <div class="categories-container">
-    
-    
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>Easy Chat</h3>
-        <p>GPT聊天服务。</p>
-        <a class="glowing-button" href="https://free.easychat.work">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>小叮当GPT</h3>
-        <p>公益项目，注册账号可免费使用，支持GPT4和GPT3.5！强烈推荐！</p>
-        <a class="glowing-button" href="http://chat.qaqgpt.com/chat">进入网站</a>
-    </div>
-</div>
-
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/xunfei.svg" alt="网站Logo">
-        </div>
-        <h3>讯飞星火</h3>
-        <p>算是国内比较好用的大模型了。</p>
-        <a class="glowing-button" href="https://xinghuo.xfyun.cn/">进入网站</a>
-    </div>
-   
-</div>
-
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/duoGPT.png" alt="网站Logo">
-        </div>
-        <h3>ChatGPT Duo</h3>
-        <p>国外GPT，可以使用。</p>
-        <a class="glowing-button" href="https://chatgptduo.com/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>Free2GPT Chat</h3>
-        <p>免费GPT聊天服务。</p>
-        <a class="glowing-button" href="https://chatp.free2gpt.xyz/">进入网站</a>
-    </div>
-</div>
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>AIGC Chat</h3>
-        <p>AI聊天服务。</p>
-        <a class="glowing-button" href="https://chat.aigc101.net/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>GeekGPT Chat</h3>
-        <p>GPT聊天服务。</p>
-        <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
-    </div>
-</div>
-
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>LeadsCloud Chat</h3>
-        <p>加载需要稍等一下。</p>
-        <a class="glowing-button" href="https://chat.leadscloud.xyz/">进入网站</a>
-    </div>
-   
-</div>
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/gptgo.webp" alt="网站Logo">
-        </div>
-        <h3>GPT Go</h3>
-        <p>GPT聊天服务，国外网站。</p>
-        <a class="glowing-button" href="http://gptgo.ai/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/powerchat.png" alt="网站Logo">
-        </div>
-        <h3>PowerChat</h3>
-        <p>强大的聊天平台，国外免费AI。</p>
-        <a class="glowing-button" href="https://powerchat.top/">进入网站</a>
-    </div>
-</div>
-
-
-<div class="featured-tools">
-   
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/chatfree.png" alt="网站Logo">
-        </div>
-        <h3>ChatFree</h3>
-        <p>柴特鲁网站。</p>
-        <a class="glowing-button" href="https://www.chatfree.cc/">进入网站</a>
-    </div>
-</div>
-<div class="featured-tools">
-   
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>ChatZ Free2GPT</h3>
-        <p>Free2GPT聊天服务。</p>
-        <a class="glowing-button" href="https://chatz.free2gpt.xyz/">进入网站</a>
-    </div>
-</div>
-
-                <div class="featured-tools">
-                    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>ChatBOTAI</h3>
-                    <p>GPT3无需登陆使用，无其他限制。</p>
-                    <a class="glowing-button" href="http://www.aiptl.com:3000/zh">进入网站</a>
-                    </div>
-                   <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/DM_20230930091844_001.svg" alt="网站Logo">
-                    </div>
-                    <h3>aiptl</h3>
-                    <p>GPT资讯站，文章不定期更新。</p>
-                    <a class="glowing-button" href="http://aiptl.com/">进入网站</a>
-                    </div>            
-                </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>GEEKGPT</h3>
-                    <p>GPT3无需登陆使用，虽然有GPT4，但是假的。</p>
-                    <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/DM_20230930091131_001.svg" alt="网站Logo">
-                    </div>
-                    <h3>mixer box</h3>
-                    <p>破解官方GPT第一人。</p>
-                    <a class="glowing-button" href="https://chatai.mixerbox.com/chat">进入网站</a>
-                </div>            
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>多个GPT账号网站在线用</h3>
-                    <p>有1000多个GPT账号免费在线使用，无需登陆。</p>
-                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>FakeGPT</h3>
-                    <p>官方GPT加自制网站运行，完全是在官方基础上破解。</p>
-                    <a class="glowing-button" href="https://chat.zhile.io/auth/login?v=5">进入网站</a>
-                </div>            
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/DM_20230929093630_001.svg" alt="网站Logo">
-                    </div>
-                    <h3>伊莉思</h3>
-                    <p>算是非常良心的一个网站了，登录之后每三小时有50次的GPT4，并且支持官方GPT插件，可联网搜索， GPT3无限制。</p>
-                    <a class="glowing-button" href="https://ylsapp.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>AnirudhGPT</h3>
-                    <p>支持GPT、plugin插件、Claude、Palm。</p>
-                    <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/login">进入网站</a>
-                </div>            
-            </div>
-           
-          
-              
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/modelscope-icon.png" alt="网站Logo">
-                    </div>
-                    <h3>魔搭GPT</h3>
-                    <p>阿里达摩院推出的大小模型协同的智能助手，具备作诗、绘画、视频生成、语音播放等多模态能力</p>
-                    <a class="glowing-button" href="https://www.modelscope.cn/studios/damo/ModelScopeGPT/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/99661-chato.cn.png" alt="网站Logo">
-                    </div>
-                    <h3>Chato</h3>
-                    <p>基于AI技术,轻松创建对话机器人</p>
-                    <a class="glowing-button" href="https://chato.cn/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/79c2a-replika.com.png" alt="网站Logo">
-                    </div>
-                    <h3>Replika</h3>
-                    <p>AI对话陪伴工具</p>
-                    <a class="glowing-button" href="https://replika.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/3a360-tiangong.kunlun.com.png" alt="网站Logo">
-                    </div>
-                    <h3>天工AI助手</h3>
-                    <p>昆仑万维与奇点智源联合研发的对标ChatGPT的大语言模型</p>
-                    <a class="glowing-button" href="https://tiangong.kunlun.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/清华GPT.png" alt="网站Logo">
-                    </div>
-                    <h3>清华GPT</h3>
-                    <p>非常推荐使用完全免费，也不需要登录，支持GPT4、GPT3.5、克劳德等多个模型，并且不限次数。4.0请选择GLM模型。</p>
-                    <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/miya.png" alt="网站Logo">
-                    </div>
-                    <h3>MIYA</h3>
-                    <p>允许使用gpt 3.5和gpt 4.0也支持绘画，但是现在可能无法正常使用。</p>
-                    <a class="glowing-button" href="https://www.miyadns.com/#/index">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>AI ChatRoom</h3>
-                    <p>不需要登录，支持直接使用GPT3.5和GPT4以及DELL，不过缺点就是你能看见别人的消息，别人也能看见你的消息。</p>
-                    <a class="glowing-button" href="https://room.chatgpt.org.uk/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>ChatGPT Plus</h3>
-                    <p>不需要登录，支持API和其他模式的选择，支持3.5和4.0，并且完全免费。</p>
-                    <a class="glowing-button" href="https://chat.tinycms.xyz:3002/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>GPT账号网站</h3>
-                    <p>这个网站允许使用GPT3.5，有多个接口用来使用，回复速度快，推荐使用。</p>
-                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html?v=2">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT-T.png" alt="网站Logo">
-                    </div>
-                    <h3>ChatGPT-T</h3>
-                    <p>这个网站允许使用GPT3.5和4.0，不过4.0注册之后有1000token，3.5回复速度快。</p>
-                    <a class="glowing-button" href="https://chatgptt.co/chat">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ICode联盟.png" alt="网站Logo">
-                    </div>
-                    <h3>ICode联盟</h3>
-                    <p>这个网站允许使用GPT3.5，但网站布局有点奇怪，手机端看不见输入内容，而且不支持流式输出。</p>
-                    <a class="glowing-button" href="https://yy123.ink/chatgpt">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/小傅哥GPT.png" alt="网站Logo">
-                    </div>
-                    <h3>小傅哥GPT</h3>
-                    <p>本人未试过，需要进公众号获取验证码。</p>
-                    <a class="glowing-button" href="https://chatgpt.itedus.cn/#/chat">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/EasyChat.ico" alt="网站Logo">
-                    </div>
-                    <h3>EasyChat</h3>
-                    <p>需要登录，可以使用自己的API，支持3.5和4.0。</p>
-                    <a class="glowing-button" href="https://llgayzuqkg.fastgpt.me/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/智谱清言.svg" alt="网站Logo">
-                    </div>
-                    <h3>智谱清言</h3>
-                    <p>由清华大学自主研发的chatGLM2模型，国产实力比较强了。</p>
-                    <a class="glowing-button" href="https://chatglm.cn/detail">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>bito</h3>
-                    <p>外国网站，无需翻墙也能加载，完全免费无次数限制，可以转载开发工具也可以作为浏览器插件，确定就是总是用英文回答。</p>
-                    <a class="glowing-button" href="https://bito.ai/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>WeTab</h3>
-                    <p>目前已知最好用的插件，支持edge和chrome插件，手机可使用狐猴浏览器安装。</p>
-                    <a class="glowing-button" href="https://www.wetab.link/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>AI助理</h3>
-                    <p>GPT3.5首选！回答速度快！支持提示词商店，但是GPT4需要付费，GPT3是可以免费的次数限制使用的，国内也能打开，不过进入之前需要扫描公众号登录</p>
-                    <a class="glowing-button" href="https://chat.xyhelper.com.cn">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>ChatBot</h3>
-                    <p>允许使用ChatBot虽然有GPT3.5和GPT4，但是4.0并不能够正常使用，即使你选择了这个选项。</p>
-                    <a class="glowing-button" href="https://chat.aivvm.com/zh">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>1Chat</h3>
-                    <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，并且还有几个自带备用网站。</p>
-                    <a class="glowing-button" href="https://1.11chat.cc/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>FeelGPT</h3>
-                    <p>包含GPT3.5-TURBO，不需要登录，回复速度也比较快。</p>
-                    <a class="glowing-button" href="https://feel-gpt.top/chat">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>AIChat</h3>
-                    <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，虽然连了网，但是似乎没什么卵用。</p>
-                    <a class="glowing-button" href="https://c.binjie.fun/#/chat/1691020665346">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>WoChat</h3>
-                    <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，这个网站支持直接翻译文字，也支持和GPT对话。</p>
-                    <a class="glowing-button" href="https://chat1.wobcw.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Tudouyun</h3>
-                    <p>网站需要登录，但是不需要注册账号，你需要输入这个邀请码：1rEZ0*@~vwbDH3Cc 如果使用GPT4模型会报错。</p>
-                    <a class="glowing-button" href="https://gpt.tudouyun.link/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>国外GPT</h3>
-                    <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
-                    <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
-                </div>
-            </div>
-                      
-           
-            <div class="featured-tools">
-               
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>仿ChatGPT</h3>
-                    <p>界面完全模仿ChatGPT，免费GPT3.5和GPT4，登录就行。</p>
-                    <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/chat/new">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-               
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>chatDia</h3>
-                    <p>登陆后支持免费无限制使用GPT3.5。</p>
-                    <a class="glowing-button" href="https://chat.inglo.cn/#/">进入网站</a>
-                </div>
-            </div>
-         
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>ChatMindAI</h3>
-                    <p>这个网站需要登录，自带各种丰富的聊天机器人。</p>
-                    <a class="glowing-button" href="https://beta.chatmindai.net/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>CheeryChat</h3>
-                    <p>需要登录，但使用激活码可赠送两万额度，激活码：C0120CBF13C83E812C7
-                    4DEEB3659E2E0。</p>
-                    <a class="glowing-button" href="https://gpt.cherrychat.org/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>奶鲨畅聊</h3>
-                    <p>这个网站需要登录，支持GPT3.5和4.0，不过4.0需要会员和登录。粉丝卡密：JQQIS702RFHTBB0DB4QCR
-                    BT4PIPYLLJ86OQ</p>
-                    <a class="glowing-button" href="https://chat02.sharkchat.cn/index.php">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>GPT Talk</h3>
-                    <p>这个网站不需要登录，支持多个平台使用。</p>
-                    <a class="glowing-button" href="https://gpttalkapp.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>核桃</h3>
-                    <p>这个网站提问3句话后需要进微信公众号登录，支持GPT3.5。</p>
-                    <a class="glowing-button" href="https://ai.minihuo.com/#/chat/1002">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>开放猫</h3>
-                    <p>这个网站需要登录，注册后只有10猫粮，不推荐使用。</p>
-                    <a class="glowing-button" href="https://gpttalkapp.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>实时聊天机器人</h3>
-                    <p>不需要登录，支持GPT3.5和GPT4。</p>
-                    <a class="glowing-button" href="https://ppp.mygpt.bid/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>ebot</h3>
-                    <p>网站无需登录回答迅速，支持GPT3.5。</p>
-                    <a class="glowing-button" href="https://ebot3.bus1.skybyte.me/#/chat/1002">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>hello ai</h3>
-                    <p>网站不需要登录，支持GPT3.5。</p>
-                    <a class="glowing-button" href="https://free.anzz.top/zh">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>theb ai</h3>
-                    <p>这个网站需要登录，具体什么样子UP主也没有用过。</p>
-                    <a class="glowing-button" href="https://chatbot.theb.ai/">进入网站</a>
-                </div>
-            </div>
-   
-  
-
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>AITianhu</h3>
-                    <p>这个网站GPT3.5、4.0全部免费，公益网站，但GPT4目前无法使用。</p>
-                    <a class="glowing-button" href="https://evndt.aitianhu.site/#/chat/1002">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>国外GPT</h3>
-                    <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
-                    <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">    
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>WRTN</h3>
-                    <p>不稳定，需要使用魔法。</p>
-                    <a class="glowing-button" href="https://wrtn.ai">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Ylokh</h3>
-                    <p>网站不需要登录也不需要收费，完全是公益网站，但缺点是需要翻墙， GPT4有的时候能用，但其他模型都用的非常流畅。</p>
-                    <a class="glowing-button" href="https://chat.ylokh.xyz">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>AMZ Chat</h3>
-                    <p>需要登录，有积分限制。</p>
-                    <a class="glowing-button" href="https://chat.52amz.com/chat">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>GPT Panda</h3>
-                    <p>支持GPT3.5和GPT4，但需要登录，每个账号注册后享有100次免费积分，其余需要充钱。</p>
-                    <a class="glowing-button" href="https://gptpanda.xyz/shop">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>ChatYoutube</h3>
-                    <p>贴Youtube视频地址，就可以针对视频进行ChatGPT聊天讨论了。</p>
-                    <a class="glowing-button" href="https://newzone.top/chatgpt/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Open Assistant</h3>
-                    <p>Open Assistant 是一个对话式 AI 项目，旨在通过提供令人惊叹的对话式 AI 来改善世界。</p>
-                    <a class="glowing-button" href="https://open-assistant.io/">进入网站</a>
-                </div>
-            </div>
-        </div>
-</div>
-        
-        
-                 
-        <div class="category" id="imageProcessing">
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>国外绘画网站</h3>
-                    <p>绘画者首选网站。国外AI绘画网站不需要翻墙，也能够很流畅的使用，并且支持一次性生成多张图片，而且免费无限制，界面很简洁。</p>
-                    <a class="glowing-button" href="https://images.ylokh.xyz/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Vega AI</h3>
-                    <p>网站需要登录，但免费支持各种图像生成，自含各种模型不限制次数，真实好用，画图及其推荐网站，专业绘画人必备。</p>
-                    <a class="glowing-button" href="https://rightbrain.art/">进入网站</a>
-                </div>
-            </div>
-          <div class="category" id="imageProcessing">
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>清华GPT</h3>
-                    <p>完全免费，无需登录，不限次数，支持各种模型，包括二次元模型，三次元模型等。</p>
-                    <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>liblibai</h3>
-                    <p>电脑端才能使用，手机端无法使用。</p>
-                    <a class="glowing-button" href="https://www.liblibai.com/sd?id=1692700759011">进入网站</a>
-                </div>
-            </div>
-          </div>
-        </div>
- 
-        <div class="category" id="work">
-           
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Gamma</h3>
-                    <p>可以用于创建网站或者是PPT文档之类，是一个很实用的GPT工具网站，每个账户注册只要有400的余额。</p>
-                    <a class="glowing-button" href="https://gamma.app/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>GPT网站开发者代码</h3>
-                    <p>这个是开发者可以开发使用的开源代码，想要搭建专属GPT网站的小伙伴有福啦！</p>
-                    <a class="glowing-button" href="https://github.com/ZS520L/GPT4-MidJourney-API/blob/main/%E5%A4%A7%E4%BE%A0GPT4.ipynb">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Cursor</h3>
-                    <p>最强AI编辑器 可以根据你的描述在当前文件自动生成代码。</p>
-                    <a class="glowing-button" href="https://www.cursor.sh/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>亿图脑图</h3>
-                    <p>国内首款实现AIGC“文生脑图”全端上线的脑图软件。</p>
-                    <a class="glowing-button" href="https://www.edrawsoft.cn/mindmaster/?AI-bot">进入网站</a>
-                </div>
-            </div>    
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>GitMind · 思乎</h3>
-                    <p>GitMind · 思乎是一款非常好用又免费的思维导图软件</p>
-                    <a class="glowing-button" href="https://gitmind.cn/?ref=ai-bot.cn">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Taskade</h3>
-                    <p>它可能会是你最喜欢的全平台协作工具，颜值太高了。</p>
-                    <a class="glowing-button" href="https://www.taskade.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>WPS AI</h3>
-                    <p>“WPS AI”是金山办公旗下具备了大语言模型能力的一款生成式人工智能应用，也是中国协同办公赛道首个类ChatGPT式应用。</p>
-                    <a class="glowing-button" href="https://ai.wps.cn/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>博思AI白板</h3>
-                    <p>博思AI白板，AI自动生成文字和思维导图。</p>
-                    <a class="glowing-button" href="https://boardmix.cn/ai-whiteboard/">进入网站</a>
-                </div>
-            </div>    
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>AmyMind</h3>
-                    <p>开箱即用的在线AI思维导图工具</p>
-                    <a class="glowing-button" href="https://amymind.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>美图AI PPT</h3>
-                    <p>美图秀秀旗下新出的制作PPT的AI工具。</p>
-                    <a class="glowing-button" href="https://design.meitu.com/ppt/">进入网站</a>
-                </div>
-            </div>    
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>飞书妙记</h3>
-                    <p>飞书智能会议纪要和快捷语音识别转文字。</p>
-                    <a class="glowing-button" href="https://www.feishu.cn/product/minutes">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>周报生成器</h3>
-                    <p>可以用AI生成周报。</p>
-                    <a class="glowing-button" href="https://weeklyreport.avemaria.fun/zh">进入网站</a>
-                </div>
-            </div>  
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>事半</h3>
-                    <p>一款可以用来写文章，写剧本，写教案，绘图，写工作总结，包括支持抠图，修图的AI工具。</p>
-                    <a class="glowing-button" href="https://halfwork.cn/tool">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Ask Your PDF</h3>
-                    <p>AskYourPdf 是一个人工智能聊天系统，使用户能够以更高效、更愉快的方式与 PDF 文档进行交互。。</p>
-                    <a class="glowing-button" href="https://askyourpdf.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>LightPDF</h3>
-                    <p>LightPDF 的人工智能文档聊天机器人是一个免费的在线工具，允许用户即时分析和提取 PDF、Word、Excel 和 PPT 文档中的数据。</p>
-                    <a class="glowing-button" href="https://lightpdf.com/chatdoc">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>您的一站式GPT</h3>
-                    <p>这里留了一个空，就给我自己打广告吧。</p>
-                    <a class="glowing-button" href="">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>gamma</h3>
-                    <p>自动化完成PPT。</p>
-                    <a class="glowing-button" href="https://gamma.app/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>mindshow</h3>
-                    <p>MindShow是一款全新的在线演示工具，它可以帮助用户快速、简便地创建漂亮的PPT演示文稿。</p>
-                    <a class="glowing-button" href="https://www.mindshow.fun/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>MotionGo-Chatppt</h3>
-                    <p>MotionGo是必优科技（原口袋动画团队）全新升级的一款PPT动画插件，可兼容WPS和Office软件，是一款轻量级产品，可以让PPT动效表达更加专业。</p>
-                    <a class="glowing-button" href="https://motion.yoo-ai.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Tome</h3>
-                    <p>Tome 是一个协作式 AI 合作伙伴，可帮助您使用任何类型的内容创建引人入胜的故事。</p>
-                    <a class="glowing-button" href="https://beta.tome.app/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Ajelix</h3>
-                    <p>Ajelix 是一款 AI Excel & Google Sheets 工具，可帮助用户以 10 倍的速度编写和解释公式、翻译电子表格、生成模板以及编写 VBA 脚。</p>
-                    <a class="glowing-button" href="https://ajelix.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>Excelformulabot</h3>
-                    <p>ExcelFormulaBot 是一种人工智能工具，可帮助用户在几秒钟内解决 Excel 和 Google 表格问题。</p>
-                    <a class="glowing-button" href="https://excelformulabot.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>酷表ChatExcel</h3>
-                    <p>ChatExcel帮你处理Excel表格，上传你的文件，输入你的需求，AI自动就帮主你处理。</p>
-                    <a class="glowing-button" href="https://chatexcel.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>秘塔写作猫</h3>
-                    <p>秘塔写作猫已经拥有数百万用户，成立北京和成都两大研发中心，在AIGC、文档辅助创作、智能合同等方向上开展研发与产品落地。</p>
-                    <a class="glowing-button" href="https://xiezuocat.com/">进入网站</a>
-                </div>
-            </div>
-        </div>
-            
-        <div class="category" id="ai">
-        <p>这些网站都是从b站上面收集过来的AI合集网站，与该网站互补，可搭配使用</p>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/langlogo.png" alt="网站Logo">
-                    </div>
-                    <h3>1AIBOX</h3>
-                    <p>里面包含了各种比较优秀的已收录的GPT网站，种类齐全，比较推荐。</p>
-                    <a class="glowing-button" href="https://www.1aibox.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/270a9bf59462f45b9bae07d7bbed287689c2a114.jpg" alt="网站Logo">
-                    </div>
-                    <h3>AIGC</h3>
-                    <p>小海疼来了UP主自制网站。</p>
-                    <a class="glowing-button" href="https://xht.aust001.com/">进入网站</a>
-                </div>
-            </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>AIGC LOOP</h3>
-                    <p>GPT和其他网站合集。</p>
-                    <a class="glowing-button" href="https://aigcloop.com/">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>小海疼的网站</h3>
-                    <p>好像没有怎么更新了，先放在这里吧。</p>
-                    <a class="glowing-button" href="http://aust001.pythonanywhere.com/menu2">进入网站</a>
-                </div>
-            </div>
-        </div>
-         
-    <div class="category" id="account">
-      <div class="featured-tools">
-        <div class="tool-card">
-        <h3>ChatGPT API_KEY免费领取</h3>
-        <p>这个网站可以每天有一美元的额度，足够使用一天了</p>
-        <a class="purple-button" href="https://faucet.openkey.cloud/">立即免费领取</a>
-        </div>
-        <div class="tool-card">
-        <h3>ChatGPT账号共享网站</h3>
-        <p>不定期更新免费的GPT和GPT plus账号，请合理使用，不要更改账号密码，或私自滥用！！</p>
-        <a class="purple-button" href="https://aiai.info/">免费获取账号</a>
-        </div>
-      </div>
-    </div>
-        
-    <div class="category" id="tool">
-      <div class="featured-tools">
-        <div class="tool-card">
-        <h3>获取免费二级域名</h3>
-        <p>这个网站可以免费获取二级域名，有100多次获取二级域名的机会，可绑定到自己的网站</p>
-        <a class="purple-button" href="http://domain.angid.eu.org/login">立即免费领取</a>
-        </div>
-        <div class="tool-card">
-        <h3>网站压力测试</h3>
-        <p>这个网站可以免费进行ddos或更高级的压力测试，仅供学习使用，严禁作违法使用，否则后果自负！！</p>
-        <a class="purple-button" href="https://stresser.su/login">点击此按钮表明你已同意以上说明</a>
-        </div>
-      </div>
-      <div class="featured-tools">
-        <div class="tool-card">
-        <h3>免费VPN梯子分享</h3>
-        <p>违法的事情作者不做，哼~🤪</p>
-        
-        </div>
-        
-      </div>
-    </div>
-         
-         
-         
-      <div class="categories-container">
-        <div class="category" id="notice">
-            
-                <div class="tool-card">
-                  <h3>AI 作诗</h3>
-                 
-                  <a class="purple-button" href="AI/poem.html">立即尝鲜</a>
-                </div>
-                <div class="tool-card">
-                  <h3>AI 塔罗牌</h3>
-                 
-                  <a class="purple-button" href="AI/talo.html">立即尝鲜</a>
-                </div>
-                <div class="tool-card">
-                  <h3>AI 扫雷</h3>
-                 
-                  <a class="purple-button" href="AI/saolei.html">立即尝鲜</a>
-                </div>
-        </div>
-      </div>
-                
-                
-    </div>
-    
-        <div id="footer">
-        <p>copyright 2023 炽阳GPT（原炽阳001） 保留所有权利。</p>
-        <p>QQ技术讨论群：906261857</p>
-        <p>网站部署于 GitHub Version: V2.3.7</p>
-        <p><a href="certificate.html">免责声明</a></p>
-        <div style="text-align:center; width:100%;">
-          <marquee direction="up" scrollamount="1">
-            <p>鸣谢名单</p>
-            <p>115414-提供大量gpt网站</p>
-            <p>无聊的一名网友-提供大量gpt网站</p>
-          </marquee>
-        </div>
-
-        <p id="uptime">网站运行时间：<span id="uptime-value">计算中...</span></p>
-        
-        </div>
-<script src="script.js"></script>
-</body>
 </html>
