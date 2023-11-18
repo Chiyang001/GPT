@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPTHub帮助中心</title>
+    <title>ChatHub帮助中心</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
         header {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-            font-size: 35px;
             color: #333;
+            padding: 20px;
+            text-align: left;
+            font-size: 18px;
+        }
+        header .title {
+            font-size: 35px;
+            margin: 0;
+        }
+        header .subtitle {
+            font-size: 20px;
+            margin: 0;
         }
         .search {
             text-align: center;
@@ -22,33 +32,72 @@
         }
         .content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
         }
         .question {
-            background-color: #f9f9f9;
+            background-color: #fff;
             border: 1px solid #ccc;
             padding: 10px;
-            margin-bottom: 10px;
+            margin: 10px;
             cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 800px; /* Set maximum width for large screens */
+        }
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 120, 215, 0.5);
         }
         .question h3 {
             font-size: 18px;
             margin: 0;
+            color: #333;
         }
+        
         .answer {
             display: none;
             padding: 10px;
-            white-space: nowrap; /* Ensures text doesn't wrap */
-            overflow: hidden; /* Hides overflowed text */
-            animation: typing 1.5s steps(40, end), blink-caret 0.75s infinite;
+            background-color: #f9f9f9;
+            border-left: 3px solid #0078d7;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 800px; /* Set maximum width for large screens */
         }
-        .answer p {
-            margin: 5px 0;
+       .answer p {
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 移除了opacity: 0; 因为我们希望在加载时文本是可见的 */
+    /* 动画将由JavaScript函数 animateParagraphs 触发 */
+   white-space: normal; /* 允许内容换行 */
+        word-wrap: break-word; /* 在单词内换行 */
+        overflow-wrap: break-word; /* 防止文本溢出 */
+}
+
+               input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-top: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-       
+        /* Typing animation for each paragraph */
+        .typing-animation p {
+            animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
     </style>
     <script>
     function toggleAnswer(question) {
@@ -77,15 +126,96 @@
             }
         }
     }
-</script>
+function animateParagraphs(answer) {
+    var paragraphs = answer.querySelectorAll('p');
+    var delay = 0;
 
+    paragraphs.forEach(function(p, index) {
+        p.style.animation = `typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite`;
+        p.style.animationDelay = `${delay}s`; // Set the delay for each paragraph
+        p.style.opacity = 1; // Make the paragraph visible before animation starts
+        delay += 2; // Increment the delay for the next paragraph
+    });
+}
+
+    </script>
 </head>
 <body>
-    <header>ChatGPTHub帮助中心</header>
+    <header>
+        <h1 class="title">ChatHub</h1>
+        <h2 class="subtitle">Help Center</h2>
+    </header>
     <div class="search">
         <input type="text" id="searchInput" onkeyup="search()" placeholder="搜索问题">
     </div>
     <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：如何确保在使用ChatGPT时保护个人隐私？</h3>
+    </div>
+    <div class="answer">
+        <p>在使用ChatGPT时，避免分享敏感个人信息，如地址、电话号码或其他可识别信息。ChatGPT不会储存个人对话内容，但出于隐私保护，最好不要分享敏感信息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT能否完全准确地理解和回答问题？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT尽管非常先进，但并不是全知全能的。它可能不会完全准确地理解或回答所有问题，特别是对于含糊或非常专业的问题。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：在使用ChatGPT时，如何区分事实和观点？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT可能会根据其训练数据给出回答，这些回答既可能包含事实，也可能包含主观意见。用户应当独立验证重要信息，并谨慎区分事实和观点。</p>
+    </div>
+</div>
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT的更新频率是多少？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT的模型更新不是定期进行的。更新通常基于新的研究成果或技术进步，而不是遵循固定的时间表。</p>
+    </div>
+</div>
+        <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT是否可以生成原创内容？</h3>
+    </div>
+    <div class="answer">
+        <p>是的，ChatGPT可以生成原创内容，但它的回答是基于先前训练的数据，并结合用户的提问来生成的。</p>
+    </div>
+</div>
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT能提供医疗或法律咨询吗？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT可以提供一般性的信息，但不应被视为专业的医疗或法律建议。在这些问题上，应咨询相关专业人士。</p>
+    </div>
+</div>
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：使用ChatGPT时需要注意哪些版权问题？</h3>
+    </div>
+    <div class="answer">
+        <p>虽然ChatGPT可以生成内容，但用户需要确保使用这些内容时遵守相关的版权法规。特别是避免将生成的内容直接用于商业用途，除非确定这样做不会侵犯版权。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT能回答所有类型的问题吗？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT在某些领域（如技术、历史、日常生活等）的表现较好，但对于极其专业或最新的主题可能不够精确。此外，它不会处理非法或不道德的请求。</p>
+    </div>
+</div>
+        <div class="content">
         <div class="question" onclick="toggleAnswer(this)">
             <h3>Q：ChatGPTHub的捐助/破解提示词/B站/版本/公告按钮为什么不见了？</h3>
         </div>
