@@ -131,12 +131,18 @@ function animateParagraphs(answer) {
     var delay = 0;
 
     paragraphs.forEach(function(p, index) {
+        // 重置样式以重新开始动画
+        p.style.animation = 'none';
+        p.offsetHeight; // 触发重排以重置动画
+        p.style.animation = null;
+
+        // 为段落添加打字机和光标闪烁的动画
         p.style.animation = `typing 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite`;
-        p.style.animationDelay = `${delay}s`; // Set the delay for each paragraph
-        p.style.opacity = 1; // Make the paragraph visible before animation starts
-        delay += 2; // Increment the delay for the next paragraph
+        p.style.animationDelay = `${delay}s`; // 设置每个段落的动画延迟
+        delay += 2; // 为下一个段落增加延迟
     });
 }
+
 
     </script>
 </head>
@@ -148,6 +154,232 @@ function animateParagraphs(answer) {
     <div class="search">
         <input type="text" id="searchInput" onkeyup="search()" placeholder="搜索问题">
     </div>
+    <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：Dall-E 是如何理解并生成与输入描述相符的图像的？</h3>
+    </div>
+    <div class="answer">
+        <p>Dall-E 使用深度学习模型来理解文本输入，并基于这些输入生成创意丰富的图像。它通过分析大量的图像和相关描述来学习图像与文本之间的关联。</p>
+    </div>
+</div>
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT-4 相比于之前的版本有哪些改进？</h3>
+    </div>
+    <div class="answer">
+        <p>GPT-4 在理解复杂文本、处理更长的对话、以及更准确地生成与输入相关的响应方面有显著的改进。它也在理解不同语境下的语言细微差别方面有所提升。</p>
+    </div>
+</div>
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT Alpha 是什么，它与GPT-4有什么不同？</h3>
+    </div>
+    <div class="answer">
+        <p>GPT-4（All Tools）是 OpenAI 推出的最新人工智能模型，它结合了自然语言理解和生成的能力，并扩展了其前身 GPT-3 的功能。这个版本包括了一系列增强的工具，如：
+
+图片生成（DALL-E）：能够根据文本描述生成图片。
+代码执行（Python）：能够执行 Python 代码，提供编程和数据分析的能力。
+网络浏览器（Browser）：允许AI模型在没有直接互联网访问的情况下浏览网页，搜索信息，并引用内容。
+文件浏览器（MyFiles Browser）：能够浏览和分析上传到对话中的文件。
+GPT-4（All Tools）通过这些工具提供了更全面的服务，能够在多种任务中提供帮助，如图像创作、编程问题解答、数据分析、网页搜索和文件内容理解等。它被设计为更智能、更灵活，并且在处理复杂任务时更加高效。</p>
+    </div>
+</div>
+    <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：最近有哪些关于OpenAI GPT模型的更新？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI 经常更新其模型和技术。为了了解最新的更新，请访问 OpenAI 的官方博客或新闻发布页面，那里会有关于新模型、功能改进、合作伙伴关系和研究进展的最新信息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI 最近有什么新的研究成果吗？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI 定期发布研究论文和项目报告，介绍其在人工智能领域的最新发展。您可以在 OpenAI 的官方网站上查看最新的研究论文和项目更新。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI 是否推出了新的GPT模型？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI 不断地在其模型系列中推出新版本。要了解是否有新的 GPT 模型发布，您可以关注 OpenAI 的官方社交媒体账号或订阅其新闻通讯以获取最新消息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI GPT模型的最新应用有哪些？</h3>
+    </div>
+    <div class="answer">
+        <p>GPT 模型被广泛应用于多种场景，包括但不限于聊天机器人、内容创作、编程辅助和语言翻译。最新的应用案例通常会在 OpenAI 的官方网站或合作伙伴的发布资料中被介绍。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：关于GPT模型，OpenAI 有哪些最新的合作项目？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI 经常与其他公司和研究机构合作，以推广和应用其 GPT 模型。最新的合作项目详情可以在 OpenAI 的新闻发布或合作伙伴的公告中找到。</p>
+    </div>
+</div>
+
+<!-- 根据需要继续添加更多关于最新资讯的帮助问题和回答 -->
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT的“联网”功能是什么，为什么会被暂时关闭？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT的“联网”功能允许用户通过Bing搜索引擎获取互联网上的信息。这项功能被暂时关闭是因为发现用户可以通过它绕过付费机制，访问本应付费的网站内容。为了解决这个问题，OpenAI决定暂停该功能，并在问题解决后重新上线。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI关闭ChatGPT的联网功能后，用户如何获取最新资讯？</h3>
+    </div>
+    <div class="answer">
+        <p>用户可以通过访问新闻网站、官方博客、社交媒体或订阅新闻通讯来获取最新资讯。同时，OpenAI可能会在未来提供新的方式或改进现有功能，以便用户能够安全合规地访问网络信息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI如何处理ChatGPT显示付费墙内容的问题？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI通过暂时关闭ChatGPT的“Browse with Bing”功能来应对这个问题。官方正在努力修复相关问题，并将在问题得到妥善解决后重新提供该功能。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：ChatGPT Plus订阅者在联网功能关闭期间有哪些替代方案？</h3>
+    </div>
+    <div class="answer">
+        <p>ChatGPT Plus订阅者在联网功能关闭期间可以继续使用ChatGPT的其他功能，如对话生成和问题解答。同时，他们也可以关注OpenAI的官方更新，以了解功能恢复的最新消息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：OpenAI有哪些计划来增强ChatGPT的实用性？</h3>
+    </div>
+    <div class="answer">
+        <p>OpenAI正在通过开发插件来增强ChatGPT的实用性。这些插件旨在为用户提供更多功能，如特定任务的自动化、数据分析和可视化等。用户可以关注OpenAI官方的最新公告，以获得关于新插件和功能的信息。</p>
+    </div>
+</div>
+
+<!-- 根据需要继续添加更多关于GPT最新资讯的帮助问题和回答 -->
+
+    <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：如何确保在使用在线服务时我的对话内容保持私密？</h3>
+    </div>
+    <div class="answer">
+        <p>使用在线服务时，您应该确保服务提供商有清晰的隐私政策，并且遵循数据保护法规。不要在对话中分享任何敏感信息，包括个人身份信息、密码或财务信息。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：如果在线服务产生了我不想要的内容，我该怎么办？</h3>
+    </div>
+    <div class="answer">
+        <p>如果在线服务生成了您认为不合适的内容，您应立即停止使用该服务，并且可以联系服务提供商以报告此问题。服务提供商可能会提供解决方案或采取措施以防止未来发生类似情况。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：我如何能够更好地理解在线服务提供的答案？</h3>
+    </div>
+    <div class="answer">
+        <p>为了更好地理解在线服务提供的答案，您可以要求服务提供详细解释或提供额外的上下文信息。有时，将问题分解成更小的部分并逐一提问也有助于获得更清晰的答案。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：在线服务是否可以帮助我学习新技能或语言？</h3>
+    </div>
+    <div class="answer">
+        <p>是的，许多在线服务提供教育资源和工具，可以帮助您学习新技能或语言。这些服务可能包括交互式课程、练习和评估，以便您可以在实践中学习和提高。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：我应该如何处理在线服务提供的信息溢出？</h3>
+    </div>
+    <div class="answer">
+        <p>面对信息溢出，最好是设定具体的目标和问题。尝试将您的查询分解成更具体的子问题，并逐一寻找答案。此外，您可以使用服务的过滤和搜索工具来帮助您找到最相关的信息。</p>
+    </div>
+</div>
+
+<!-- 根据需要继续添加更多有用的帮助问题和回答 -->
+
+    <div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT模型是如何训练的？</h3>
+    </div>
+    <div class="answer">
+        <p>GPT模型是通过大量文本数据进行预训练的，它使用了无监督学习方法来理解和生成语言。通过这种方式，模型学会了语言的结构和词汇间的关系。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT模型可以做什么？</h3>
+    </div>
+    <div class="answer">
+        <p>GPT模型能够执行多种语言任务，如文本生成、翻译、摘要、问答和文本分类等。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT模型的限制是什么？</h3>
+    </div>
+    <div class="answer">
+        <p>虽然GPT模型在语言理解方面非常强大，但它也有限制。模型的输出有时可能缺乏准确性，它可能会生成不准确或不相关的信息，并且它的知识是截至训练数据的最后更新日期。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：如何提高与GPT模型的交互质量？</h3>
+    </div>
+    <div class="answer">
+        <p>为了提高交互质量，用户应该提供清晰、具体的问题或指令。此外，理解模型输出的上下文也很重要。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：GPT模型的输出是否可以定制？</h3>
+    </div>
+    <div class="answer">
+        <p>是的，GPT模型的输出可以通过调整参数或对模型进行微调来定制，以适应特定的应用或领域。</p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="question" onclick="toggleAnswer(this)">
+        <h3>Q：使用GPT模型时，如何处理生成的内容的版权问题？</h3>
+    </div>
+    <div class="answer">
+        <p>生成的内容通常被认为是公共领域的，但这可能取决于您所在的司法管辖区和特定用例。在使用这些内容时，建议咨询版权专家。</p>
+    </div>
+</div>
+
+<!-- 添加更多问题和答案的代码可以按照上述格式继续添加 -->
+
     <div class="content">
     <div class="question" onclick="toggleAnswer(this)">
         <h3>Q：如何确保在使用ChatGPT时保护个人隐私？</h3>
