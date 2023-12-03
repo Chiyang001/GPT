@@ -12,9 +12,7 @@ function createSnowflake() {
             const fallSpeed = Math.random() * 5 + 5; // 进一步减缓下落速度
             snowflake.style.animationDuration = `${fallSpeed}s`;
 
-            const windEffect = Math.random() > 0.5 ? 1 : 1;
-            snowflake.style.setProperty('--wind-direction', windEffect); // 设置风向
-
+            
             return snowflake;
         }
 
