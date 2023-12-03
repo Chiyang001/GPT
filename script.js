@@ -1,4 +1,31 @@
+//雪花动画
+function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            document.body.appendChild(snowflake);
 
+            const initialX = Math.random() * window.innerWidth;
+            const initialY = Math.random() * window.innerHeight;
+            snowflake.style.left = `${initialX}px`;
+            snowflake.style.top = `-${initialY}px`;
+
+            const fallSpeed = Math.random() * 5 + 5; // 进一步减缓下落速度
+            snowflake.style.animationDuration = `${fallSpeed}s`;
+
+            const windEffect = Math.random() > 0.5 ? 1 : 1;
+            snowflake.style.setProperty('--wind-direction', windEffect); // 设置风向
+
+            return snowflake;
+        }
+
+        function createSnowfall(numSnowflakes) {
+            for (let i = 0; i < numSnowflakes; i++) {
+                createSnowflake();
+            }
+        }
+
+        createSnowfall(25); // 减少雪花数量
+  
 // 菜单栏代码
 function toggleMenu() {
             var menu = document.getElementById('menu');

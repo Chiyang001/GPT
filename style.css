@@ -1,5 +1,6 @@
 
-    
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
     /* 适用于手机设备 */
 @media only screen and (max-width: 600px) {
     body {
@@ -283,6 +284,8 @@ button:hover {
     justify-content: center;
     align-items: center;
     animation: gradient 5s linear infinite; /* 设置渐变动画 */
+    font-weight: 700; /* 加粗 */
+    font-style: italic; /* 斜体 */
   }
 
 .leaderboard-container {
@@ -404,7 +407,8 @@ button:hover {
             background-color: #333;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+            border-radius: 10px; /* 圆角边框 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增加更明显的阴影效果 */
         }
 
         #menu a {
@@ -427,11 +431,17 @@ button:hover {
     max-height: 80%; /* Set a maximum height for the popup */
     overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
     color: black; /* 将文字颜色设为黑色 */
+    border-radius: 10px; /* 圆角边框 */
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; /* 加粗 */
+    font-style: italic; /* 斜体 */
 }
 
 .popup-content {
     max-height: 100%;
     overflow-y: auto;
+    border-radius: 10px; /* 圆角边框 */
+    font-family: 'Montserrat', sans-serif; 
 }
 
 
@@ -443,6 +453,24 @@ button:hover {
             cursor: pointer;
             color: #333;
         }
+      
+        .snowflake {
+            position: absolute;
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+    to {
+        top: 100vh;
+        transform: translate(calc(var(--wind-direction) * 10px), 100%);
+    }
+}
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -879,7 +907,8 @@ button:hover {
             background-color: #333;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+            border-radius: 10px; /* 圆角边框 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增加更明显的阴影效果 */
         }
 
         #menu a {
@@ -902,11 +931,17 @@ button:hover {
     max-height: 80%; /* Set a maximum height for the popup */
     overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
     color: black; /* 将文字颜色设为黑色 */
+    border-radius: 10px; /* 圆角边框 */
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; /* 加粗 */
+    font-style: italic; /* 斜体 */
 }
 
 .popup-content {
     max-height: 100%;
     overflow-y: auto;
+    border-radius: 10px; /* 圆角边框 */
+    font-family: 'Montserrat', sans-serif; 
 }
 
 
@@ -918,3 +953,19 @@ button:hover {
             cursor: pointer;
             color: #333;
         }
+.snowflake {
+            position: absolute;
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+    to {
+        top: 100vh;
+        transform: translate(calc(var(--wind-direction) * 10px), 100%);
+    }
+}
