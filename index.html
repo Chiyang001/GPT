@@ -28,19 +28,17 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2023.12.9）</p>
-        <p>1.删除部分失效网站</p>
-        <p>2.修复链接无法跳转问题</p>
-        <p>3.修复部分网站无法收藏的问题</p>
-        <p>4.更新排行榜</p>
-        <p>5.更新帮助中心相关问题</p>
+        <p>更新公告（2023.12.24）</p>
+        <p>1.新增部分网站</p>
+        <p>2.删除无效网站</p>
+        
     </div>
 </div>
 
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.0.3</p>
+        <p>Alpha 1.0.5</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -93,12 +91,18 @@
         <!-- 这里将显示搜索结果 -->
     </ul>
 
-
+    <div class="golden-tool-card">
+    <h3>COZE</h3>
+    <p>无限制使用GPT4和搜索等强大插件</p>
+    <a class="purple-button" href="https://www.coze.com/">立即体验</a>
+    <a class="purple-button" href="https://b23.tv/NRlZdTi">查看教程</a>
+    </div>
     <div class="tool-card">
         <h3>帮助中心</h3>
         <p>有任何问题可以进来查看帮助文档</p>
         <a class="purple-button" href="helpcenter.html">查看文档</a>
     </div>
+    
         </div>
 </div>
  
@@ -142,7 +146,7 @@
             </li>
             <li>
                 <span class="rank">5</span>
-                <span class="site-name">NewBing</span>
+                <span class="site-name">NewBing(已失效)</span>
                 <span class="enter-button" onclick="location.href='https://newbing.fishhome.link'">进入</span>
             </li>
             <li>
@@ -182,7 +186,17 @@
 <div class="category" id="textGeneration">
   <div class="categories-container">
     
-    
+<div class="featured-tools">
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <div class="tool-logo">
+            <img src="logo/1689492512.png" alt="网站Logo">
+        </div>
+        <h3>ONE Chat</h3>
+        <p>按次数计费，不过可以免费领取一定的额度。</p>
+        <a class="glowing-button" href="https://chat.sb-chat.com/index.php?i=1955">进入网站</a>
+    </div>
+
+</div>    
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
@@ -888,18 +902,7 @@
          
       <div class="categories-container">
         <div class="category" id="bing">
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <h3>NewBing国内版</h3>
-        <p>不需要梯子，密码是：fishhome666，如果有遇到提示反复人机验证或时无效域，请尝试点击右上角的一键重置按钮</p>
-        <a class="purple-button" href="https://newbing.fishhome.link">立即体验</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <h3>NewBing&GPT4</h3>
-        <p>不需要梯子，可以使用GPT4，自带提示词</p>
-        <a class="purple-button" href="https://bingo.jsdianman.repl.co/">立即体验</a>
-    </div>
-</div>
+
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>NewBing-fishhome</h3>

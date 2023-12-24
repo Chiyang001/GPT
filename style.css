@@ -470,7 +470,18 @@ button:hover {
         transform: translate(calc(var(--wind-direction) * 10px), 100%);
     }
 }
-
+.golden-tool-card {
+    border: 1px solid #444444;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: glow 1s infinite alternate;
+    background-color: gold;
+    /* 定义其它需要的样式 */
+}
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -968,4 +979,16 @@ button:hover {
         top: 100vh;
         transform: translate(calc(var(--wind-direction) * 10px), 100%);
     }
+}
+.golden-tool-card {
+    border: 1px solid #444444;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: glow 1s infinite alternate;
+    background-color: gold;
+    /* 定义其它需要的样式 */
 }

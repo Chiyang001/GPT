@@ -322,6 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.boxShadow = "none";
             card.style.backgroundColor = "#303030";
             card.style.border = "1px solid #444444";
+
         });
     }
 
@@ -331,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.boxShadow = "0 0 30px blue";
             card.style.backgroundColor = "#303030";
             card.style.border = "1px solid #444444";
+           
         });
     }
 
@@ -340,6 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.boxShadow = "0 0 10px yellow";
             card.style.backgroundColor = "#b34f1d";
             card.style.border = "2px solid yellow";
+          
         });
     }
 
