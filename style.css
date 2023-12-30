@@ -55,49 +55,52 @@
         }
 
         .category {
-            text-align: center;
-            padding: 10px;
-            background: linear-gradient(to right, #212121, #424242);
-            border-radius: 10px;
-            margin: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
-            backdrop-filter: blur(8px); /* 添加毛玻璃效果 */
-        }
+    text-align: center;
+    padding: 10px;
+    background: #B0C4DE; /* 淡蓝色背景，给人冬日清冷之感 */
+    color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+}
+
+
 
         /* Featured Tools Container */
         .featured-tools {
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
-        }
-
-        /* Tool Cards */
-        .tool-card {
-            background-color: #303030;
-            border: 1px solid #444444;
-            padding: 10px;
-            margin: 5px;
-            text-align: center;
-            border-radius: 10px;
-            position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: glow 1s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
-/* 定义一个光晕动画 */
+/* 工具卡片 - 冬季主题 */
+.tool-card {
+    background-color: #B0C4DE; /* 冬天的灰蓝色 */
+    border: 1px solid #4A5A6B; /* 边框采用更深的灰色 */
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: glow 1s infinite alternate;
+    color: #F7F9F9; /* 文字使用浅色以突出深色背景 */
+}
+
+/* 可选：添加关键帧动画以实现微妙的“发光”效果 */
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px blue;
+        box-shadow: 0 0 5px #3E4A59;
     }
     to {
-        box-shadow: 0 0 30px blue;
+        box-shadow: 0 0 20px #2C3E50;
     }
 }
-        }
 
         .tool-card:hover {
             transform: translateY(-5px);
@@ -536,52 +539,52 @@ button:hover {
         }
 
         .category {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(to right, #212121, #424242);
-            border-radius: 15px;
-            margin: 20px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
-            backdrop-filter: blur(8px); /* 添加毛玻璃效果 */
-        }
+    text-align: center;
+    padding: 10px;
+    background: #B0C4DE; /* 淡蓝色背景，给人冬日清冷之感 */
+    color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+}
+
 
         /* Featured Tools Container */
         .featured-tools {
-            display: flex;
-            justify-content: space-between;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
-            margin: 0px;
-        }
-
-        /* Tool Cards */
-        .tool-card {
-            background-color: #303030;
-            border: 1px solid #444444;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            border-radius: 10px;
-            position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
-                        animation: glow 1s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
-/* 定义一个光晕动画 */
+/* 工具卡片 - 冬季主题 */
+.tool-card {
+    background-color: #B0C4DE; /* 冬天的灰蓝色 */
+    border: 1px solid #4A5A6B; /* 边框采用更深的灰色 */
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: glow 1s infinite alternate;
+    color: #F7F9F9; /* 文字使用浅色以突出深色背景 */
+}
+
+/* 可选：添加关键帧动画以实现微妙的“发光”效果 */
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px blue;
+        box-shadow: 0 0 5px #3E4A59;
     }
     to {
-        box-shadow: 0 0 30px blue;
+        box-shadow: 0 0 20px #2C3E50;
     }
 }
-        }
-        }
+
 
         .tool-card:hover {
             transform: translateY(-5px);

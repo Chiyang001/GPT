@@ -317,14 +317,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function resetToolCards() {
-        toolCards.forEach(card => {
-            card.style.animation = "none";
-            card.style.boxShadow = "none";
-            card.style.backgroundColor = "#303030";
-            card.style.border = "1px solid #444444";
+    toolCards.forEach(card => {
+        card.style.animation = "none"; // 移除动画
+        card.style.boxShadow = "none"; // 移除阴影效果
+        card.style.backgroundColor = "#5D6D7E"; // 设置为冬天主题的背景色
+        card.style.border = "5px solid white"; // 设置白色边框
+        card.style.color = "#F7F9F9"; // 设置文字颜色，确保与背景对比
+    });
+}
 
-        });
-    }
 
     function setPurpleToolCards() {
         toolCards.forEach(card => {
