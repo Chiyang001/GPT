@@ -103,15 +103,43 @@
             font-size: 1.5rem; /* 增大字体大小 */
             text-align: center;
         }
+        #timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
     </style>
 </head>
 <body>
+<div id="timer">37 秒后动画结束</div>
+
+
     <div id="message-container">
         <!-- 祝福语句将在这里动态显示 -->
     </div>
     <button class="skip-button" onclick="skipAnimation()">跳过动画</button>
 
     <script>
+    var timeLeft = 37;
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (timeLeft == 0) {
+    clearTimeout(timerId);
+    document.getElementById('timer').innerHTML = '动画结束!';
+  } else {
+    document.getElementById('timer').innerHTML = timeLeft + ' 秒后动画结束';
+    timeLeft--;
+  }
+}
+
+
         // JavaScript脚本
         const messages = [
             "新年快乐，智慧伴您每一步",
