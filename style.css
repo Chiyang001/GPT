@@ -388,38 +388,66 @@ button:hover {
 }
 
 #menu-container {
-            position: absolute;
-            top: 10px; /* 调整距离顶部的位置 */
-            right: 10px; /* 调整距离右边的位置 */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* 使子元素右对齐 */
-        }
+    position: absolute;
+    top: 10px; /* 调整距离顶部的位置 */
+    right: 10px; /* 调整距离右边的位置 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 使子元素右对齐 */
+    border-radius: 10px; /* 添加圆角边框，确保与其他元素协调 */
+    overflow: hidden; /* 防止子元素溢出容器边界 */
+}
+
+/* 如果#menu-container内有具体的按钮或元素，也可适当调整样式以符合整体设计 */
+#menu-container .button {
+    border-radius: 10px; /* 为按钮添加相同的圆角 */
+    /* 可以添加其他样式以确保按钮美观和一致性 */
+}
+
 
         #menu-button {
-            cursor: pointer;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-        }
+    cursor: pointer;
+    background: linear-gradient(135deg, #6e48aa, #9d50bb); /* 添加渐变背景 */
+    color: #fff;
+    border: none;
+    padding: 15px; /* 增加内边距以使按钮更大一些 */
+    border-radius: 10px; /* 修改为圆角方形 */
+    font-size: 16px; /* 调整字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+}
+
+#menu-button:hover {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+}
+
+
 
         #menu {
-            display: none;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            border-radius: 10px; /* 圆角边框 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增加更明显的阴影效果 */
-        }
+    display: none;
+    background-color: #333;
+    padding: 20px; /* 增加内边距以获得更好的空间感 */
+    border-radius: 10px; /* 统一圆角大小 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 加深阴影以增加深度感 */
+    transition: box-shadow 0.3s; /* 添加阴影过渡效果 */
+}
 
-        #menu a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
+#menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px; /* 增加链接之间的间距 */
+    padding: 10px 0; /* 为链接添加上下内边距 */
+    transition: background-color 0.3s, color 0.3s; /* 添加背景和颜色过渡效果 */
+}
+
+#menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时添加淡色背景 */
+    color: #ddd; /* 轻微改变颜色以增强交互感 */
+}
+
 /* Your existing CSS */
 /* Your existing CSS */
 .popup {
@@ -485,6 +513,28 @@ button:hover {
     background-color: gold;
     /* 定义其它需要的样式 */
 }
+.floating-text {
+    position: fixed; /* 修改为 fixed 以使其相对于视口定位 */
+    color: red;
+    font-size: 20px;
+    pointer-events: none;
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+    z-index: 1000; /* 高优先级 */
+}
+
+#values-switch {
+    margin-top: 10px;
+}
+
+#values-switch label {
+    margin-right: 10px;
+}
+
+
+
+
+
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
     body {
@@ -899,38 +949,66 @@ button:hover {
     color: black; /* 设置列表中的文字颜色为黑色 */
 }
 #menu-container {
-            position: absolute;
-            top: 10px; /* 调整距离顶部的位置 */
-            right: 10px; /* 调整距离右边的位置 */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* 使子元素右对齐 */
-        }
+    position: absolute;
+    top: 10px; /* 调整距离顶部的位置 */
+    right: 10px; /* 调整距离右边的位置 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 使子元素右对齐 */
+    border-radius: 10px; /* 添加圆角边框，确保与其他元素协调 */
+    overflow: hidden; /* 防止子元素溢出容器边界 */
+}
+
+/* 如果#menu-container内有具体的按钮或元素，也可适当调整样式以符合整体设计 */
+#menu-container .button {
+    border-radius: 10px; /* 为按钮添加相同的圆角 */
+    /* 可以添加其他样式以确保按钮美观和一致性 */
+}
+
 
         #menu-button {
-            cursor: pointer;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-        }
+    cursor: pointer;
+    background: linear-gradient(135deg, #6e48aa, #9d50bb); /* 添加渐变背景 */
+    color: #fff;
+    border: none;
+    padding: 15px; /* 增加内边距以使按钮更大一些 */
+    border-radius: 10px; /* 修改为圆角方形 */
+    font-size: 16px; /* 调整字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+}
+
+#menu-button:hover {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+}
+
+
 
         #menu {
-            display: none;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            border-radius: 10px; /* 圆角边框 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增加更明显的阴影效果 */
-        }
+    display: none;
+    background-color: #333;
+    padding: 20px; /* 增加内边距以获得更好的空间感 */
+    border-radius: 10px; /* 统一圆角大小 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 加深阴影以增加深度感 */
+    transition: box-shadow 0.3s; /* 添加阴影过渡效果 */
+}
 
-        #menu a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 5px;
-        }
+#menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px; /* 增加链接之间的间距 */
+    padding: 10px 0; /* 为链接添加上下内边距 */
+    transition: background-color 0.3s, color 0.3s; /* 添加背景和颜色过渡效果 */
+}
+
+#menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时添加淡色背景 */
+    color: #ddd; /* 轻微改变颜色以增强交互感 */
+}
+
         /* Your existing CSS */
 /* Your existing CSS */
 .popup {
@@ -994,4 +1072,20 @@ button:hover {
             animation: glow 1s infinite alternate;
     background-color: gold;
     /* 定义其它需要的样式 */
+}
+.floating-text {
+    position: fixed; /* 修改为 fixed 以使其相对于视口定位 */
+    color: red;
+    font-size: 20px;
+    pointer-events: none;
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+    z-index: 1000; /* 高优先级 */
+}
+#values-switch {
+    margin-top: 10px;
+}
+
+#values-switch label {
+    margin-right: 10px;
 }

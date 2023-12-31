@@ -15,13 +15,21 @@
 <body>
   
    <div id="menu-container">
-        <button id="menu-button" onclick="toggleMenu()">更多👆</button>
+        <button id="menu-button" onclick="toggleMenu()">更多&设置</button>
         <div id="menu">
             <a onclick="showPopup('announcement-popup')">更新公告</a>
             <a onclick="showPopup('version-popup')">网站版本</a>
             <a href="https://chiyang001.github.io/GPT/prompt">破解提示词</a>
             <a href="money.html">捐助开发者</a>
             <a href="https://m.bilibili.com/space/404891612">开发者B站</a>
+            <div id="values-switch">
+            <label for="toggle-values">显示社会主义核心价值观</label>
+            <input type="checkbox" id="toggle-values" onclick="toggleValues()">
+            <div id="snowfall-switch">
+            <label for="toggle-snowfall">雪花效果</label>
+            <input type="checkbox" id="toggle-snowfall" checked>
+            </div>
+            </div>
         </div>
     </div>
 
@@ -35,15 +43,16 @@
         <p>3.更新主题色调</p>
         <p>4.新增多个网站</p>
         <p>5.新增入场动画></p>
-        
-        
+        <p>6.新增点击页面产生社会主义核心价值观的动画</p>
+        <p>7.新增雪花动画开关按钮</p>
+        <p>8.删除帮助中心</p>
     </div>
 </div>
 
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.0.6</p>
+        <p>Alpha 1.1.0</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -53,7 +62,7 @@
         <source src="https://gitcode.net/qq_37688711/gpt/-/raw/main/background.mp4?inline=false" type="video/mp4">
         <!-- 你也可以在这里添加其他视频格式的 source 元素 -->
     </video>
-    
+   
     
     <button id="themeButton">切换主题</button>
     <div id="themeModal" class="modal">
@@ -109,11 +118,7 @@
     <a class="purple-button" href="https://b23.tv/HL6CLaU">查看教程</a>
     </div>
 </div>
-    <div class="tool-card">
-        <h3>帮助中心</h3>
-        <p>有任何问题可以进来查看帮助文档</p>
-        <a class="purple-button" href="helpcenter.html">查看文档</a>
-    </div>
+    
     
         </div>
 </div>
@@ -801,7 +806,7 @@
                     <a class="glowing-button" href="https://lightpdf.com/chatdoc">进入网站</a>
                 </div>
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>您的一站式GPT</h3>
+                    <h3>ChatGPTHUB</h3>
                     <p>这里留了一个空，就给我自己打广告吧。</p>
                     <a class="glowing-button" href="">进入网站</a>
                 </div>
@@ -933,9 +938,9 @@
 
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <h3>不存在Bing项目网站</h3>
-        <p>目前up主没有收集到可用的Bing镜像网站，等待你的来信......</p>
-        
+        <h3>fishBing</h3>
+        <p>密码：fishhome666，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://vercel.jsdianman.eu.org/web/?showconv=1#/">进入网站</a>
     </div>
     
 </div>

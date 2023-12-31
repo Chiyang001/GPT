@@ -1,28 +1,92 @@
+//界面显示社会主义核心价值观的红色字体
+document.addEventListener("DOMContentLoaded", function() {
+    var phrases = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"];
+    var isValuesEffectEnabled = true; // 默认启用红色文字效果
+
+    var toggleValuesCheckbox = document.getElementById('toggle-values');
+    toggleValuesCheckbox.checked = true; // 设置复选框为选中状态
+
+    // 以前的红色文字动画效果代码
+    document.addEventListener('click', function(e) {
+        if (!isValuesEffectEnabled) return; // 如果效果被禁用，不执行任何操作
+
+        var randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        var textElement = document.createElement('div');
+        textElement.classList.add('floating-text');
+        textElement.textContent = randomPhrase;
+        textElement.style.left = e.clientX + 'px';
+        textElement.style.top = e.clientY + 'px';
+
+        document.body.appendChild(textElement);
+
+        setTimeout(function() {
+            textElement.style.transform = 'translateY(-100px)';
+            textElement.style.opacity = '0';
+        }, 0);
+
+        setTimeout(function() {
+            document.body.removeChild(textElement);
+        }, 2000);
+    });
+
+    // 切换按钮逻辑
+    toggleValuesCheckbox.addEventListener('change', function() {
+        isValuesEffectEnabled = this.checked;
+    });
+});
+
+
+
 //雪花动画
-function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            document.body.appendChild(snowflake);
+document.addEventListener("DOMContentLoaded", function() {
+    var isSnowfallEnabled = true; // 默认启用雪花效果
 
-            const initialX = Math.random() * window.innerWidth;
-            const initialY = Math.random() * window.innerHeight;
-            snowflake.style.left = `${initialX}px`;
-            snowflake.style.top = `-${initialY}px`;
+    // 创建雪花的函数
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        document.body.appendChild(snowflake);
 
-            const fallSpeed = Math.random() * 5 + 5; // 进一步减缓下落速度
-            snowflake.style.animationDuration = `${fallSpeed}s`;
+        const initialX = Math.random() * window.innerWidth;
+        const initialY = Math.random() * window.innerHeight;
+        snowflake.style.left = `${initialX}px`;
+        snowflake.style.top = `-${initialY}px`;
 
-            
-            return snowflake;
+        const fallSpeed = Math.random() * 5 + 5; // 雪花下落速度
+        snowflake.style.animationDuration = `${fallSpeed}s`;
+
+        return snowflake;
+    }
+
+    // 创建多个雪花的函数
+    function createSnowfall(numSnowflakes) {
+        for (let i = 0; i < numSnowflakes; i++) {
+            createSnowflake();
         }
+    }
 
-        function createSnowfall(numSnowflakes) {
-            for (let i = 0; i < numSnowflakes; i++) {
-                createSnowflake();
-            }
+    // 控制雪花效果的函数
+    function toggleSnowfall() {
+        isSnowfallEnabled = !isSnowfallEnabled;
+        if (isSnowfallEnabled) {
+            createSnowfall(25); // 启用时创建雪花
+        } else {
+            document.querySelectorAll('.snowflake').forEach(snowflake => {
+                snowflake.remove(); // 禁用时移除所有雪花
+            });
         }
+    }
 
-        createSnowfall(25); // 减少雪花数量
+    // 初始创建雪花
+    if (isSnowfallEnabled) {
+        createSnowfall(25);
+    }
+
+    // 给复选框添加事件监听器
+    var toggleSnowfallCheckbox = document.getElementById('toggle-snowfall');
+    toggleSnowfallCheckbox.addEventListener('change', toggleSnowfall);
+});
+
   
 // 菜单栏代码
 function toggleMenu() {
