@@ -15,32 +15,35 @@
 <body>
   
    <div id="menu-container">
-        <button id="menu-button" onclick="toggleMenu()">更多&设置</button>
-        <div id="menu">
-            <a onclick="showPopup('announcement-popup')">更新公告</a>
-            <a onclick="showPopup('version-popup')">网站版本</a>
-            <a href="https://chiyang001.github.io/GPT/prompt">破解提示词</a>
-            <a href="money.html">捐助开发者</a>
-            <a href="https://m.bilibili.com/space/404891612">开发者B站</a>
-            <div id="values-switch">
+    <button id="menu-button" onclick="toggleMenu()">更多&设置</button>
+    <div id="menu">
+        <a onclick="showPopup('announcement-popup')">更新公告</a>
+        <a onclick="showPopup('version-popup')">网站版本</a>
+        <a href="https://chiyang001.github.io/GPT/prompt">破解提示词</a>
+        <a href="money.html">捐助开发者</a>
+        <a href="https://m.bilibili.com/space/404891612">开发者B站</a>
+        <a onclick="clearAllData()">清除所有数据</a>
+        <div id="values-switch">
             <label for="toggle-values">显示社会主义核心价值观</label>
             <input type="checkbox" id="toggle-values" onclick="toggleValues()">
             <div id="snowfall-switch">
-            <label for="toggle-snowfall">雪花效果</label>
-            <input type="checkbox" id="toggle-snowfall" checked>
-            </div>
+                <label for="toggle-snowfall">雪花效果</label>
+                <input type="checkbox" id="toggle-snowfall" checked>
             </div>
         </div>
     </div>
+</div>
+
 
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2023.1.27）</p>
+        <p>更新公告（2023.1.28）</p>
         
         <p>1.删除无限制使用GPT4的教程（已失效）</p>
         <p>2.新增部分网站</p>
         <p>3.删除失效网站</p>
+        <p>4.设置中新增清除数据按钮</p>
         
     </div>
 </div>
@@ -103,7 +106,7 @@
 <div class="featured-tools">
     <div class="golden-tool-card">
     <h3>COZE</h3>
-    <p>无限制使用GPT4和搜索等强大插件（梯子自备）</p>
+    <p>无限制使用GPT4和搜索等强大插件（梯子自备）（可能网页进不去）</p>
     <a class="purple-button" href="https://www.coze.com/">立即体验</a>
     <a class="purple-button" href="https://b23.tv/NRlZdTi">查看教程</a>
     </div>
@@ -164,13 +167,13 @@
             </li>
             <li>
                 <span class="rank">7</span>
-                <span class="site-name">FakeGPT</span>
-                <span class="enter-button" onclick="location.href='https://chat.zhile.io/auth/login?v=5'">进入</span>
+                <span class="site-name">GPT官网国内服务站</span>
+                <span class="enter-button" onclick="location.href='https://chat.gptdsb.com/login'">进入</span>
             </li>
             <li>
                 <span class="rank">8</span>
                 <span class="site-name">BingAI 密码：fishhome666</span>
-                <span class="enter-button" onclick="location.href='http://vercel.jsdianman.eu.org/'">进入</span>
+                <span class="enter-button" onclick="location.href='https://bing.fishhome.link/web/#/'">进入</span>
             </li>
             <li>
                 <span class="rank">9</span>
@@ -193,6 +196,19 @@
      
 <div class="category" id="textGeneration">
   <div class="categories-container">
+    
+<div class="featured-tools">
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <div class="tool-logo">
+            <img src="logo/ChatGPT.jpg" alt="网站Logo">
+        </div>
+        <h3>GPT官网国内服务站</h3>
+        <p>登录openai官方账号免梯子。</p>
+        <a class="glowing-button" href="https://chat.gptdsb.com/login">进入网站</a>
+    </div>
+   
+
+</div>       
     
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
@@ -419,14 +435,7 @@
                 </div>            
             </div>
             <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/DM_20230929093630_001.svg" alt="网站Logo">
-                    </div>
-                    <h3>伊莉思</h3>
-                    <p>这两天突然无法进入网页，登录之后每三小时有50次的GPT4，并且支持官方GPT插件，可联网搜索， GPT3无限制。</p>
-                    <a class="glowing-button" href="https://ylsapp.com/">进入网站</a>
-                </div>
+                
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
                     <img src="logo/ChatGPT.jpg" alt="网站Logo">
@@ -683,7 +692,11 @@
                     <p>绘画者首选网站。国外AI绘画网站不需要翻墙，也能够很流畅的使用，并且支持一次性生成多张图片，而且免费无限制，界面很简洁。</p>
                     <a class="glowing-button" href="https://images.ylokh.xyz/">进入网站</a>
                 </div>
-                
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <h3>6pen art</h3>
+                    <p>感觉还可以，界面很清爽。</p>
+                    <a class="glowing-button" href="https://6pen.art/">进入网站</a>
+                </div>
             </div>
           <div class="category" id="imageProcessing">
             <div class="featured-tools">
@@ -691,6 +704,11 @@
                     <h3>清华GPT</h3>
                     <p>完全免费，无需登录，不限次数，支持各种模型，包括二次元模型，三次元模型等。</p>
                     <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
+                </div>
+                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+                    <h3>art breeder</h3>
+                    <p>需要梯子，不过免费。</p>
+                    <a class="glowing-button" href="https://www.artbreeder.com/">进入网站</a>
                 </div>
             </div>
            
@@ -954,7 +972,7 @@
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>BingAI</h3>
         <p>密码：fishhome666，使用时请选择能正常使用的服务器</p>
-        <a class="purple-button" href="http://vercel.jsdianman.eu.org/">进入网站</a>
+        <a class="purple-button" href="https://bing.fishhome.link/web/#/">进入网站</a>
     </div>
     
 </div>

@@ -1,3 +1,49 @@
+//清除数据
+function clearAllData() {
+    // 清除sessionStorage
+    sessionStorage.clear();
+
+    // 清除localStorage
+    localStorage.clear();
+
+    // 清除所有缓存
+    caches.keys().then(keys => {
+        keys.forEach(key => caches.delete(key));
+    });
+
+    // 清除IndexedDB
+    indexedDB.databases().then(dbs => {
+        dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+    });
+
+    // 清除cookies
+    document.cookie.split(";").forEach(function(c) { 
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+    });
+
+    // 刷新页面
+    location.reload();
+
+    // 显示消息提示
+    var message = document.createElement('div');
+    message.innerText = '数据已清除';
+    message.style.position = 'fixed';
+    message.style.left = '50%';
+    message.style.top = '50%';
+    message.style.transform = 'translate(-50%, -50%)';
+    message.style.background = 'rgba(0,0,0,0.5)';
+    message.style.color = 'white';
+    message.style.padding = '20px';
+    message.style.borderRadius = '5px';
+    document.body.appendChild(message);
+
+    // 1秒后隐藏消息提示
+    setTimeout(function() {
+        message.style.display = 'none';
+    }, 1000);
+}
+
+
 //界面显示社会主义核心价值观的红色字体
 document.addEventListener("DOMContentLoaded", function() {
     var phrases = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"];
