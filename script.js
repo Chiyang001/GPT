@@ -1,3 +1,12 @@
+//来回切换标题的动画效果
+var originalTitle = document.title;  // 保存原始标题
+    var newTitle = "用免费的网站，换取无价的体验";  // 新标题
+    var isOriginalTitle = true;
+
+    setInterval(function() {
+        document.title = isOriginalTitle ? newTitle : originalTitle;
+        isOriginalTitle = !isOriginalTitle;
+    }, 5000);  // 每5秒切换标题
 //清除数据
 function clearAllData() {
     // 清除sessionStorage
