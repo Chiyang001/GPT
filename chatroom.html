@@ -83,7 +83,11 @@
   <div id="chat-header">
     <h1>ChatGPTHub在线聊天室</h1>
     <p>国外评论系统，国内可能无法正常加载，请开梯子留言</p>
+    <p>没有梯子？<a href="javascript:void(0);" onclick="openQQChat()">与管理员临时对话</a>点击后若没有自动跳转到QQ请手动点击请求</p>
   </div>
+  <!-- 聊天室的其他内容 -->
+</div>
+
 
 <!-- Disqus 代码 -->
 <div id="disqus_thread"></div>
@@ -107,6 +111,12 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 <script id="dsq-count-scr" src="//chatgpthub.disqus.com/count.js" async></script>
-
+<script type="text/javascript">
+function openQQChat() {
+    var qqNumber = '3083248889'; // 替换为您的QQ号码
+    var url = 'http://wpa.qq.com/msgrd?v=3&uin=' + qqNumber + '&site=qq&menu=yes';
+    window.open(url, '_blank', 'height=600,width=800,resizable=yes,scrollbars=yes');
+}
+</script>
 </body>
 </html>
