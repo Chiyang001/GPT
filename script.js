@@ -1,3 +1,30 @@
+//cookie询问框
+function handleConsent(consent) {
+    // 隐藏cookie询问框
+    document.getElementById('cookieConsent-box').style.display = 'none';
+
+    if (!consent) {
+        // 如果用户不同意，隐藏收藏按钮
+        document.getElementById('viewFavorites-button').style.display = 'none';
+    }
+}
+
+//加载动画
+// 确保页面加载完成后执行
+window.addEventListener('load', function() {
+  // 获取加载器容器
+  var loaderContainer = document.getElementById('loader-container');
+
+  // 设置一个定时器，在3秒后开始淡出动画
+  setTimeout(function() {
+    // 开始淡出动画
+    loaderContainer.style.opacity = '0';
+    // 在动画结束后移除加载器
+    setTimeout(function() {
+      loaderContainer.style.display = 'none';
+    }, 300); // 300ms后移除，确保动画完成
+  }, 3000); // 3秒后开始淡出动画
+});
 //来回切换标题的动画效果
 var originalTitle = document.title;  // 保存原始标题
     var newTitle = "用免费的网站，换取无价的体验";  // 新标题
