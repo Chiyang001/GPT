@@ -1,12 +1,40 @@
-//cookie询问框
-function handleConsent(consent) {
-    // 隐藏cookie询问框
-    document.getElementById('cookieConsent-box').style.display = 'none';
+// 当文档加载完毕时执行检查cookie的操作
+document.addEventListener('DOMContentLoaded', function() {
+    checkConsentCookie();
+});
 
-    if (!consent) {
+// 检查页面加载时的Cookie
+function checkConsentCookie() {
+    var userConsent = document.cookie.split(';').some(function(item) {
+        return item.trim().startsWith('userConsent=');
+    });
+
+    if (!userConsent) {
+        // 如果没有找到userConsent cookie，显示询问框
+        document.getElementById('cookieConsent-box').style.display = 'block';
+    }
+}
+
+// 处理用户对Cookie询问的响应
+function handleConsent(consent) {
+    var consentBox = document.getElementById('cookieConsent-box');
+    consentBox.style.display = 'none';
+
+    if (consent) {
+        // 用户同意，设置cookie
+        setConsentCookie();
+    } else {
         // 如果用户不同意，隐藏收藏按钮
         document.getElementById('viewFavorites-button').style.display = 'none';
     }
+}
+
+// 设置Cookie的函数
+function setConsentCookie() {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000)); // 设置Cookie有效期为1年
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = "userConsent=true;" + expires + ";path=/";
 }
 
 //加载动画
@@ -335,8 +363,34 @@ function animateSubtitle() {
 
 
 
+async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
 
-       function toggleCategory(categoryId) {
+async function doubleSha256(password) {
+    const firstHash = await sha256(password);
+    const secondHash = await sha256(firstHash);
+    return secondHash;
+}
+
+async function toggleCategory(categoryId) {
+    if (categoryId === 'tool') {
+        const password = prompt("请输入密码:");
+        const hashedPassword = await doubleSha256(password);
+
+        const correctDoubleHashedPassword = 'b5f7563b277a15c998985d7f8a53013506fe9216b16e918ec06649e8542f2d58';
+
+        if (hashedPassword !== correctDoubleHashedPassword) {
+            alert("密码错误!");
+            return;
+        }
+    }
+
+    // 原有的toggle逻辑
     const categories = document.querySelectorAll('.category');
     const buttons = document.querySelectorAll('.category-button');
     categories.forEach((cat) => {
@@ -362,6 +416,7 @@ function animateSubtitle() {
     const button = document.querySelector(`#${categoryId}-button`);
     button.classList.add('active');
 }
+
 
 
 

@@ -24,27 +24,23 @@
 
 <div id="loader-container">
  <div class="loader">
-  <div class="box box-1">
-    <div class="side-left"></div>
-    <div class="side-right"></div>
-    <div class="side-top"></div>
-  </div>
-  <div class="box box-2">
-    <div class="side-left"></div>
-    <div class="side-right"></div>
-    <div class="side-top"></div>
-  </div>
-  <div class="box box-3">
-    <div class="side-left"></div>
-    <div class="side-right"></div>
-    <div class="side-top"></div>
-  </div>
-  <div class="box box-4">
-    <div class="side-left"></div>
-    <div class="side-right"></div>
-    <div class="side-top"></div>
-  </div>
- </div>
+  <div class="cell d-0"></div>
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+  
+  
+  <div class="cell d-2"></div>
+  <div class="cell d-3"></div>
+  
+  
+  <div class="cell d-3"></div>
+  <div class="cell d-4"></div>
+  
+  
+</div>
 </div>
    <div id="menu-container">
     <button id="menu-button" onclick="toggleMenu()">更多&设置</button>
@@ -70,19 +66,18 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2023.1.31）</p>
+        <p>更新公告（2023.2.1）</p>
         
-        <p>1.优化cookie设置流程</p>
-        <p>2.优化按钮样式</p>
-        <p>3.新增加载动画</p>
-        
+        <p>1.修复加载动画的bug</p>
+        <p>2.开发者工具新增密码</p>
+        <p>3.对cookie做出了优化</p>
     </div>
 </div>
 
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.1.4</p>
+        <p>Alpha 1.1.5</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -120,7 +115,7 @@
 <button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
         </div>
         <div class="category-container">
-        <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️其他工具</button>
+        <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️开发者工具</button>
 <button id="bing-button" class="category-button" onclick="toggleCategory('bing'); scrollToContent()">🅱️新必应Bing合集</button>
 <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
         </div>
@@ -974,15 +969,15 @@
       <div class="featured-tools">
  
         <div class="tool-card">
-        <h3>网站压力测试</h3><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <p>这个网站可以免费进行ddos或更高级的压力测试，仅供学习使用，严禁作违法使用，否则后果自负！！</p>
-        <a class="purple-button" href="https://stresser.su/login">点击此按钮表明你已同意以上说明</a>
+        <h3>网站压力测试</h3>
+        <a class="purple-button" href="https://stresser.su/login">进入</a>
         </div>
       </div>
       <div class="featured-tools">
-        <div class="tool-card">
-        <h3>免费VPN梯子分享</h3>
-        <p>违法的事情作者不做，哼~🤪</p>
+	<div class="tool-card">
+        <h3>小火箭加速器</h3>
+        <a class="purple-button" href="https://wwb.lanzoul.com/iER5f1mw3nzc">进入</a>
+        </div>
         
         </div>
         
