@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
     setTimeout(function() {
       loaderContainer.style.display = 'none';
     }, 300); // 300ms后移除，确保动画完成
-  }, 3000); // 3秒后开始淡出动画
+  }, 300); // 0.3秒后开始淡出动画
 });
 //来回切换标题的动画效果
 var originalTitle = document.title;  // 保存原始标题
