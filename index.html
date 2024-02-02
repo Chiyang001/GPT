@@ -14,34 +14,7 @@
 </head>
 <body>
 
-<!-- Cookie询问框 -->
-<div id="cookieConsent-box">
-    <p>我们使用cookies来改善您的体验。是否同意使用cookies？</p>
-    <button onclick="handleConsent(true)">同意</button>
-    <button onclick="handleConsent(false)">不同意</button>
-</div>
 
-
-<div id="loader-container">
- <div class="loader">
-  <div class="cell d-0"></div>
-  <div class="cell d-1"></div>
-  <div class="cell d-2"></div>
-
-  <div class="cell d-1"></div>
-  <div class="cell d-2"></div>
-  
-  
-  <div class="cell d-2"></div>
-  <div class="cell d-3"></div>
-  
-  
-  <div class="cell d-3"></div>
-  <div class="cell d-4"></div>
-  
-  
-</div>
-</div>
    <div id="menu-container">
     <button id="menu-button" onclick="toggleMenu()">更多&设置</button>
     <div id="menu">
@@ -68,17 +41,19 @@
     <div class="popup-content">
         <p>更新公告（2023.2.2）</p>
         
-        <p>1.修复加载动画的bug</p>
+        <p>1.删除加载动画的bug</p>
         <p>2.开发者工具新增密码</p>
         <p>3.对cookie做出了优化</p>
         <p>4.上强度！对开发者链接进行强制加密！</p>
+        <p>5.删除cookie询问框</p>
+        <p>6.更新大量bing网站</p>
     </div>
 </div>
 
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.1.5</p>
+        <p>Alpha 1.1.6</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -1000,7 +975,42 @@
         <p>密码：fishhome666，使用时请选择能正常使用的服务器</p>
         <a class="purple-button" href="https://bing.fishhome.link/web/#/">进入网站</a>
     </div>
-    
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>LaoGou</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://laogou-go-proxy-bingai.hf.space">进入网站</a>
+    </div>
+</div>
+<div class="featured-tools">
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>老狗部署2</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://xx1.laogou666.com/">进入网站</a>
+    </div>
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>harry</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://harry-zklcdc-go-proxy-bingai.hf.space">进入网站</a>
+    </div>
+</div>
+<div class="featured-tools">
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>dongsiqie</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://dongsiqie-bing.hf.space">进入网站</a>
+    </div>
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>dongsiqie2</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://dongsiqie-bingai.hf.space">进入网站</a>
+    </div>
+</div>
+<div class="featured-tools">
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+        <h3>zklcdc</h3>
+        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
+        <a class="purple-button" href="https://bingai.zklcdc.xyz/">进入网站</a>
+    </div>
 </div>
         </div>
       </div>
