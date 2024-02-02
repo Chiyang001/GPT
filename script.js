@@ -1,3 +1,5 @@
+
+
 // 当文档加载完毕时执行检查cookie的操作
 document.addEventListener('DOMContentLoaded', function() {
     checkConsentCookie();
@@ -553,6 +555,42 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+//链接加密
+(function() {
+    var _0x12cd = {
+        'x1': 'link-stress-test',
+        'x2': 'link-rocket-accelerator',
+        'x3': 'link-windvpn'
+    };
+
+    var _0x23de = {
+        'x1': 'aHR0cHM6Ly9zdHJlc3Nlci5zdS9sb2dpbg==',
+        'x2': 'aHR0cHM6Ly93d2IubGFuem91bC5jb20vaUVSNWYxbXczbnpj',
+        'x3': 'aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMWpaVUFIZGgyY2RLNEluVnVqOWRybWc/cHdkPTAwMDA='
+    };
+
+    function _0x45fg(encodedStr) {
+        var _0x56hi = atob(encodedStr);
+        return _0x56hi;
+    }
+
+    function _0x67ij(urlStr) {
+        window.location.href = _0x45fg(urlStr);
+    }
+
+    function _0x78kl(elem, callback) {
+        document.getElementById(elem).addEventListener('click', callback);
+    }
+
+    Object.keys(_0x12cd).forEach(function(key) {
+        _0x78kl(_0x12cd[key], function() { _0x67ij(_0x23de[key]); });
+    });
+})();
+
+
+
+
 // 初始化收藏夹数据
 var favorites = [];
 
@@ -614,6 +652,3 @@ updateFavoritesList();
 function goToFavoritePage() {
     window.location.href = 'favorite.html';
 }
-
-
-
