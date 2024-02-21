@@ -93,55 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-//雪花动画
-document.addEventListener("DOMContentLoaded", function() {
-    var isSnowfallEnabled = true; // 默认启用雪花效果
 
-    // 创建雪花的函数
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        document.body.appendChild(snowflake);
-
-        const initialX = Math.random() * window.innerWidth;
-        const initialY = Math.random() * window.innerHeight;
-        snowflake.style.left = `${initialX}px`;
-        snowflake.style.top = `-${initialY}px`;
-
-        const fallSpeed = Math.random() * 5 + 5; // 雪花下落速度
-        snowflake.style.animationDuration = `${fallSpeed}s`;
-
-        return snowflake;
-    }
-
-    // 创建多个雪花的函数
-    function createSnowfall(numSnowflakes) {
-        for (let i = 0; i < numSnowflakes; i++) {
-            createSnowflake();
-        }
-    }
-
-    // 控制雪花效果的函数
-    function toggleSnowfall() {
-        isSnowfallEnabled = !isSnowfallEnabled;
-        if (isSnowfallEnabled) {
-            createSnowfall(25); // 启用时创建雪花
-        } else {
-            document.querySelectorAll('.snowflake').forEach(snowflake => {
-                snowflake.remove(); // 禁用时移除所有雪花
-            });
-        }
-    }
-
-    // 初始创建雪花
-    if (isSnowfallEnabled) {
-        createSnowfall(25);
-    }
-
-    // 给复选框添加事件监听器
-    var toggleSnowfallCheckbox = document.getElementById('toggle-snowfall');
-    toggleSnowfallCheckbox.addEventListener('change', toggleSnowfall);
-});
 
   
 // 菜单栏代码

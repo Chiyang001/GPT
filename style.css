@@ -482,22 +482,7 @@ button:hover {
             color: #333;
         }
       
-        .snowflake {
-            position: absolute;
-            background: #fff;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-    to {
-        top: 100vh;
-        transform: translate(calc(var(--wind-direction) * 10px), 100%);
-    }
-}
+       
 .golden-tool-card {
     border: 1px solid #444444;
             padding: 10px;
@@ -1038,22 +1023,7 @@ button:hover {
             cursor: pointer;
             color: #333;
         }
-.snowflake {
-            position: absolute;
-            background: #fff;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
 
-        @keyframes fall {
-    to {
-        top: 100vh;
-        transform: translate(calc(var(--wind-direction) * 10px), 100%);
-    }
-}
 .golden-tool-card {
     border: 1px solid #444444;
             padding: 10px;
