@@ -36,9 +36,12 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2024.3.9）</p>
+        <p>更新公告（2024.3.10）</p>
         
-        <p>1.删除无效网站</p>
+        <p>1.新增GPT官方插件</p>
+        <p>2.新增了几个网站</p>
+        <p>3.新增GPT4账号获取渠道</p>
+        <p>4.优化布局排版</p>
         
 
     </div>
@@ -47,7 +50,7 @@
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.1.9</p>
+        <p>Alpha 1.2.0</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -85,7 +88,7 @@
 <button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
         </div>
         <div class="category-container">
-        <button id="tool-button" class="category-button" onclick="toggleCategory('tool'); scrollToContent()">🛠️开发者工具</button>
+        
 <button id="bing-button" class="category-button" onclick="toggleCategory('bing'); scrollToContent()">🅱️新必应Bing合集</button>
 <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
         </div>
@@ -101,12 +104,17 @@
     </ul>
 <div class="featured-tools">
     <div class="golden-tool-card">
-    <h3>COZE</h3>
-    <p>无限制使用GPT4和搜索等强大插件（梯子自备）（可能网页进不去）</p>
-    <a class="purple-button" href="https://www.coze.com/">立即体验</a>
-    <a class="purple-button" href="https://b23.tv/NRlZdTi">查看教程</a>
+    <h3>KeepChatGPT</h3>
+    <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
+    <p>这是一款提高ChatGPT的数据安全能力和效率的插件。并且免费共享大量创新功能，如：自动刷新、保持活跃、数据安全、取消审计、克隆对话、言无不尽、净化页面、展示大屏、展示全屏、拦截跟踪、日新月异等。让我们的AI体验无比安全、顺畅、丝滑、高效、简洁。</p>
+    <a class="purple-button" href="https://greasyfork.org/zh-CN/scripts/462804-keepchatgpt">立即体验</a>
     </div>
-  
+    <div class="golden-tool-card">
+    <h3>GPT模型切换器</h3>
+    <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
+    <p>在 ChatGPT 网页端使用 GPT-4 Mobile 模型。同时，它还提供了切换到其他模型的功能，以提供更大的灵活性。一般来说，该脚本不会与其他流行的 ChatGPT 脚本产生冲突。</p>
+    <a class="purple-button" href="https://greasyfork.org/zh-CN/scripts/468905-chatgpt-model-switcher-supports-gpt-4-mobile-and-all-available-models">立即体验</a>
+    </div>
 </div>
     
     
@@ -194,7 +202,13 @@
   <div class="categories-container">
     
 <div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+   <div class="golden-tool-card">
+    <h3>COZE</h3>
+    <p>无限制使用GPT4和搜索等强大插件（梯子自备）</p>
+    <a class="purple-button" href="https://www.coze.com/">立即体验</a>
+    <a class="purple-button" href="https://b23.tv/NRlZdTi">查看教程</a>
+    </div>
+    <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
             <img src="logo/ChatGPT.jpg" alt="网站Logo">
         </div>
@@ -202,7 +216,7 @@
         <p>登录openai官方账号免梯子。</p>
         <a class="glowing-button" href="https://chat.gptdsb.com/login">进入网站</a>
     </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
             <img src="logo/ChatGPT.jpg" alt="网站Logo">
         </div>
@@ -213,7 +227,7 @@
 
 </div>       
 <div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
             <img src="logo/ChatGPT.jpg" alt="网站Logo">
         </div>
@@ -221,7 +235,7 @@
         <p>无需登陆免费使用。</p>
         <a class="glowing-button" href="https://ai.tentech.top/">进入网站</a>
     </div>
-   <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+   <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
             <img src="logo/ChatGPT.jpg" alt="网站Logo">
         </div>
@@ -687,18 +701,14 @@
                  
         <div class="category" id="imageProcessing">
             <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>国外绘画网站</h3>
-                    <p>绘画者首选网站。国外AI绘画网站不需要翻墙，也能够很流畅的使用，并且支持一次性生成多张图片，而且免费无限制，界面很简洁。</p>
-                    <a class="glowing-button" href="https://images.ylokh.xyz/">进入网站</a>
-                </div>
+               
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>6pen art</h3>
                     <p>感觉还可以，界面很清爽。</p>
                     <a class="glowing-button" href="https://6pen.art/">进入网站</a>
                 </div>
             </div>
-          <div class="category" id="imageProcessing">
+       
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>清华GPT</h3>
@@ -710,7 +720,7 @@
                     <p>需要梯子，不过免费。</p>
                     <a class="glowing-button" href="https://www.artbreeder.com/">进入网站</a>
                 </div>
-            </div>
+           
            
           </div>
         </div>
@@ -927,8 +937,14 @@
         </div>
          
     <div class="category" id="account">
-    <p>目前账号领取比较困难，更新较缓</p>
+  
       <div class="featured-tools">
+        <div class="golden-tool-card">
+        <h3>获取GPT4账号</h3>
+        <p>之前由于用户滥用，导致大量GPT4账号失效，若需要GPT4账号，请加好友并注明“获取GPT4账号”，QQ：3083248889</p>
+        <a class="purple-button" href="http://wpa.qq.com/msgrd?v=3&uin=3083248889&site=qq&menu=yes">立即免费领取</a>
+
+        </div>
         <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>ChatGPT API_KEY免费领取</h3>
         <p>这个网站可以每天有一美元的额度，足够使用一天了</p>
@@ -944,27 +960,7 @@
         
     </div>
         
-    <div class="category" id="tool">
-  <div class="featured-tools">
-    <div class="tool-card">
-      <h3>网站压力测试</h3>
-      <!-- 添加特定的id -->
-      <a id="link-stress-test" href="javascript:void(0)">进入</a>
-    </div>
-    <div class="tool-card">
-      <h3>windscribe</h3>
-      <!-- 添加特定的id -->
-      <a id="link-windvpn" href="javascript:void(0)">进入</a>
-    </div>
-  </div>
-  <div class="featured-tools">
-    <div class="tool-card">
-      <h3>小火箭加速器</h3>
-      <!-- 添加特定的id -->
-      <a id="link-rocket-accelerator" href="javascript:void(0)">进入</a>
-    </div>
-  </div>
-</div>
+   
 
          
          
