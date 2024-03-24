@@ -36,12 +36,10 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2024.3.10）</p>
+        <p>更新公告（2024.3.24）</p>
         
-        <p>1.新增GPT官方插件</p>
-        <p>2.新增了几个网站</p>
-        <p>3.新增GPT4账号获取渠道</p>
-        <p>4.优化布局排版</p>
+        <p>1.更新样式和布局</p>
+
         
 
     </div>
@@ -50,7 +48,7 @@
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.2.0</p>
+        <p>Alpha 1.2.1</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -74,49 +72,50 @@
     <div id="header">
         <h1 id="title" style="background: linear-gradient(to right, #8a4df5, #0d47a1); -webkit-background-clip: text; color: transparent;">ChatGPTHub</h1>
         <p id="subtitle">用免费的网站，换取无价的体验。</p>
-        <div class="container">
-        <p>请先选择您需要的资源分类：</p>
-        </div>
-        <div class="category-container">
-<button id="commend-button" class="category-button" onclick="toggleCategory('commend'); scrollToContent()">📊排行榜</button>
-<button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
-<button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
-        </div>
-        <div class="category-container">
-<button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
-<button id="ai-button" class="category-button" onclick="toggleCategory('ai'); scrollToContent()">🌐AI合集</button>
-<button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
-        </div>
-        <div class="category-container">
-        
-<button id="bing-button" class="category-button" onclick="toggleCategory('bing'); scrollToContent()">🅱️新必应Bing合集</button>
-<button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
-        </div>
+<div class="container">
+    <p>请先选择您需要的资源分类：</p>
+</div>
+<div class="container">
+    <div class="category-container">
+        <button id="commend-button" class="category-button" onclick="toggleCategory('commend'); scrollToContent()">📊排行榜</button>
+        <button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
+        <button id="imageProcessing-button" class="category-button" onclick="toggleCategory('imageProcessing'); scrollToContent()">🎬图像处理</button>
+        <button id="work-button" class="category-button" onclick="toggleCategory('work'); scrollToContent()">💻工作辅助</button>
+        <button id="ai-button" class="category-button" onclick="toggleCategory('ai'); scrollToContent()">🌐AI合集</button>
+        <button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
+        <button id="bing-button" class="category-button" onclick="toggleCategory('bing'); scrollToContent()">🅱️新必应Bing合集</button>
+        <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
     </div>
+</div>
 
 
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="搜索网站">
-        <button onclick="searchWebsites()">搜索</button>
-    </div>
-    <ul id="search-results" class="search-list">
-        <!-- 这里将显示搜索结果 -->
-    </ul>
+    <input type="text" id="search-input" placeholder="搜索网站">
+    <button class="search-button" onclick="searchWebsites()">🔍</button>
+</div>
+<ul id="search-results" class="search-list">
+    <!-- 这里将显示搜索结果 -->
+</ul>
+
+<div class="category-container">
+<p>❤️猜你想要：</p>
+</div>
+<div class="container">
 <div class="featured-tools">
     <div class="golden-tool-card">
     <h3>KeepChatGPT</h3>
     <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
     <p>这是一款提高ChatGPT的数据安全能力和效率的插件。并且免费共享大量创新功能，如：自动刷新、保持活跃、数据安全、取消审计、克隆对话、言无不尽、净化页面、展示大屏、展示全屏、拦截跟踪、日新月异等。让我们的AI体验无比安全、顺畅、丝滑、高效、简洁。</p>
-    <a class="purple-button" href="https://greasyfork.org/zh-CN/scripts/462804-keepchatgpt">立即体验</a>
+    <a class="glowing-button" href="https://greasyfork.org/zh-CN/scripts/462804-keepchatgpt">立即体验</a>
     </div>
     <div class="golden-tool-card">
     <h3>GPT模型切换器</h3>
     <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
     <p>在 ChatGPT 网页端使用 GPT-4 Mobile 模型。同时，它还提供了切换到其他模型的功能，以提供更大的灵活性。一般来说，该脚本不会与其他流行的 ChatGPT 脚本产生冲突。</p>
-    <a class="purple-button" href="https://greasyfork.org/zh-CN/scripts/468905-chatgpt-model-switcher-supports-gpt-4-mobile-and-all-available-models">立即体验</a>
+    <a class="glowing-button" href="https://greasyfork.org/zh-CN/scripts/468905-chatgpt-model-switcher-supports-gpt-4-mobile-and-all-available-models">立即体验</a>
     </div>
 </div>
-    
+</div>
     
         </div>
 </div>
@@ -205,8 +204,8 @@
    <div class="golden-tool-card">
     <h3>COZE</h3>
     <p>无限制使用GPT4和搜索等强大插件（梯子自备）</p>
-    <a class="purple-button" href="https://www.coze.com/">立即体验</a>
-    <a class="purple-button" href="https://b23.tv/NRlZdTi">查看教程</a>
+    <a class="glowing-button" href="https://www.coze.com/">立即体验</a>
+    <a class="glowing-button" href="https://b23.tv/NRlZdTi">查看教程</a>
     </div>
     <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
@@ -973,19 +972,19 @@
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>dongsiqie</h3>
         <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
-        <a class="purple-button" href="https://dongsiqie-bing.hf.space">进入网站</a>
+        <a class="glowing-button" href="https://dongsiqie-bing.hf.space">进入网站</a>
     </div>
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>dongsiqie2</h3>
         <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
-        <a class="purple-button" href="https://dongsiqie-bingai.hf.space">进入网站</a>
+        <a class="glowing-button" href="https://dongsiqie-bingai.hf.space">进入网站</a>
     </div>
 </div>
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>zklcdc</h3>
         <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
-        <a class="purple-button" href="https://bingai.zklcdc.xyz/">进入网站</a>
+        <a class="glowing-button" href="https://bingai.zklcdc.xyz/">进入网站</a>
     </div>
 </div>
         </div>

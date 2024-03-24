@@ -25,9 +25,8 @@
         /* Tool Categories */
         .category-container {
             display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
         }
 
         .category-button {
@@ -39,7 +38,9 @@
             padding: 5px 10px;
             border-radius: 10px;
             margin: 5px;
+    flex-basis: calc(33.333% - 10px)
             transition: background-color 0.3s;
+            z-index: 1000;
         }
 
         .category-button:hover {
@@ -55,10 +56,10 @@
             margin-top: 10px;
         }
 
-        .category {
+       .category {
     text-align: center;
     padding: 10px;
-    background: #B0C4DE; /* 淡蓝色背景，给人冬日清冷之感 */
+    background: rgba(176, 196, 222, 0.5); /* 将淡蓝色背景改为半透明 */
     color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
     border-radius: 10px;
     margin: 10px;
@@ -68,7 +69,10 @@
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
     backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+    position: relative;
+    
 }
+
 
 
 
@@ -81,68 +85,104 @@
 
 /* 工具卡片 - 冬季主题 */
 .tool-card {
-    background-color: #B0C4DE; /* 冬天的灰蓝色 */
-    border: 1px solid #4A5A6B; /* 边框采用更深的灰色 */
-    padding: 10px;
-    margin: 5px;
+    background-color: rgba(243, 225, 205, 0.9); /* 米黄色背景，略微透明 */
+    color: #6B4423; /* 暗棕色文字，传统的书墨色 */
+    border: 1px solid #C0A080; /* 古铜色边框 */
+    border-radius: 10px; /* 圆角边框 */
+    padding: 20px;
+    margin: 20px;
     text-align: center;
-    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 轻微阴影 */
+    font-family: '宋体', 'SimSun', serif; /* 使用宋体，增加古风感 */
+    transition: all 0.3s ease;
     position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-    animation: glow 1s infinite alternate;
-    color: #F7F9F9; /* 文字使用浅色以突出深色背景 */
 }
 
-/* 可选：添加关键帧动画以实现微妙的“发光”效果 */
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px #3E4A59;
-    }
-    to {
-        box-shadow: 0 0 20px #2C3E50;
-    }
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-        }
+/* 添加一些装饰性的元素，如伪元素的边角装饰 */
+.tool-card::before, .tool-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C0A080;
+    background-color: rgba(243, 225, 205, 0.9);
+}
+
+.tool-card::before {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+}
+
+.tool-card::after {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+
 
         /* Glowing Button */
         .glowing-button {
   padding: 10px 15px;
-  border: none;
-  font-size: 12px;
-  color: #fff;
-  border-radius: 7px;
-  letter-spacing: 4px;
+  border: 2px solid #8B4513; /* 添加深棕色边框 */
+  font-size: 14px; /* 稍微增加字体大小，提高可读性 */
+  color: #F5F5DC; /* 设置文字颜色为米色 */
+  border-radius: 7px; /* 保持圆角 */
+  letter-spacing: 2px; /* 减少字母间距，使其更适合古风 */
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none; /* 移除大写字母转换，保持原样 */
   transition: 0.5s;
-  transition-property: box-shadow;
+  transition-property: box-shadow, transform; /* 增加变换属性以实现平滑过渡 */
   text-decoration: none; /* 移除下划线 */
-}
-
-.glowing-button {
-  background: rgb(0,140,255);
-  box-shadow: 0 0 25px rgb(0,140,255);
+  font-family: '宋体', '楷体'; /* 使用更符合古风的字体 */
+  background: #8B4513; /* 背景色改为深棕色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 使用更微妙的阴影效果 */
 }
 
 .glowing-button:hover {
-  box-shadow: 0 0 5px rgb(0,140,255),
-              0 0 25px rgb(0,140,255),
-              0 0 50px rgb(0,140,255),
-              0 0 100px rgb(0,140,255);
+  background: #A0522D; /* 鼠标悬停时背景色变深 */
+  color: #fff; /* 鼠标悬停时文字颜色变为白色 */
+  box-shadow: 0 0 10px #A0522D, /* 修改为更细腻的阴影效果 */
+               0 0 20px #A0522D;
+  transform: translateY(-2px); /* 轻微向上移动，增加交互感 */
 }
+
 
         /* Footer */
         #footer {
-            background-color: #202020;
-            color: #888888;
-            text-align: center;
-            padding: 10px;
-            margin-bottom: -200px;
-        }
+    background-color: #F5F5DC; /* 修改背景颜色为米色，更符合古风 */
+    color: #8B4513; /* 将文字颜色调整为深棕色，增加古风感 */
+    text-align: center;
+    padding: 20px; /* 增加一些内边距，让文字不会太挤 */
+    font-family: '宋体', '楷体'; /* 使用更符合古风的字体 */
+    border-top: 2px solid #8B4513; /* 顶部添加深棕色边框，增加分隔感 */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加上方阴影，增加层次感 */
+    margin-bottom: 0; /* 根据需要调整底部外边距 */
+}
+
+/* 如果有链接在footer中，也可以对其样式进行调整，与整体风格保持一致 */
+#footer a {
+    color: #8B4513; /* 链接颜色调整为深棕色 */
+    text-decoration: none; /* 去掉下划线，保持简洁 */
+    transition: color 0.3s; /* 添加颜色变化的过渡效果 */
+}
+
+#footer a:hover {
+    color: #A0522D; /* 鼠标悬停时变为更深的棕色 */
+}
+
 }
 
 .gradient-bg {
@@ -273,20 +313,24 @@ button:hover {
     100% { background-position: 0 100%; }
   }
 
-  .container {
-    width: 200px;
-    height: 50px; /* 更新高度以适应一行文本 */
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-    background-size: 200% 200%;
+ .container {
+    width: 80%; /* 宽度占视窗宽度的80% */
+
+    height: 100; /* 高度自动，根据内容调整 */
+    padding: 10px; /* 内填充，确保内容不会紧贴边缘 */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin: auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: gradient 5s linear infinite; /* 设置渐变动画 */
-    font-weight: 700; /* 加粗 */
-    font-style: italic; /* 斜体 */
-  }
+    font-weight: 700;
+    font-style: italic;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 
 .leaderboard-container {
             width: 600px;
@@ -361,10 +405,12 @@ button:hover {
 #search-input {
     padding: 5px;
     width: 300px;
-    color: white; /* 设置输入框中的文字颜色为白色 */
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 轻微突出的边框 */
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border-radius: 10px; /* 圆角边框 */
 }
-
-
 
 .search-list {
     list-style: none;
@@ -376,74 +422,73 @@ button:hover {
     border: 1px solid #ccc;
     margin: 5px 0;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景 */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    color: black; /* 设置列表中的文字颜色为黑色 */
+    color: black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+    backdrop-filter: blur(3px); /* 毛玻璃效果 */
 }
+
 
 #menu-container {
     position: absolute;
-    top: 10px; /* 调整距离顶部的位置 */
-    right: 10px; /* 调整距离右边的位置 */
+    top: 10px;
+    right: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 使子元素右对齐 */
-    border-radius: 10px; /* 添加圆角边框，确保与其他元素协调 */
-    overflow: hidden; /* 防止子元素溢出容器边界 */
+    align-items: flex-end;
+    border-radius: 5px; /* 调整为更符合古风的圆角大小 */
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid #8B4513; /* 添加深棕色边框 */
+    background-color: #F5F5DC; /* 背景色调整为米色，更符合古风 */
 }
 
-/* 如果#menu-container内有具体的按钮或元素，也可适当调整样式以符合整体设计 */
-#menu-container .button {
-    border-radius: 10px; /* 为按钮添加相同的圆角 */
-    /* 可以添加其他样式以确保按钮美观和一致性 */
-}
-
-
-        #menu-button {
+#menu-button {
     cursor: pointer;
-    background: linear-gradient(135deg, #6e48aa, #9d50bb); /* 添加渐变背景 */
-    color: #fff;
-    border: none;
-    padding: 15px; /* 增加内边距以使按钮更大一些 */
-    border-radius: 10px; /* 修改为圆角方形 */
-    font-size: 16px; /* 调整字体大小 */
-    font-weight: bold; /* 字体加粗 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+    background: #8B4513; /* 按钮背景色改为深棕色 */
+    color: #FFFFFF; /* 文字颜色改为白色 */
+    border: 1px solid #8B4513; /* 边框颜色与背景色一致 */
+    padding: 10px 20px; /* 调整内边距 */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: '宋体', '楷体'; /* 改用更符合古风的字体 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 调整阴影效果为更加柔和 */
+    transition: all 0.3s; /* 优化过渡效果 */
 }
 
 #menu-button:hover {
-    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+    background: #A0522D; /* 鼠标悬停时深化背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-
-        #menu {
+#menu {
     display: none;
-    background-color: #333;
-    padding: 20px; /* 增加内边距以获得更好的空间感 */
-    border-radius: 10px; /* 统一圆角大小 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 加深阴影以增加深度感 */
-    transition: box-shadow 0.3s; /* 添加阴影过渡效果 */
+    background-color: #F5F5DC; /* 菜单背景色与容器一致，更符合古风 */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s; /* 优化过渡效果 */
 }
 
 #menu a {
     display: block;
-    color: #fff;
+    color: #8B4513; /* 链接文字颜色调整为深棕色 */
     text-decoration: none;
-    margin-bottom: 10px; /* 增加链接之间的间距 */
-    padding: 10px 0; /* 为链接添加上下内边距 */
-    transition: background-color 0.3s, color 0.3s; /* 添加背景和颜色过渡效果 */
+    margin-bottom: 8px; /* 适当调整间距 */
+    padding: 8px 0;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时添加淡色背景 */
-    color: #ddd; /* 轻微改变颜色以增强交互感 */
+    background-color: #A0522D; /* 鼠标悬停时背景色变化 */
+    color: #FFFFFF; /* 鼠标悬停时文字色变白 */
 }
+
 
 /* Your existing CSS */
 /* Your existing CSS */
@@ -453,34 +498,48 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #F5F5DC; /* 修改背景颜色为米色，更符合古风 */
     padding: 20px;
-    border: 1px solid #ccc;
-    max-height: 80%; /* Set a maximum height for the popup */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
-    color: black; /* 将文字颜色设为黑色 */
-    border-radius: 10px; /* 圆角边框 */
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 700; /* 加粗 */
-    font-style: italic; /* 斜体 */
+    border: 2px solid #8B4513; /* 使用深棕色边框 */
+    max-height: 80%;
+    overflow-y: auto;
+    color: #3C2F2F; /* 文字颜色调整为深棕色 */
+    border-radius: 5px; /* 圆角稍微减小，符合古典美 */
+    font-family: '宋体', '楷体'; /* 更换为符合古风的字体 */
+    font-weight: 700;
+    font-style: normal; /* 移除斜体样式，使用正常字体风格 */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影，增加立体感 */
 }
 
 .popup-content {
     max-height: 100%;
     overflow-y: auto;
-    border-radius: 10px; /* 圆角边框 */
-    font-family: 'Montserrat', sans-serif; 
+    border-radius: 5px; /* 保持与.popup的圆角一致 */
+    font-family: '宋体', '楷体'; /* 统一字体风格 */
 }
 
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #8B4513; /* 关闭按钮颜色调整为深棕色，与整体风格一致 */
+    font-size: 20px; /* 增加字体大小，使其更加明显易见 */
+}
 
+/* 添加一些装饰性的CSS样式，例如边框内阴影，为弹窗添加更多细节 */
+.popup::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid #A0522D; /* 边框颜色略深，增加层次感 */
+    border-radius: 4px; /* 略小于.popup的圆角，形成内阴影的效果 */
+}
 
-        #close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #333;
-        }
       
        
 .golden-tool-card {
@@ -513,6 +572,24 @@ button:hover {
     margin-right: 10px;
 }
 
+.search-button {
+    padding: 5px 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 轻微突出的边框 */
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border-radius: 10px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬浮时的指针样式 */
+    transition: background-color 0.3s, transform 0.3s; /* 平滑的过渡效果 */
+}
+
+.search-button:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* 鼠标悬浮时背景更透明 */
+}
+
+.search-button:active {
+    transform: scale(0.95); /* 鼠标点击时的微缩效果 */
+}
 
 
 
@@ -541,8 +618,8 @@ button:hover {
         /* Tool Categories */
         .category-container {
             display: flex;
-            justify-content: center;
-            margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
         }
 
         .category-button {
@@ -554,7 +631,9 @@ button:hover {
             padding: 10px 20px;
             border-radius: 20px;
             margin: 0 10px;
+            flex-basis: calc(33.333% - 10px)
             transition: background-color 0.3s;
+            z-index: 1000;
         }
 
         .category-button:hover {
@@ -570,10 +649,10 @@ button:hover {
             margin-top: 20px;
         }
 
-        .category {
+.category {
     text-align: center;
     padding: 10px;
-    background: #B0C4DE; /* 淡蓝色背景，给人冬日清冷之感 */
+    background: rgba(176, 196, 222, 0.5); /* 将淡蓝色背景改为半透明 */
     color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
     border-radius: 10px;
     margin: 10px;
@@ -583,7 +662,10 @@ button:hover {
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
     backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+    position: relative;
+    
 }
+
 
 
         /* Featured Tools Container */
@@ -591,72 +673,108 @@ button:hover {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    
 }
 
 /* 工具卡片 - 冬季主题 */
 .tool-card {
-    background-color: #B0C4DE; /* 冬天的灰蓝色 */
-    border: 1px solid #4A5A6B; /* 边框采用更深的灰色 */
-    padding: 10px;
-    margin: 5px;
+    background-color: rgba(243, 225, 205, 0.9); /* 米黄色背景，略微透明 */
+    color: #6B4423; /* 暗棕色文字，传统的书墨色 */
+    border: 1px solid #C0A080; /* 古铜色边框 */
+    border-radius: 10px; /* 圆角边框 */
+    padding: 20px;
+    margin: 20px;
     text-align: center;
-    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 轻微阴影 */
+    font-family: '宋体', 'SimSun', serif; /* 使用宋体，增加古风感 */
+    transition: all 0.3s ease;
     position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-    animation: glow 1s infinite alternate;
-    color: #F7F9F9; /* 文字使用浅色以突出深色背景 */
 }
 
-/* 可选：添加关键帧动画以实现微妙的“发光”效果 */
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px #3E4A59;
-    }
-    to {
-        box-shadow: 0 0 20px #2C3E50;
-    }
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 添加一些装饰性的元素，如伪元素的边角装饰 */
+.tool-card::before, .tool-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C0A080;
+    background-color: rgba(243, 225, 205, 0.9);
+}
+
+.tool-card::before {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+}
+
+.tool-card::after {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 10px;
 }
 
 
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-        }
+
+
 
         /* Glowing Button */
-                .glowing-button {
-  padding: 10px 15px;
-  border: none;
-  font-size: 12px;
-  color: #fff;
-  border-radius: 7px;
-  letter-spacing: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: 0.5s;
-  transition-property: box-shadow;
-  text-decoration: none; /* 移除下划线 */
-}
-
 .glowing-button {
-  background: rgb(0,140,255);
-  box-shadow: 0 0 25px rgb(0,140,255);
+  padding: 10px 15px;
+  border: 2px solid #8B4513; /* 添加深棕色边框 */
+  font-size: 14px; /* 稍微增加字体大小，提高可读性 */
+  color: #F5F5DC; /* 设置文字颜色为米色 */
+  border-radius: 7px; /* 保持圆角 */
+  letter-spacing: 2px; /* 减少字母间距，使其更适合古风 */
+  font-weight: 700;
+  text-transform: none; /* 移除大写字母转换，保持原样 */
+  transition: 0.5s;
+  transition-property: box-shadow, transform; /* 增加变换属性以实现平滑过渡 */
+  text-decoration: none; /* 移除下划线 */
+  font-family: '宋体', '楷体'; /* 使用更符合古风的字体 */
+  background: #8B4513; /* 背景色改为深棕色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 使用更微妙的阴影效果 */
 }
 
 .glowing-button:hover {
-  box-shadow: 0 0 5px rgb(0,140,255),
-              0 0 25px rgb(0,140,255),
-              0 0 50px rgb(0,140,255),
-              0 0 100px rgb(0,140,255);
+  background: #A0522D; /* 鼠标悬停时背景色变深 */
+  color: #fff; /* 鼠标悬停时文字颜色变为白色 */
+  box-shadow: 0 0 10px #A0522D, /* 修改为更细腻的阴影效果 */
+               0 0 20px #A0522D;
+  transform: translateY(-2px); /* 轻微向上移动，增加交互感 */
 }
+
         /* Footer */
         #footer {
-            background-color: #202020;
-            color: #888888;
-            text-align: center;
-            padding: 20px;
-            margin-bottom: -200px;
+    background-color: #F5F5DC; /* 修改背景颜色为米色，更符合古风 */
+    color: #8B4513; /* 将文字颜色调整为深棕色，增加古风感 */
+    text-align: center;
+    padding: 20px; /* 增加一些内边距，让文字不会太挤 */
+    font-family: '宋体', '楷体'; /* 使用更符合古风的字体 */
+    border-top: 2px solid #8B4513; /* 顶部添加深棕色边框，增加分隔感 */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加上方阴影，增加层次感 */
+    margin-bottom: 0; /* 根据需要调整底部外边距 */
 }
+
+/* 如果有链接在footer中，也可以对其样式进行调整，与整体风格保持一致 */
+#footer a {
+    color: #8B4513; /* 链接颜色调整为深棕色 */
+    text-decoration: none; /* 去掉下划线，保持简洁 */
+    transition: color 0.3s; /* 添加颜色变化的过渡效果 */
+}
+
+#footer a:hover {
+    color: #A0522D; /* 鼠标悬停时变为更深的棕色 */
+}
+
 
 .gradient-bg {
     background: linear-gradient(to right, #ff9900, #ff33cc); /* 渐变色设置 */
@@ -788,18 +906,24 @@ button:hover {
     100% { background-position: 0 100%; }
   }
 
-  .container {
-    width: 250px;
-    height: 50px; /* 更新高度以适应一行文本 */
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-    background-size: 200% 200%;
+.container {
+    width: 80%; /* 宽度占视窗宽度的80% */
+
+    height: auto; /* 高度自动，根据内容调整 */
+    padding: 10px; /* 内填充，确保内容不会紧贴边缘 */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin: auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: gradient 5s linear infinite; /* 设置渐变动画 */
-  }
+    font-weight: 700;
+    font-style: italic;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
   
   @keyframes lightBorder {
     0% { transform: rotate(0deg); }
@@ -904,10 +1028,12 @@ button:hover {
 #search-input {
     padding: 5px;
     width: 300px;
-    color: white; /* 设置输入框中的文字颜色为白色 */
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 轻微突出的边框 */
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border-radius: 10px; /* 圆角边框 */
 }
-
-
 
 .search-list {
     list-style: none;
@@ -919,73 +1045,72 @@ button:hover {
     border: 1px solid #ccc;
     margin: 5px 0;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景 */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    color: black; /* 设置列表中的文字颜色为黑色 */
+    color: black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+    backdrop-filter: blur(3px); /* 毛玻璃效果 */
 }
+
 #menu-container {
     position: absolute;
-    top: 10px; /* 调整距离顶部的位置 */
-    right: 10px; /* 调整距离右边的位置 */
+    top: 10px;
+    right: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 使子元素右对齐 */
-    border-radius: 10px; /* 添加圆角边框，确保与其他元素协调 */
-    overflow: hidden; /* 防止子元素溢出容器边界 */
+    align-items: flex-end;
+    border-radius: 5px; /* 调整为更符合古风的圆角大小 */
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid #8B4513; /* 添加深棕色边框 */
+    background-color: #F5F5DC; /* 背景色调整为米色，更符合古风 */
 }
 
-/* 如果#menu-container内有具体的按钮或元素，也可适当调整样式以符合整体设计 */
-#menu-container .button {
-    border-radius: 10px; /* 为按钮添加相同的圆角 */
-    /* 可以添加其他样式以确保按钮美观和一致性 */
-}
-
-
-        #menu-button {
+#menu-button {
     cursor: pointer;
-    background: linear-gradient(135deg, #6e48aa, #9d50bb); /* 添加渐变背景 */
-    color: #fff;
-    border: none;
-    padding: 15px; /* 增加内边距以使按钮更大一些 */
-    border-radius: 10px; /* 修改为圆角方形 */
-    font-size: 16px; /* 调整字体大小 */
-    font-weight: bold; /* 字体加粗 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+    background: #8B4513; /* 按钮背景色改为深棕色 */
+    color: #FFFFFF; /* 文字颜色改为白色 */
+    border: 1px solid #8B4513; /* 边框颜色与背景色一致 */
+    padding: 10px 20px; /* 调整内边距 */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: '宋体', '楷体'; /* 改用更符合古风的字体 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 调整阴影效果为更加柔和 */
+    transition: all 0.3s; /* 优化过渡效果 */
 }
 
 #menu-button:hover {
-    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+    background: #A0522D; /* 鼠标悬停时深化背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-
-        #menu {
+#menu {
     display: none;
-    background-color: #333;
-    padding: 20px; /* 增加内边距以获得更好的空间感 */
-    border-radius: 10px; /* 统一圆角大小 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 加深阴影以增加深度感 */
-    transition: box-shadow 0.3s; /* 添加阴影过渡效果 */
+    background-color: #F5F5DC; /* 菜单背景色与容器一致，更符合古风 */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s; /* 优化过渡效果 */
 }
 
 #menu a {
     display: block;
-    color: #fff;
+    color: #8B4513; /* 链接文字颜色调整为深棕色 */
     text-decoration: none;
-    margin-bottom: 10px; /* 增加链接之间的间距 */
-    padding: 10px 0; /* 为链接添加上下内边距 */
-    transition: background-color 0.3s, color 0.3s; /* 添加背景和颜色过渡效果 */
+    margin-bottom: 8px; /* 适当调整间距 */
+    padding: 8px 0;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时添加淡色背景 */
-    color: #ddd; /* 轻微改变颜色以增强交互感 */
+    background-color: #A0522D; /* 鼠标悬停时背景色变化 */
+    color: #FFFFFF; /* 鼠标悬停时文字色变白 */
 }
+
 
         /* Your existing CSS */
 /* Your existing CSS */
@@ -995,34 +1120,48 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #F5F5DC; /* 修改背景颜色为米色，更符合古风 */
     padding: 20px;
-    border: 1px solid #ccc;
-    max-height: 80%; /* Set a maximum height for the popup */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
-    color: black; /* 将文字颜色设为黑色 */
-    border-radius: 10px; /* 圆角边框 */
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 700; /* 加粗 */
-    font-style: italic; /* 斜体 */
+    border: 2px solid #8B4513; /* 使用深棕色边框 */
+    max-height: 80%;
+    overflow-y: auto;
+    color: #3C2F2F; /* 文字颜色调整为深棕色 */
+    border-radius: 5px; /* 圆角稍微减小，符合古典美 */
+    font-family: '宋体', '楷体'; /* 更换为符合古风的字体 */
+    font-weight: 700;
+    font-style: normal; /* 移除斜体样式，使用正常字体风格 */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影，增加立体感 */
 }
 
 .popup-content {
     max-height: 100%;
     overflow-y: auto;
-    border-radius: 10px; /* 圆角边框 */
-    font-family: 'Montserrat', sans-serif; 
+    border-radius: 5px; /* 保持与.popup的圆角一致 */
+    font-family: '宋体', '楷体'; /* 统一字体风格 */
 }
 
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #8B4513; /* 关闭按钮颜色调整为深棕色，与整体风格一致 */
+    font-size: 20px; /* 增加字体大小，使其更加明显易见 */
+}
 
+/* 添加一些装饰性的CSS样式，例如边框内阴影，为弹窗添加更多细节 */
+.popup::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid #A0522D; /* 边框颜色略深，增加层次感 */
+    border-radius: 4px; /* 略小于.popup的圆角，形成内阴影的效果 */
+}
 
-        #close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #333;
-        }
 
 .golden-tool-card {
     border: 1px solid #444444;
@@ -1053,4 +1192,22 @@ button:hover {
     margin-right: 10px;
 }
 
+.search-button {
+    padding: 5px 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 轻微突出的边框 */
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border-radius: 10px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬浮时的指针样式 */
+    transition: background-color 0.3s, transform 0.3s; /* 平滑的过渡效果 */
+}
+
+.search-button:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* 鼠标悬浮时背景更透明 */
+}
+
+.search-button:active {
+    transform: scale(0.95); /* 鼠标点击时的微缩效果 */
+}
 
