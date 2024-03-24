@@ -24,10 +24,14 @@
 
         /* Tool Categories */
         .category-container {
-            display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-        }
+    width: 100%; /* 根据需要调整 */
+    height: auto; /* 根据需要调整，auto意味着高度根据内容自动调整 */
+    overflow: auto; /* 当内容确实溢出时显示滚动条 */
+}
+
 
         .category-button {
             background: none;
@@ -59,8 +63,8 @@
        .category {
     text-align: center;
     padding: 10px;
-    background: rgba(176, 196, 222, 0.5); /* 将淡蓝色背景改为半透明 */
-    color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
+    background: rgba(176, 196, 222, 0.5);
+    color: #2C3E50;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -68,10 +72,11 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
-    backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+    backdrop-filter: blur(8px);
     position: relative;
-    
+    overflow: auto; /* 添加自动滚动条 */
 }
+
 
 
 
@@ -617,10 +622,14 @@ button:hover {
 
         /* Tool Categories */
         .category-container {
-            display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-        }
+    width: 100%; /* 根据需要调整 */
+    height: auto; /* 根据需要调整，auto意味着高度根据内容自动调整 */
+    overflow: auto; /* 当内容确实溢出时显示滚动条 */
+}
+
 
         .category-button {
             background: none;
@@ -652,8 +661,8 @@ button:hover {
 .category {
     text-align: center;
     padding: 10px;
-    background: rgba(176, 196, 222, 0.5); /* 将淡蓝色背景改为半透明 */
-    color: #2C3E50; /* 深蓝色文字，与背景形成对比 */
+    background: rgba(176, 196, 222, 0.5);
+    color: #2C3E50;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -661,10 +670,11 @@ button:hover {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
-    backdrop-filter: blur(8px); /* 保留毛玻璃效果 */
+    backdrop-filter: blur(8px);
     position: relative;
-    
+    overflow: auto; /* 添加自动滚动条 */
 }
+
 
 
 
