@@ -36,10 +36,14 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2024.3.24）</p>
+        <p>更新公告（2024.3.31）</p>
         
-        <p>1.更新样式和布局</p>
-
+        <p>1.新增部分网站</p>
+        <p>2.更新排行榜</p>
+        <p>3.新增网站标签</p>
+        <p>4.修复公告栏被按钮遮挡的bug</p>
+        <p>5.删除部分无效网站</p>
+        <p>6.优化UI和样式布局</p>
         
 
     </div>
@@ -48,7 +52,7 @@
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.2.1</p>
+        <p>Alpha 1.2.2</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -103,12 +107,14 @@
 
 <div class="featured-tools">
     <div class="golden-tool-card">
+     <span class="recently-updated">破解插件</span> 
     <h3>KeepChatGPT</h3>
     <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
     <p>这是一款提高ChatGPT的数据安全能力和效率的插件。并且免费共享大量创新功能，如：自动刷新、保持活跃、数据安全、取消审计、克隆对话、言无不尽、净化页面、展示大屏、展示全屏、拦截跟踪、日新月异等。让我们的AI体验无比安全、顺畅、丝滑、高效、简洁。</p>
     <a class="glowing-button" href="https://greasyfork.org/zh-CN/scripts/462804-keepchatgpt">立即体验</a>
     </div>
     <div class="golden-tool-card">
+     <span class="recently-updated">破解插件</span> 
     <h3>GPT模型切换器</h3>
     <p>*浏览器需要安装油猴插件，然后安装脚本。</p>
     <p>在 ChatGPT 网页端使用 GPT-4 Mobile 模型。同时，它还提供了切换到其他模型的功能，以提供更大的灵活性。一般来说，该脚本不会与其他流行的 ChatGPT 脚本产生冲突。</p>
@@ -136,17 +142,17 @@
         <div class="category" id="commend">
 
     <div class="leaderboard">
-        <h2>排行榜</h2>
+        <h2>排行榜</h2><p>更新时间：2024年3月31日 01：54</p>
         <ul>
             <li>
                 <span class="rank">1</span>
-                <span class="site-name">智能体模型</span>
-                <span class="enter-button" onclick="location.href='https://www.gnomic.cn/'">进入</span>
+                <span class="site-name">秘塔搜搜</span>
+                <span class="enter-button" onclick="location.href='https://metaso.cn/'">进入</span>
             </li>
             <li>
                 <span class="rank">2</span>
-                <span class="site-name">小叮当GPT</span>
-                <span class="enter-button" onclick="location.href='http://chat.qaqgpt.com/chat'">进入</span>
+                <span class="site-name">ROWChat</span>
+                <span class="enter-button" onclick="location.href='https://sharedchat.cn/shared.html'">进入</span>
             </li>
             <li>
                 <span class="rank">3</span>
@@ -155,8 +161,8 @@
             </li>
             <li>
                 <span class="rank">4</span>
-                <span class="site-name">Easy Chat</span>
-                <span class="enter-button" onclick="location.href='https://free.easychat.work'">进入</span>
+                <span class="site-name">免费Gemini网站</span>
+                <span class="enter-button" onclick="location.href='https://chatgemini.wjhtkjwz.eu.org'">进入</span>
             </li>
             <li>
                 <span class="rank">5</span>
@@ -165,8 +171,8 @@
             </li>
             <li>
                 <span class="rank">6</span>
-                <span class="site-name">Libre Chat</span>
-                <span class="enter-button" onclick="location.href='https://ai.speedymind.net'">进入</span>
+                <span class="site-name">免费GPT3.5</span>
+                <span class="enter-button" onclick="location.href='https://ai.tentech.top/'">进入</span>
             </li>
             <li>
                 <span class="rank">7</span>
@@ -175,13 +181,13 @@
             </li>
             <li>
                 <span class="rank">8</span>
-                <span class="site-name">免费Gemini网站</span>
-                <span class="enter-button" onclick="location.href='https://chatgemini.wjhtkjwz.eu.org'">进入</span>
+                <span class="site-name">智谱清言</span>
+                <span class="enter-button" onclick="location.href='https://chatglm.cn/detail'">进入</span>
             </li>
             <li>
                 <span class="rank">9</span>
-                <span class="site-name">ChatGPT Plus</span>
-                <span class="enter-button" onclick="location.href='https://chat.tinycms.xyz:3002'">进入</span>
+                <span class="site-name">LMSYS</span>
+                <span class="enter-button" onclick="location.href='https://lmsys.org/'">进入</span>
             </li>
             <li>
                 <span class="rank">10</span>
@@ -201,6 +207,15 @@
   <div class="categories-container">
     
 <div class="featured-tools">
+    <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <span class="recently-updated">最近更新</span> 
+        <div class="tool-logo">
+            <img src="logo/ChatGPT4.png" alt="网站Logo">
+        </div>
+        <h3>秘塔搜搜</h3>
+        <p>免费作为搜索引擎进行答案整理。</p>
+        <a class="glowing-button" href="https://metaso.cn/">进入网站</a>
+    </div>
    <div class="golden-tool-card">
     <h3>COZE</h3>
     <p>无限制使用GPT4和搜索等强大插件（梯子自备）</p>
@@ -208,6 +223,7 @@
     <a class="glowing-button" href="https://b23.tv/NRlZdTi">查看教程</a>
     </div>
     <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+     <span class="full-people">UP主推荐</span> 
         <div class="tool-logo">
             <img src="logo/ChatGPT.jpg" alt="网站Logo">
         </div>
@@ -216,11 +232,12 @@
         <a class="glowing-button" href="https://chat.gptdsb.com/login">进入网站</a>
     </div>
     <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <span class="full-people">人数爆满</span> 
         <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
+            <img src="logo/ChatGPT4.png" alt="网站Logo">
         </div>
-        <h3>免费GPT4网站</h3>
-        <p>登录openai官方账号免梯子。</p>
+        <h3>ROWChat</h3>
+        <p>提供免费的GPT4国内聊天服务</p>
         <a class="glowing-button" href="https://sharedchat.cn/shared.html">进入网站</a>
     </div>
 
@@ -234,35 +251,22 @@
         <p>无需登陆免费使用。</p>
         <a class="glowing-button" href="https://ai.tentech.top/">进入网站</a>
     </div>
-   <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+  
+</div>       
+<div class="featured-tools">
+    
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <span class="recently-updated">最近更新</span> 
         <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
+            <img src="logo/ChatGPT4.png" alt="网站Logo">
         </div>
-        <h3>免费Gemini网站</h3>
-        <p>无需登陆使用Gemini。</p>
-        <a class="glowing-button" href="https://chatgemini.wjhtkjwz.eu.org">进入网站</a>
+        <h3>lmsys</h3>
+        <p>无需梯子，支持免费GPT4，克劳德等多个模型</p>
+        <a class="glowing-button" href="https://lmsys.org/">进入网站</a>
     </div>
 </div>       
 <div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>无限制使用GPT网站</h3>
-        <p>无需梯子，无需登陆，免费使用GPT4和GPT3.5</p>
-        <a class="glowing-button" href="https://parnix.houtar.eu.org/">进入网站</a>
-    </div>
-
-</div>       
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>Libre Chat</h3>
-        <p>注册账号可以随便填写，支持免费使用gpt4，新必应，克劳德等多种模型。</p>
-        <a class="glowing-button" href="https://ai.speedymind.net">进入网站</a>
-    </div>
+   
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <div class="tool-logo">
             <img src="logo/1689492512.png" alt="网站Logo">
@@ -282,19 +286,13 @@
         <p>GPT聊天服务。</p>
         <a class="glowing-button" href="https://free.easychat.work">进入网站</a>
     </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>小叮当GPT</h3>
-        <p>公益项目，注册账号可免费使用，支持GPT4和GPT3.5！强烈推荐！</p>
-        <a class="glowing-button" href="http://chat.qaqgpt.com/chat">进入网站</a>
-    </div>
+   
 </div>
 
 <div class="featured-tools">
     
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+     <span class="full-people">UP主推荐</span> 
         <div class="tool-logo">
             <img src="logo/logo.png" alt="网站Logo">
         </div>
@@ -307,6 +305,7 @@
 
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+     <span class="full-people">UP主推荐</span> 
         <div class="tool-logo">
             <img src="logo/xunfei.svg" alt="网站Logo">
         </div>
@@ -315,6 +314,7 @@
         <a class="glowing-button" href="https://xinghuo.xfyun.cn/">进入网站</a>
     </div>
    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+   <span class="full-people">UP主推荐</span> 
         <div class="tool-logo">
             <img src="logo/Kimi.3857f0b5.png" alt="网站Logo">
         </div>
@@ -324,72 +324,9 @@
     </div>
 </div>
 
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/duoGPT.png" alt="网站Logo">
-        </div>
-        <h3>ChatGPT Duo</h3>
-        <p>国外GPT，可以使用。</p>
-        <a class="glowing-button" href="https://chatgptduo.com/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>Free2GPT Chat</h3>
-        <p>免费GPT聊天服务。</p>
-        <a class="glowing-button" href="https://chatp.free2gpt.xyz/">进入网站</a>
-    </div>
-</div>
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>AIGC Chat</h3>
-        <p>AI聊天服务。</p>
-        <a class="glowing-button" href="https://chat.aigc101.net/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>GeekGPT Chat</h3>
-        <p>GPT聊天服务。</p>
-        <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
-    </div>
-</div>
 
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/ChatGPT.jpg" alt="网站Logo">
-        </div>
-        <h3>LeadsCloud Chat</h3>
-        <p>加载需要稍等一下。</p>
-        <a class="glowing-button" href="https://chat.leadscloud.xyz/">进入网站</a>
-    </div>
-   
-</div>
-<div class="featured-tools">
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/gptgo.webp" alt="网站Logo">
-        </div>
-        <h3>GPT Go</h3>
-        <p>GPT聊天服务，国外网站。</p>
-        <a class="glowing-button" href="http://gptgo.ai/">进入网站</a>
-    </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <div class="tool-logo">
-            <img src="logo/powerchat.png" alt="网站Logo">
-        </div>
-        <h3>PowerChat</h3>
-        <p>强大的聊天平台，国外免费AI。</p>
-        <a class="glowing-button" href="https://powerchat.top/">进入网站</a>
-    </div>
-</div>
+
+
 
 
 
@@ -408,14 +345,7 @@
 </div>
 
                 <div class="featured-tools">
-                    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>ChatBOTAI</h3>
-                    <p>GPT3无需登陆使用，无其他限制。</p>
-                    <a class="glowing-button" href="http://www.aiptl.com:3000/zh">进入网站</a>
-                    </div>
+                    
                    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
                     <img src="logo/DM_20230930091844_001.svg" alt="网站Logo">
@@ -426,14 +356,7 @@
                     </div>            
                 </div>
             <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>GEEKGPT</h3>
-                    <p>GPT3无需登陆使用，虽然有GPT4，但是假的。</p>
-                    <a class="glowing-button" href="https://chat.geekgpt.org/">进入网站</a>
-                </div>
+               
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
                     <img src="logo/DM_20230930091131_001.svg" alt="网站Logo">
@@ -443,38 +366,8 @@
                     <a class="glowing-button" href="https://chatai.mixerbox.com/chat">进入网站</a>
                 </div>            
             </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>多个GPT账号网站在线用</h3>
-                    <p>有1000多个GPT账号免费在线使用，无需登陆。</p>
-                    <a class="glowing-button" href="https://chat-shared2.zhile.io/shared.html">进入网站</a>
-                </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>FakeGPT</h3>
-                    <p>官方GPT加自制网站运行，完全是在官方基础上破解。</p>
-                    <a class="glowing-button" href="https://chat.zhile.io/auth/login?v=5">进入网站</a>
-                </div>            
-            </div>
-            <div class="featured-tools">
-                
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>AnirudhGPT</h3>
-                    <p>支持GPT、plugin插件、Claude、Palm。</p>
-                    <a class="glowing-button" href="https://chatgpt-app.techwithanirudh.repl.co/login">进入网站</a>
-                </div>            
-            </div>
-           
           
-              
+     
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
@@ -533,7 +426,7 @@
                
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
+                    <img src="logo/ChatGPT4.png" alt="网站Logo">
                     </div>
                     <h3>ChatGPT Plus</h3>
                     <p>不需要登录，支持API和其他模式的选择，支持3.5和4.0，并且完全免费。</p>
@@ -560,14 +453,7 @@
                 </div>
             </div>
             <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/EasyChat.ico" alt="网站Logo">
-                    </div>
-                    <h3>EasyChat</h3>
-                    <p>需要登录，可以使用自己的API，支持3.5和4.0。</p>
-                    <a class="glowing-button" href="https://llgayzuqkg.fastgpt.me/">进入网站</a>
-                </div>
+                
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
                     <img src="logo/智谱清言.svg" alt="网站Logo">
@@ -603,14 +489,7 @@
                     <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，并且还有几个自带备用网站。</p>
                     <a class="glowing-button" href="https://1.11chat.cc/">进入网站</a>
                 </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <div class="tool-logo">
-                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
-                    </div>
-                    <h3>FeelGPT</h3>
-                    <p>包含GPT3.5-TURBO，不需要登录，回复速度也比较快。</p>
-                    <a class="glowing-button" href="https://feel-gpt.top/chat">进入网站</a>
-                </div>
+                
             </div>
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
@@ -619,14 +498,7 @@
                     <a class="glowing-button" href="https://c.binjie.fun/#/chat/1691020665346">进入网站</a>
                 </div>
             </div>
-            <div class="featured-tools">
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>WoChat</h3>
-                    <p>网站不需要登录可以免费使用，并且没有次数限制，不过是GPT3.5，这个网站支持直接翻译文字，也支持和GPT对话。</p>
-                    <a class="glowing-button" href="https://chat1.wobcw.com/">进入网站</a>
-                </div>
-               
-            </div>
+          
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>国外GPT</h3>
@@ -714,11 +586,7 @@
                     <p>完全免费，无需登录，不限次数，支持各种模型，包括二次元模型，三次元模型等。</p>
                     <a class="glowing-button" href="http://www.zaiwen.top/#/">进入网站</a>
                 </div>
-                <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-                    <h3>art breeder</h3>
-                    <p>需要梯子，不过免费。</p>
-                    <a class="glowing-button" href="https://www.artbreeder.com/">进入网站</a>
-                </div>
+               
            
            
           </div>
@@ -877,7 +745,7 @@
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <div class="tool-logo">
-                    <img src="logo/langlogo.png" alt="网站Logo">
+                    <img src="logo/ChatGPT.jpg" alt="网站Logo">
                     </div>
                     <h3>1AIBOX</h3>
                     <p>里面包含了各种比较优秀的已收录的GPT网站，种类齐全，比较推荐。</p>
@@ -938,12 +806,7 @@
     <div class="category" id="account">
   
       <div class="featured-tools">
-        <div class="golden-tool-card">
-        <h3>获取GPT4账号</h3>
-        <p>之前由于用户滥用，导致大量GPT4账号失效，若需要GPT4账号，请加好友并注明“获取GPT4账号”，QQ：3083248889</p>
-        <a class="purple-button" href="http://wpa.qq.com/msgrd?v=3&uin=3083248889&site=qq&menu=yes">立即免费领取</a>
-
-        </div>
+        
         <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
         <h3>ChatGPT API_KEY免费领取</h3>
         <p>这个网站可以每天有一美元的额度，足够使用一天了</p>
@@ -974,11 +837,7 @@
         <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
         <a class="glowing-button" href="https://dongsiqie-bing.hf.space">进入网站</a>
     </div>
-    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-        <h3>dongsiqie2</h3>
-        <p>bing镜像网站，使用时请选择能正常使用的服务器</p>
-        <a class="glowing-button" href="https://dongsiqie-bingai.hf.space">进入网站</a>
-    </div>
+   
 </div>
 <div class="featured-tools">
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>

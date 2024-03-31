@@ -30,6 +30,7 @@
     width: 100%; /* 根据需要调整 */
     height: auto; /* 根据需要调整，auto意味着高度根据内容自动调整 */
     overflow: auto; /* 当内容确实溢出时显示滚动条 */
+    z-index: 0;
 }
 
 
@@ -44,7 +45,7 @@
             margin: 5px;
     flex-basis: calc(33.333% - 10px)
             transition: background-color 0.3s;
-            z-index: 1000;
+            z-index: 0;
         }
 
         .category-button:hover {
@@ -75,6 +76,7 @@
     backdrop-filter: blur(8px);
     position: relative;
     overflow: auto; /* 添加自动滚动条 */
+    z-index: 0;
 }
 
 
@@ -273,22 +275,27 @@
 }
 
 #themeButton {
-            background: linear-gradient(to right, #3498db, #8e44ad);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-        }
+    background: #f4e2d8; /* 轻柔的背景色，类似古代纸张 */
+    color: #563d28; /* 深棕色文字，模拟墨迹的颜色 */
+    border: 2px solid #d3b293; /* 边框颜色，添加古旧感 */
+    border-radius: 0; /* 移除圆角以符合古风的简洁 */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微的阴影保持层次感 */
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 置顶 */
+    left: 0; /* 置左 */
+    z-index: 1000; /* 确保在最上层 */
+}
 
-        #themeButton:hover {
-            background: linear-gradient(to right, #2980b9, #7d3c98);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-        }
+#themeButton:hover {
+    background: #e8d4c0; /* 悬停时背景颜色变浅 */
+    transform: translateY(-2px); /* 轻微上浮效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* 悬停时阴影增强 */
+}
+
 
         .tool-logo img {
     border-radius: 50%; /* 将图像变成圆形 */
@@ -522,6 +529,7 @@ button:hover {
     overflow-y: auto;
     border-radius: 5px; /* 保持与.popup的圆角一致 */
     font-family: '宋体', '楷体'; /* 统一字体风格 */
+    z-index: 1000;
 }
 
 #close-button {
@@ -596,8 +604,29 @@ button:hover {
     transform: scale(0.95); /* 鼠标点击时的微缩效果 */
 }
 
+.recently-updated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 4px; /* 根据需要调整 */
+    border-bottom-right-radius: 8px; /* 添加一点设计感 */
+}
 
-
+.full-people {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 4px; /* 根据需要调整 */
+    border-bottom-right-radius: 8px; /* 添加一点设计感 */
+}
 
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
@@ -628,6 +657,7 @@ button:hover {
     width: 100%; /* 根据需要调整 */
     height: auto; /* 根据需要调整，auto意味着高度根据内容自动调整 */
     overflow: auto; /* 当内容确实溢出时显示滚动条 */
+    z-index: 0;
 }
 
 
@@ -642,7 +672,7 @@ button:hover {
             margin: 0 10px;
             flex-basis: calc(33.333% - 10px)
             transition: background-color 0.3s;
-            z-index: 1000;
+            z-index: 0;
         }
 
         .category-button:hover {
@@ -673,6 +703,7 @@ button:hover {
     backdrop-filter: blur(8px);
     position: relative;
     overflow: auto; /* 添加自动滚动条 */
+    z-index: 0;
 }
 
 
@@ -872,22 +903,27 @@ button:hover {
 }
 
 #themeButton {
-            background: linear-gradient(to right, #3498db, #8e44ad);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-        }
+    background: #f4e2d8; /* 轻柔的背景色，类似古代纸张 */
+    color: #563d28; /* 深棕色文字，模拟墨迹的颜色 */
+    border: 2px solid #d3b293; /* 边框颜色，添加古旧感 */
+    border-radius: 0; /* 移除圆角以符合古风的简洁 */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微的阴影保持层次感 */
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 置顶 */
+    left: 0; /* 置左 */
+    z-index: 1000; /* 确保在最上层 */
+}
 
-        #themeButton:hover {
-            background: linear-gradient(to right, #2980b9, #7d3c98);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-        }
+#themeButton:hover {
+    background: #e8d4c0; /* 悬停时背景颜色变浅 */
+    transform: translateY(-2px); /* 轻微上浮效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* 悬停时阴影增强 */
+}
+
         
         .tool-logo img {
     border-radius: 50%; /* 将图像变成圆形 */
@@ -1149,6 +1185,7 @@ button:hover {
     overflow-y: auto;
     border-radius: 5px; /* 保持与.popup的圆角一致 */
     font-family: '宋体', '楷体'; /* 统一字体风格 */
+    z-index: 1000;
 }
 
 #close-button {
@@ -1221,3 +1258,26 @@ button:hover {
     transform: scale(0.95); /* 鼠标点击时的微缩效果 */
 }
 
+.recently-updated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 4px; /* 根据需要调整 */
+    border-bottom-right-radius: 8px; /* 添加一点设计感 */
+}
+
+.full-people {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 4px; /* 根据需要调整 */
+    border-bottom-right-radius: 8px; /* 添加一点设计感 */
+}

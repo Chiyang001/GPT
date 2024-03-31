@@ -355,6 +355,8 @@ scrollToTopButton.addEventListener('click', () => {
 
 //这个是主题设置代码
 document.addEventListener("DOMContentLoaded", function() {
+    
+
     const themeButton = document.getElementById("themeButton");
     const themeModal = document.getElementById("themeModal");
     const defaultThemeButton = document.getElementById("defaultThemeButton");
