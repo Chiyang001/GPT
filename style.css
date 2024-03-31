@@ -327,8 +327,6 @@ button:hover {
 
  .container {
     width: 80%; /* 宽度占视窗宽度的80% */
-
-    height: 100; /* 高度自动，根据内容调整 */
     padding: 10px; /* 内填充，确保内容不会紧贴边缘 */
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
@@ -338,10 +336,12 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* 若你有多个子元素并希望它们垂直排列，可以添加这个属性 */
     font-weight: 700;
     font-style: italic;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
+
 
 
 .leaderboard-container {
@@ -627,6 +627,25 @@ button:hover {
     border-top-left-radius: 4px; /* 根据需要调整 */
     border-bottom-right-radius: 8px; /* 添加一点设计感 */
 }
+
+
+.container-p {
+    width: 80%; /* 宽度占视窗宽度的80% */
+    height: 50px; /* 高度固定为50px */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* 水平居中内容 */
+    align-items: center; /* 垂直居中内容 */
+    font-weight: 700;
+    font-style: italic;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
 
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
@@ -954,8 +973,6 @@ button:hover {
 
 .container {
     width: 80%; /* 宽度占视窗宽度的80% */
-
-    height: auto; /* 高度自动，根据内容调整 */
     padding: 10px; /* 内填充，确保内容不会紧贴边缘 */
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
@@ -965,6 +982,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* 若你有多个子元素并希望它们垂直排列，可以添加这个属性 */
     font-weight: 700;
     font-style: italic;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -1280,4 +1298,20 @@ button:hover {
     font-size: 12px;
     border-top-left-radius: 4px; /* 根据需要调整 */
     border-bottom-right-radius: 8px; /* 添加一点设计感 */
+}
+
+.container-p {
+    width: 80%; /* 宽度占视窗宽度的80% */
+    height: 50px; /* 高度固定为50px */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* 水平居中内容 */
+    align-items: center; /* 垂直居中内容 */
+    font-weight: 700;
+    font-style: italic;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
