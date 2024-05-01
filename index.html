@@ -36,14 +36,12 @@
     <div id="announcement-popup" class="popup">
     <div id="close-button" onclick="closePopup('announcement-popup')">X</div>
     <div class="popup-content">
-        <p>更新公告（2024.3.31）</p>
+        <p>更新公告（2024.5.1）</p>
         
         <p>1.新增部分网站</p>
-        <p>2.更新排行榜</p>
-        <p>3.新增网站标签</p>
-        <p>4.修复公告栏被按钮遮挡的bug</p>
-        <p>5.删除部分无效网站</p>
-        <p>6.优化UI和样式布局</p>
+        
+        
+
         
 
     </div>
@@ -52,7 +50,7 @@
 
     <div id="version-popup" class="popup">
         <div id="close-button" onclick="closePopup('version-popup')">X</div>
-        <p>Alpha 1.2.2</p>
+        <p>Alpha 1.2.4</p>
     </div>
 
    <div class="scroll-to-top" id="scrollToTop">
@@ -76,10 +74,10 @@
     <div id="header">
         <h1 id="title" style="background: linear-gradient(to right, #8a4df5, #0d47a1); -webkit-background-clip: text; color: transparent;">ChatGPTHub</h1>
         <p id="subtitle">用免费的网站，换取无价的体验。</p>
-<div class="container-p">
+<div class="container">
     <p>请先选择您需要的资源分类：</p>
 </div>
-<div class="container">
+
     <div class="category-container">
         <button id="commend-button" class="category-button" onclick="toggleCategory('commend'); scrollToContent()">📊排行榜</button>
         <button id="textGeneration-button" class="category-button" onclick="toggleCategory('textGeneration'); scrollToContent()">✏️文本生成</button>
@@ -89,7 +87,7 @@
         <button id="account-button" class="category-button" onclick="toggleCategory('account'); scrollToContent()">🔑账号合集</button>
         <button id="bing-button" class="category-button" onclick="toggleCategory('bing'); scrollToContent()">🅱️新必应Bing合集</button>
         <button id="viewFavorites-button" class="category-button" onclick="goToFavoritePage()">⭐我的收藏</button>
- </div>
+    
 </div>
 
 
@@ -100,6 +98,7 @@
 <ul id="search-results" class="search-list">
     <!-- 这里将显示搜索结果 -->
 </ul>
+
 
 <div class="category-container">
 <p>❤️猜你想要：</p>
@@ -208,7 +207,7 @@
     
 <div class="featured-tools">
     <div class="golden-tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-    <span class="recently-updated">最近更新</span> 
+   
         <div class="tool-logo">
             <img src="logo/ChatGPT4.png" alt="网站Logo">
         </div>
@@ -256,7 +255,7 @@
 <div class="featured-tools">
     
     <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
-    <span class="recently-updated">最近更新</span> 
+
         <div class="tool-logo">
             <img src="logo/ChatGPT4.png" alt="网站Logo">
         </div>
@@ -593,7 +592,18 @@
         </div>
  
         <div class="category" id="work">
-           
+           <div class="featured-tools">
+    
+    <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
+    <span class="recently-updated">最近更新</span> 
+        <div class="tool-logo">
+            <img src="logo/ChatGPT4.png" alt="网站Logo">
+        </div>
+        <h3>Suno</h3>
+        <p>需要梯子才能够进入网站， Ai生成音乐</p>
+        <a class="glowing-button" href="https://app.suno.ai/">进入网站</a>
+    </div>
+</div>       
             <div class="featured-tools">
                 <div class="tool-card"><span class="favorite-icon" onclick="toggleFavorite(this)">☆</span>
                     <h3>Gamma</h3>
