@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>ChiYang WebAI</title>
     <style>
-        body {
+       body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-y: scroll; /* 修改为允许纵向滚动 */
             background-color: #f5f5f7;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
+            display: block; /* 修改为块级元素排列 */
+            height: 100vh; /* 修改为自适应高度 */
         }
         .container {
             display: flex;
@@ -490,6 +487,8 @@
 </head>
 <body>
     <div class="background-animation"></div>
+
+    <!-- Page 1 -->
     <div class="container">
         <div class="left">
             <h1 class="text-shadow text-bold">求知若渴 一触即发</h1>
@@ -505,6 +504,78 @@
         <div class="decorative-circle circle-1" style="width: 100px; height: 100px; top: 10%; left: 70%;"></div>
         <div class="decorative-circle circle-2" style="width: 150px; height: 150px; top: 50%; left: 80%;"></div>
     </div>
+
+
+
+    <!-- Page 3 -->
+    <div class="container">
+        <div class="left">
+            <h1 class="text-shadow text-bold">排行榜</h1>
+            <h2 class="text-shadow text-light">自动更新热门AI网站。</h2>
+
+            <div class="floating-circle circle-small" data-factor-x="0.02" data-factor-y="0.02"></div>
+            <div class="floating-circle circle-medium" data-factor-x="0.04" data-factor-y="0.04"></div>
+            <div class="floating-circle circle-large" data-factor-x="0.06" data-factor-y="0.06"></div>
+        </div>
+        <div class="right">
+            <img src="pai.png" alt="Technology" class="glow-effect">
+        </div>
+        <div class="decorative-circle circle-1" style="width: 100px; height: 100px; top: 30%; left: 50%;"></div>
+        <div class="decorative-circle circle-2" style="width: 150px; height: 150px; top: 70%; left: 60%;"></div>
+    </div>
+
+
+    <!-- Page 5 -->
+    <div class="container">
+        <div class="left">
+            <h1 class="text-shadow text-bold">文本生成</h1>
+            <h2 class="text-shadow text-light">收录了主流超多网站合集。</h2>
+
+            <div class="floating-circle circle-small" data-factor-x="0.02" data-factor-y="0.02"></div>
+            <div class="floating-circle circle-medium" data-factor-x="0.04" data-factor-y="0.04"></div>
+            <div class="floating-circle circle-large" data-factor-x="0.06" data-factor-y="0.06"></div>
+        </div>
+        <div class="right">
+            <img src="wen.png" alt="Collaboration" class="glow-effect">
+        </div>
+        <div class="decorative-circle circle-1" style="width: 100px; height: 100px; top: 50%; left: 30%;"></div>
+        <div class="decorative-circle circle-2" style="width: 150px; height: 150px; top: 90%; left: 40%;"></div>
+    </div>
+
+<!-- Page 6 -->
+    <div class="container">
+        <div class="left">
+            <h1 class="text-shadow text-bold">工作辅助</h1>
+            <h2 class="text-shadow text-light">办公AI网站/软件一网打尽。</h2>
+
+            <div class="floating-circle circle-small" data-factor-x="0.02" data-factor-y="0.02"></div>
+            <div class="floating-circle circle-medium" data-factor-x="0.04" data-factor-y="0.04"></div>
+            <div class="floating-circle circle-large" data-factor-x="0.06" data-factor-y="0.06"></div>
+        </div>
+        <div class="right">
+            <img src="gong.png" alt="Collaboration" class="glow-effect">
+        </div>
+        <div class="decorative-circle circle-1" style="width: 100px; height: 100px; top: 50%; left: 30%;"></div>
+        <div class="decorative-circle circle-2" style="width: 150px; height: 150px; top: 90%; left: 40%;"></div>
+    </div>
+
+<!-- Page 7 -->
+    <div class="container">
+        <div class="left">
+            <h1 class="text-shadow text-bold">网站搜索</h1>
+            <h2 class="text-shadow text-light">想要的网站一键搜索。</h2>
+
+            <div class="floating-circle circle-small" data-factor-x="0.02" data-factor-y="0.02"></div>
+            <div class="floating-circle circle-medium" data-factor-x="0.04" data-factor-y="0.04"></div>
+            <div class="floating-circle circle-large" data-factor-x="0.06" data-factor-y="0.06"></div>
+        </div>
+        <div class="right">
+            <img src="sou.png" alt="Collaboration" class="glow-effect">
+        </div>
+        <div class="decorative-circle circle-1" style="width: 100px; height: 100px; top: 50%; left: 30%;"></div>
+        <div class="decorative-circle circle-2" style="width: 150px; height: 150px; top: 90%; left: 40%;"></div>
+    </div>
+
 </body>
 
 </html>
