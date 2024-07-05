@@ -1,63 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的AI收藏</title>
+    <title>我的收藏</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0f0f0f;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
             margin: 0;
-            padding: 0;
-            color: #ffffff;
-        }
-
-        #container {
-            max-width: 800px;
-            margin: 0 auto;
             padding: 20px;
-            background-color: #181818;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
-
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         h1 {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
+            color: #007bff;
         }
-
-        ul {
-            list-style-type: none;
+        .favorite-list {
+            margin-top: 20px;
+        }
+        .favorite-list h2 {
+            color: #007bff;
+        }
+        .favorite-list ul {
+            list-style: none;
             padding: 0;
         }
-
-        li {
-            margin: 10px 0;
+        .favorite-list li {
             padding: 10px;
-            background-color: #292929;
-            border-radius: 5px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        a {
-            color: #3498db;
+        .favorite-list li:last-child {
+            border-bottom: none;
+        }
+        .favorite-list a {
+            color: #007bff;
             text-decoration: none;
-            transition: color 0.3s;
         }
-
-        a:hover {
-            color: #ffffff;
+        .favorite-list a:hover {
+            text-decoration: underline;
+        }
+        .favorite-list .remove-button {
+            font-size: 1em;
+            cursor: pointer;
+            color: #ff0000;
+        }
+        .favorite-list .remove-button:hover {
+            color: #cc0000;
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>我的AI收藏</h1>
-        <ul id="favoriteList">
-            <!-- 这里可以添加收藏项 -->
-        </ul>
+    <div class="container">
+        <h1>我的收藏</h1>
+        <div class="favorite-list">
+            <h2>收藏夹</h2>
+            <ul id="favoriteList">
+
+            </ul>
+        </div>
     </div>
-    <script src="f-script.js"></script>
+
+    <script>
+        var favorites = [];
+        if (localStorage.getItem("favorites")) {
+            favorites = JSON.parse(localStorage.getItem("favorites"));
+        }
+
+        // 更新收藏夹列表
+        function updateFavoritesList() {
+            var favoriteList = document.getElementById("favoriteList");
+            favoriteList.innerHTML = "";
+
+            if (favorites.length === 0) {
+                favoriteList.innerHTML = "<p>您的收藏夹为空。</p>";
+            } else {
+                favorites.forEach(function(item) {
+                    var listItem = document.createElement("li");
+                    listItem.innerHTML = '<a href="' + item.url + '">' + item.name + '</a> <span class="remove-button" onclick="removeFavorite(\'' + item.name + '\', \'' + item.url + '\')">移除</span>';
+                    favoriteList.appendChild(listItem);
+                });
+            }
+        }
+        
+        function removeFavorite(name, url) {
+            favorites = favorites.filter(function(item) {
+                return !(item.name === name && item.url === url);
+            });
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            updateFavoritesList();
+            alert("已取消收藏！");
+        }
+        
+        updateFavoritesList();
+    </script>
 </body>
 </html>
+
