@@ -8,47 +8,58 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #101010;
-            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c3e50;
+            color: #ecf0f1;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column;
         }
 
         .container {
             text-align: center;
-            padding: 20px;
-            border-radius: 20px;
-            background: linear-gradient(to right, #1a237e, #0d47a1);
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
             animation: fadeIn 1s ease-in-out;
         }
 
         .title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 20px;
+            color: #e74c3c;
         }
 
         .content {
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
         .glow-button {
             display: inline-block;
             padding: 10px 20px;
             border: none;
-            border-radius: 20px;
+            border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
-            background: linear-gradient(to right, #1a237e, #0d47a1);
+            background: linear-gradient(to right, #2980b9, #3498db);
             color: #ffffff;
             position: relative;
             overflow: hidden;
+            transition: background 0.3s ease-in-out;
         }
 
         .glow-button::before {
@@ -67,6 +78,10 @@
             transform: scale(1);
         }
 
+        .glow-button:hover {
+            background: linear-gradient(to right, #3498db, #2980b9);
+        }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -78,37 +93,58 @@
             }
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            const zhContainer = document.getElementById('zh-container');
+            const enContainer = document.getElementById('en-container');
+            if (lang === 'en') {
+                zhContainer.style.display = 'none';
+                enContainer.style.display = 'block';
+            } else {
+                zhContainer.style.display = 'block';
+                enContainer.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="zh-container">
         <h1 class="title">免责声明</h1>
         <p class="content">
-    
-**免责声明**<br>
-
-欢迎访问 **ChatGPTHub** 网站（以下简称“本网站”）。在使用本网站之前，请您务必仔细阅读以下免责声明。通过访问本网站，您同意遵守以下条款和条件：<br>
-
-1. **信息准确性和完整性**：本网站提供的所有信息和内容仅供参考和信息交流之用。尽管我们努力确保提供准确和最新的信息，但我们不对信息的准确性、完整性、可靠性或适用性做出任何明示或暗示的保证。您在使用本网站提供的信息时应自行判断其适用性。<br>
-
-2. **技术免责**：本网站提供的工具和资源基于GPT技术，这些工具生成的内容可能会受到算法和数据输入的影响。我们不对通过本网站生成的文本、图像或其他内容的准确性、合法性、完整性或品质承担任何责任。<br>
-
-3. **第三方链接**：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户提供。我们对这些第三方网站的内容或准确性不承担任何责任，并且不对其进行背书或推荐。<br>
-
-4. **服务中断**：我们将尽力保证本网站的正常运行，但不保证本网站在任何时候都不会受到中断、延迟或其他技术问题的影响。我们不承担由于网站服务中断或技术问题引起的任何损失或损害。<br>
-
-5. **知识产权**：本网站上的所有内容，包括但不限于文本、图像、标志、图标和其他元素，均受版权和其他知识产权法律的保护。未经授权，任何人不得复制、修改、分发、传播或以任何方式使用本网站的内容。<br>
-
-6. **使用风险**：您通过本网站使用任何工具或资源，均属于您个人的决定和责任。您应自行承担因使用本网站而可能导致的任何风险和后果。<br>
-
-7. **免责声明的修改**：我们保留随时修改本免责声明的权利。请您定期访问此页面以了解最新的免责声明。<br>
-
-通过访问和使用本网站，您表示您已阅读、理解并同意上述免责声明中的条款和条件。如果您不同意这些条款，请不要使用本网站。<br>
-
-如果您对本免责声明或本网站有任何疑问，请联系我：QQ-3083248889。<br>
-
-
+            **免责声明**<br><br>
+            欢迎访问 **ChatGPTHub** 网站（以下简称“本网站”）。在使用本网站之前，请您务必仔细阅读以下免责声明。通过访问本网站，您同意遵守以下条款和条件：<br><br>
+            1. **信息准确性和完整性**：本网站提供的所有信息和内容仅供参考和信息交流之用。尽管我们努力确保提供准确和最新的信息，但我们不对信息的准确性、完整性、可靠性或适用性做出任何明示或暗示的保证。您在使用本网站提供的信息时应自行判断其适用性。<br><br>
+            2. **技术免责**：本网站提供的工具和资源基于GPT技术，这些工具生成的内容可能会受到算法和数据输入的影响。我们不对通过本网站生成的文本、图像或其他内容的准确性、合法性、完整性或品质承担任何责任。<br><br>
+            3. **第三方链接**：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户提供。我们对这些第三方网站的内容或准确性不承担任何责任，并且不对其进行背书或推荐。<br><br>
+            4. **服务中断**：我们将尽力保证本网站的正常运行，但不保证本网站在任何时候都不会受到中断、延迟或其他技术问题的影响。我们不承担由于网站服务中断或技术问题引起的任何损失或损害。<br><br>
+            5. **知识产权**：本网站上的所有内容，包括但不限于文本、图像、标志、图标和其他元素，均受版权和其他知识产权法律的保护。未经授权，任何人不得复制、修改、分发、传播或以任何方式使用本网站的内容。<br><br>
+            6. **使用风险**：您通过本网站使用任何工具或资源，均属于您个人的决定和责任。您应自行承担因使用本网站而可能导致的任何风险和后果。<br><br>
+            7. **免责声明的修改**：我们保留随时修改本免责声明的权利。请您定期访问此页面以了解最新的免责声明。<br><br>
+            通过访问和使用本网站，您表示您已阅读、理解并同意上述免责声明中的条款和条件。如果您不同意这些条款，请不要使用本网站。<br><br>
+            如果您对本免责声明或本网站有任何疑问，请联系我：QQ-3083248889。不会有人注意到这个更新吧<br>
         </p>
-        <a class="glow-button" href="#">在使用之前请仔细阅读本条款！</a>
+        <div class="button-group">
+            <button class="glow-button" onclick="switchLanguage('en')">Switch to English</button>
+        </div>
+    </div>
+    <div class="container" id="en-container" style="display: none;">
+        <h1 class="title">Disclaimer</h1>
+        <p class="content">
+            **Disclaimer**<br><br>
+            Welcome to the **ChatGPTHub** website (hereinafter referred to as "this website"). Before using this website, please read the following disclaimer carefully. By accessing this website, you agree to abide by the following terms and conditions:<br><br>
+            1. **Information Accuracy and Completeness**: All information and content provided on this website are for reference and information exchange purposes only. Although we strive to provide accurate and up-to-date information, we do not make any express or implied guarantees regarding the accuracy, completeness, reliability, or suitability of the information. You should independently judge the applicability of the information provided by this website.<br><br>
+            2. **Technical Disclaimer**: The tools and resources provided by this website are based on GPT technology, and the content generated by these tools may be influenced by algorithms and data input. We are not responsible for the accuracy, legality, completeness, or quality of any text, images, or other content generated through this website.<br><br>
+            3. **Third-Party Links**: This website may contain links to third-party websites. These links are provided for the convenience of users only. We do not assume any responsibility for the content or accuracy of these third-party websites, nor do we endorse or recommend them.<br><br>
+            4. **Service Interruption**: We will do our best to ensure the normal operation of this website, but we do not guarantee that the website will not be affected by interruptions, delays, or other technical issues at any time. We do not assume any responsibility for any loss or damage caused by website service interruptions or technical issues.<br><br>
+            5. **Intellectual Property**: All content on this website, including but not limited to text, images, logos, icons, and other elements, is protected by copyright and other intellectual property laws. No one may copy, modify, distribute, transmit, or use the content of this website in any way without authorization.<br><br>
+            6. **Use at Your Own Risk**: Your use of any tools or resources provided by this website is your personal decision and responsibility. You should bear any risks and consequences that may arise from using this website.<br><br>
+            7. **Disclaimer Modification**: We reserve the right to modify this disclaimer at any time. Please visit this page regularly to learn about the latest disclaimer.<br><br>
+            By accessing and using this website, you indicate that you have read, understood, and agreed to the terms and conditions of the above disclaimer. If you do not agree to these terms, please do not use this website.<br><br>
+            If you have any questions about this disclaimer or this website, please contact me: QQ-3083248889.<br>
+        </p>
+        <div class="button-group">
+            <button class="glow-button" onclick="switchLanguage('zh')">切换到中文</button>
+        </div>
     </div>
 </body>
 </html>
