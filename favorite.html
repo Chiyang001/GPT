@@ -11,6 +11,7 @@
             color: #333;
             margin: 0;
             padding: 20px;
+            transition: background-color 0.5s, color 0.5s;
         }
         .container {
             max-width: 800px;
@@ -19,6 +20,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s;
         }
         h1 {
             text-align: center;
@@ -40,6 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: background-color 0.5s, color 0.5s;
         }
         .favorite-list li:last-child {
             border-bottom: none;
@@ -47,6 +50,7 @@
         .favorite-list a {
             color: #007bff;
             text-decoration: none;
+            transition: color 0.5s;
         }
         .favorite-list a:hover {
             text-decoration: underline;
@@ -55,13 +59,36 @@
             font-size: 1em;
             cursor: pointer;
             color: #ff0000;
+            transition: color 0.5s;
         }
         .favorite-list .remove-button:hover {
             color: #cc0000;
         }
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.5s, transform 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mode-toggle:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
     <div class="container">
         <h1>我的收藏</h1>
         <div class="favorite-list">
@@ -93,7 +120,7 @@
                 });
             }
         }
-        
+
         function removeFavorite(name, url) {
             favorites = favorites.filter(function(item) {
                 return !(item.name === name && item.url === url);
@@ -102,7 +129,30 @@
             updateFavoritesList();
             alert("已取消收藏！");
         }
-        
+
+        function toggleMode() {
+            var body = document.body;
+            var container = document.querySelector('.container');
+            var button = document.querySelector('.mode-toggle');
+            var links = document.querySelectorAll('.favorite-list a');
+            var removeButtons = document.querySelectorAll('.favorite-list .remove-button');
+            if (body.style.backgroundColor === 'rgb(16, 16, 16)') {
+                body.style.backgroundColor = '#f0f0f0';
+                body.style.color = '#333';
+                container.style.backgroundColor = '#fff';
+                button.textContent = '🌙';
+                links.forEach(link => link.style.color = '#007bff');
+                removeButtons.forEach(button => button.style.color = '#ff0000');
+            } else {
+                body.style.backgroundColor = '#101010';
+                body.style.color = '#fff';
+                container.style.backgroundColor = '#333';
+                button.textContent = '☀️';
+                links.forEach(link => link.style.color = '#80d0ff');
+                removeButtons.forEach(button => button.style.color = '#ff6666');
+            }
+        }
+
         updateFavoritesList();
     </script>
 </body>
