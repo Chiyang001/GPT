@@ -1,3 +1,32 @@
+function toggleDayNightMode() {
+    var body = document.body;
+    var video = document.querySelector('.background-video');
+    if (body.classList.contains('day-mode')) {
+        body.classList.remove('day-mode');
+        body.classList.add('night-mode');
+        video.style.backgroundColor = 'black'; // 设置背景为纯黑色
+        localStorage.setItem('theme', 'night-mode');
+    } else {
+        body.classList.remove('night-mode');
+        body.classList.add('day-mode');
+        video.style.backgroundColor = 'transparent'; // 恢复默认背景
+        localStorage.setItem('theme', 'day-mode');
+    }
+}
+
+// 页面加载时检查本地存储的主题设置
+document.addEventListener("DOMContentLoaded", function() {
+    var storedTheme = localStorage.getItem('theme');
+    var video = document.querySelector('.background-video');
+    if (storedTheme) {
+        document.body.classList.add(storedTheme);
+        if (storedTheme === 'night-mode') {
+            video.style.backgroundColor = 'black';
+        }
+    } else {
+        document.body.classList.add('day-mode'); // 默认主题
+    }
+});
 
 //来回切换标题的动画效果
 var originalTitle = document.title;  // 保存原始标题

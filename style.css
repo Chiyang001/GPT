@@ -645,7 +645,82 @@ button:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+/* 在style.css文件中添加 */
 
+body.day-mode {
+    background-color: white;
+    color: black;
+}
+
+body.night-mode {
+    background-color: black;
+    color: white;
+}
+
+/* 其他元素的样式根据需要定义 */
+.night-mode .tool-card {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+.night-mode .category {
+    background: rgba(50, 50, 50, 0.9);
+    color: #ccc;
+}
+
+.night-mode .glowing-button {
+    background-color: #444;
+    color: #ddd;
+    border: 2px solid #666;
+}
+
+.night-mode .modal-content {
+    background-color: #222;
+    color: #ddd;
+}
+
+.night-mode .popup {
+    background-color: #222;
+    color: #ddd;
+    border: 2px solid #666;
+}
+
+.night-mode .category-button {
+    color: #ddd;
+    background-color: #444;
+}
+
+.night-mode .search-container,
+.night-mode #search-input,
+.night-mode .search-button,
+.night-mode .search-list li {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #555;
+}
+
+.night-mode #footer {
+    background-color: #222;
+    color: #ddd;
+    border-top: 2px solid #444;
+}
+
+.night-mode #menu-container,
+.night-mode #menu-button,
+.night-mode #menu {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #444;
+}
+
+.background-video {
+    transition: background-color 0.5s;
+}
+
+body.night-mode .background-video {
+    background-color: black !important; /* 强制设置背景色 */
+}
 
 /* 适用于平板和电脑设备 */
 @media only screen and (min-width: 601px) {
@@ -1315,3 +1390,81 @@ button:hover {
     font-style: italic;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
+
+/* 在style.css文件中添加 */
+
+body.day-mode {
+    background-color: white;
+    color: black;
+}
+
+body.night-mode {
+    background-color: black;
+    color: white;
+}
+
+/* 其他元素的样式根据需要定义 */
+.night-mode .tool-card {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+.night-mode .category {
+    background: rgba(50, 50, 50, 0.9);
+    color: #ccc;
+}
+
+.night-mode .glowing-button {
+    background-color: #444;
+    color: #ddd;
+    border: 2px solid #666;
+}
+
+.night-mode .modal-content {
+    background-color: #222;
+    color: #ddd;
+}
+
+.night-mode .popup {
+    background-color: #222;
+    color: #ddd;
+    border: 2px solid #666;
+}
+
+.night-mode .category-button {
+    color: #ddd;
+    background-color: #444;
+}
+
+.night-mode .search-container,
+.night-mode #search-input,
+.night-mode .search-button,
+.night-mode .search-list li {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #555;
+}
+
+.night-mode #footer {
+    background-color: #222;
+    color: #ddd;
+    border-top: 2px solid #444;
+}
+
+.night-mode #menu-container,
+.night-mode #menu-button,
+.night-mode #menu {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #444;
+}
+
+.background-video {
+    transition: background-color 0.5s;
+}
+
+body.night-mode .background-video {
+    background-color: black !important; /* 强制设置背景色 */
+}
+
