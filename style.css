@@ -234,27 +234,34 @@
             z-index: -1;
         }
 .scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #000; /* 明确设置背景颜色为黑色 */
+    background-image: none; /* 清除可能存在的默认背景图片等影响底色的因素 */
+    border: none; /* 去除边框，避免边框颜色影响底色视觉效果 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: background 0.3s ease, color 0.3s ease; /* 同时添加背景和颜色的过渡效果 */
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(to right, #007bff, #800080); /* 鼠标悬停时变为从蓝色到紫色的渐变色背景 */
+    color: #fff; /* 鼠标悬停时文字颜色变为白色，与渐变背景搭配更协调 */
 }
 
 .scroll-to-top::before {
     content: "置顶";
-    font-size:14px;
-    color: purple;
+    font-size: 14px;
+    color: #C0C0C0; /* 初始文字颜色设为银色 */
 }
-
 .modal {
     display: none;
     position: fixed;
